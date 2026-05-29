@@ -1,0 +1,32 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python (for any future eval/tooling scripts)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Node (for any future tooling)
+node_modules/
+npm-debug.log*
+
+# Local working files — NEVER commit real case material
+# Draft instruments, client facts, and matter-specific files stay local.
+/workspace/
+/local/
+*.draft.md
+*-MATTER-*.md
+*.client.*
+
+# Skill packaging output
+*.skill
