@@ -20,6 +20,11 @@ env/
 node_modules/
 npm-debug.log*
 
+# Secrets — API keys live in .env, never committed (see CONNECTORS.md).
+.env
+.env.*
+!.env.example
+
 # Local working files — NEVER commit real case material
 # Draft instruments, client facts, and matter-specific files stay local.
 /workspace/
