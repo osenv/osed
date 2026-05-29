@@ -66,15 +66,6 @@ cd osed
 # Install the skills into a Claude Skills-compatible environment, or read them directly.
 ```
 
-To publish a fresh copy to GitHub using the GitHub CLI (`gh`):
-
-```bash
-./init-repo.sh            # creates a private repo named "osed" and pushes
-./init-repo.sh --public   # public instead
-```
-
-The script uses your existing `gh` authentication; it will tell you what to do if `gh` isn't installed or logged in.
-
 ## Status
 
 Seed release. The two templates under `templates/` are the first worked instruments; the skills reference them. The roadmap (in `docs/architecture.md`) lists the next instruments to template, by barrier-to-entry order.
