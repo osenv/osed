@@ -4,6 +4,18 @@
 
 ---
 
+## What this is, in plain terms
+
+Suppose a government agency is supposed to do something under an environmental law — issue a rule, clean up a hazard, answer a formal request — and it hasn't. Holding the agency to that duty usually means hiring a litigation team, which most community groups can't afford just to get started.
+
+OSED helps you produce a clean **first draft** of the formal documents that process uses — the notice letters, petitions, and complaints that lawyers call "instruments." You bring the facts and the goal; OSED handles the repetitive structure and **flags every spot where a human judgment call is needed**.
+
+What OSED does **not** do: it does not give legal advice, tell you whether you have a case, or file anything. A licensed attorney must review and decide before any document leaves your hands. See [`DISCLAIMER.md`](DISCLAIMER.md).
+
+The rest of this page explains how that works in more detail, and then how to install it. If you're not technical, you can stop reading at [Repository layout](#repository-layout) — everything before it is meant for you.
+
+---
+
 ## The idea in one paragraph
 
 The most replicable asset in a half-century of environmental litigation is not a marquee Supreme Court win. It is procedural machinery: the citizen-suit notice letter, the deadline suit, the administrative petition, the consent-decree scaffold. Cases that turn on singular facts and a particular political moment do not transfer. Instruments do. OSED packages that machinery as a set of [Claude Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) — modular, inspectable instruction sets — so that a community group, a county commission, or a small public-interest shop can draft a clean, well-formed legal instrument without first hiring a litigation team.
@@ -21,7 +33,7 @@ Each agent is a skill. Each maps to a stage of the litigation workflow, and each
 | **Gap Analysis** | [`skills/gap-analysis`](skills/gap-analysis) | Reads a statute, extracts mandatory duties and their deadlines, cross-references the agency's actual record, flags actionable misses. | Decide whether a miss is worth suing over. |
 | **Drafting** | [`skills/drafting`](skills/drafting) | Produces the formal instrument: notice of intent, rulemaking petition, deadline complaint, settlement scaffold. | Sign, file, or assert that the instrument is ready to file. |
 | **Plain-Language** | [`skills/plain-language`](skills/plain-language) | Translates a legal pathway into terms a non-lawyer can act on. | Give legal advice or predict outcomes. |
-| **Plain-Precedent Retrieval** | [`skills/precedent-retrieval`](skills/precedent-retrieval) | Surfaces controlling case law for the relevant circuit so a human can judge whether a case survives. | Conclude that a case is safe to file. |
+| **Precedent Retrieval** | [`skills/precedent-retrieval`](skills/precedent-retrieval) | Surfaces controlling case law for the relevant circuit so a human can judge whether a case survives. | Conclude that a case is safe to file. |
 
 The agents are designed to hand off to each other: Gap Analysis finds the miss, Drafting produces the instrument, Precedent Retrieval attaches the controlling law, Plain-Language makes the whole package legible to the person who has to decide.
 
