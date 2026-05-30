@@ -48,3 +48,25 @@ def test_non_200_is_returned_not_raised():
 def test_phase1_hosts_are_allowlisted():
     assert "www.federalregister.gov" in ALLOWED_HOSTS
     assert "www.ecfr.gov" in ALLOWED_HOSTS
+
+
+def test_phase2_hosts_are_allowlisted():
+    assert "www.govinfo.gov" in ALLOWED_HOSTS
+    assert "api.regulations.gov" in ALLOWED_HOSTS
+
+
+def test_custom_headers_are_sent():
+    """Lets a keyed client pass X-Api-Key in a header, so the key never appears
+    in the request URL (and therefore never in an envelope's source_url)."""
+    seen = {}
+
+    def handler(request):
+        seen.update(request.headers)
+        return httpx.Response(200, json={})
+
+    get(
+        "https://api.regulations.gov/v4/documents",
+        headers={"X-Api-Key": "secret-key"},
+        transport=httpx.MockTransport(handler),
+    )
+    assert seen.get("x-api-key") == "secret-key"

@@ -10,6 +10,7 @@ import pytest
 
 from osed_connectors.clients import ecfr
 from osed_connectors.clients import federal_register as fr
+from osed_connectors.clients import govinfo
 
 pytestmark = pytest.mark.live
 
@@ -57,3 +58,21 @@ def test_ecfr_missing_part_is_honest_not_found():
     assert env["found"] is False
     assert env["result"] is None
     assert "404" in env["reason"]
+
+
+def test_govinfo_returns_uscode_section_text():
+    # 42 U.S.C. 7409 — Clean Air Act national ambient air quality standards.
+    env = govinfo.get_uscode_section(title=42, section="7409")
+    assert env["found"] is True
+    assert "ambient air quality" in env["result"]["text"].lower()
+    assert env["result"]["citation"] == "42 U.S.C. 7409"
+    assert env["source_current_as_of"].isdigit()  # edition year
+    assert env["result"]["package_id"].startswith("USCODE-")
+    assert "api_key" not in env["source_url"]
+
+
+def test_govinfo_bad_citation_is_honest_not_found():
+    env = govinfo.get_uscode_section(title=42, section="999999")
+    assert env["found"] is False
+    assert env["result"] is None
+    assert env["reason"]

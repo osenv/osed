@@ -21,6 +21,8 @@ import httpx
 ALLOWED_HOSTS: set[str] = {
     "www.federalregister.gov",
     "www.ecfr.gov",
+    "www.govinfo.gov",
+    "api.regulations.gov",
 }
 
 DEFAULT_TIMEOUT = httpx.Timeout(15.0)
@@ -34,13 +36,16 @@ class DisallowedHost(ValueError):
 def get(
     url: str,
     *,
-    params: dict | None = None,
+    params: dict | list | None = None,
+    headers: dict | None = None,
     transport: httpx.BaseTransport | None = None,
 ) -> httpx.Response:
     """GET `url`, enforcing the host allowlist and timeout.
 
-    `transport` is injectable so tests can supply an `httpx.MockTransport`
-    without touching the network.
+    `headers` are merged over the default User-Agent — used to pass an API key in
+    a header (e.g. X-Api-Key) so it never appears in the request URL, and thus
+    never in an envelope's `source_url`. `transport` is injectable so tests can
+    supply an `httpx.MockTransport` without touching the network.
     """
     host = urlparse(url).hostname
     if host not in ALLOWED_HOSTS:
@@ -48,10 +53,13 @@ def get(
             f"Refusing request to non-allowlisted host: {host!r}. "
             f"Allowed: {sorted(ALLOWED_HOSTS)}"
         )
+    merged_headers = {"User-Agent": _USER_AGENT}
+    if headers:
+        merged_headers.update(headers)
     with httpx.Client(
         timeout=DEFAULT_TIMEOUT,
         transport=transport,
         follow_redirects=False,
-        headers={"User-Agent": _USER_AGENT},
+        headers=merged_headers,
     ) as client:
         return client.get(url, params=params)
