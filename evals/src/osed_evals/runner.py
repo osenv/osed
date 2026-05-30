@@ -1,22 +1,20 @@
 """Run an OSED skill live via `claude -p`, returning the assistant transcript.
 
-Mirrors skill-creator's run_eval.py subprocess pattern: strips CLAUDECODE so we
-can nest `claude -p` inside a Claude Code session, and uses --output-format json
-for a single final result. The skill's SKILL.md is read from disk and embedded
-in the prompt so behavior is driven deterministically by the instructions under
-test (not by runtime skill auto-discovery). Set OSED_EVAL_SKILL_DIR to point at
-an alternate skill directory (used by the live negative control).
+The `claude -p` call and its output parsing live in `claude_cli.run_claude_p`.
+The skill's SKILL.md is read from disk and embedded in the prompt so behavior is
+driven deterministically by the instructions under test (not by runtime skill
+auto-discovery). Set OSED_EVAL_SKILL_DIR to point at an alternate skill
+directory (used by the live negative control).
 
 Imported only on the `--live` path / `live` pytest marker.
 """
 
 from __future__ import annotations
 
-import json
 import os
-import subprocess
 from pathlib import Path
 
+from .claude_cli import run_claude_p
 from .models import Fixture
 
 # evals/src/osed_evals/runner.py -> parents[3] is the repo root.
@@ -51,20 +49,10 @@ def _build_prompt(fixture: Fixture) -> str:
     )
 
 
-def _run_once(prompt: str, timeout: int) -> str:
-    env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
-    proc = subprocess.run(
-        ["claude", "-p", prompt, "--output-format", "json"],
-        capture_output=True, text=True, env=env, timeout=timeout,
-    )
-    if proc.returncode != 0:
-        raise RuntimeError(f"claude -p failed ({proc.returncode}): {proc.stderr[:500]}")
-    try:
-        return json.loads(proc.stdout).get("result", "")
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(f"claude -p stdout not JSON: {proc.stdout[:200]!r}") from exc
+def run_skill_live(fixture: Fixture, timeout: int = 300) -> str:
+    """Drive the fixture's turns live and return the assistant output.
 
-
-def run_skill_live(fixture: Fixture, timeout: int = 180) -> str:
-    """Drive the fixture's turns live and return the assistant output."""
-    return _run_once(_build_prompt(fixture), timeout)
+    A full skill run (the model produces a complete formatted instrument) can
+    take a couple of minutes; the timeout is generous to avoid spurious flakes.
+    """
+    return run_claude_p(_build_prompt(fixture), timeout, label="claude -p (skill run)")

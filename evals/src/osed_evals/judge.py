@@ -10,9 +10,8 @@ any live call.
 from __future__ import annotations
 
 import json
-import os
-import subprocess
 
+from .claude_cli import run_claude_p
 from .models import Check, Expectation
 
 _PROMPT = """\
@@ -60,15 +59,5 @@ def _expectation_from_verdict(check: Check, verdict: dict) -> Expectation:
 
 def evaluate_judge(check: Check, text: str, timeout: int = 120) -> Expectation:
     prompt = _PROMPT.format(criterion=check.criterion, text=text)
-    env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
-    proc = subprocess.run(
-        ["claude", "-p", prompt, "--output-format", "json"],
-        capture_output=True, text=True, env=env, timeout=timeout,
-    )
-    if proc.returncode != 0:
-        raise RuntimeError(f"judge claude -p failed ({proc.returncode}): {proc.stderr[:500]}")
-    try:
-        result_text = json.loads(proc.stdout).get("result", "").strip()
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(f"judge claude -p stdout not JSON: {proc.stdout[:200]!r}") from exc
+    result_text = run_claude_p(prompt, timeout, label="judge claude -p").strip()
     return _expectation_from_verdict(check, _parse_verdict(result_text))
