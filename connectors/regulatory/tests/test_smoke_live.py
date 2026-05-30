@@ -8,6 +8,7 @@ not specific records), and that the safeguards survive a real round-trip.
 
 import pytest
 
+from osed_connectors.clients import ecfr
 from osed_connectors.clients import federal_register as fr
 
 pytestmark = pytest.mark.live
@@ -37,3 +38,22 @@ def test_federal_register_nonsense_term_is_honest_not_found():
     assert env["found"] is False
     assert env["result"] is None
     assert env["reason"]
+
+
+def test_ecfr_returns_current_text_with_freshness_date():
+    # 40 CFR 50.1 — definitions for the National Ambient Air Quality Standards.
+    env = ecfr.get_current_text(title=40, part="50", section="50.1")
+    assert env["found"] is True
+    assert "Clean Air Act" in env["result"]["text"]
+    # eCFR's own freshness date, distinct from retrieved_at
+    assert env["source_current_as_of"]
+    assert env["source_current_as_of"] != env["retrieved_at"]
+    assert "unofficial" in env["notice"].lower()
+    assert env["source_url"].startswith("https://www.ecfr.gov/api/versioner/v1/full/")
+
+
+def test_ecfr_missing_part_is_honest_not_found():
+    env = ecfr.get_current_text(title=40, part="999999")
+    assert env["found"] is False
+    assert env["result"] is None
+    assert "404" in env["reason"]
