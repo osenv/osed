@@ -30,3 +30,10 @@ pytest -m 'live or not live'
 python -m osed_evals run --fixtures fixtures --skill drafting
 python -m osed_evals run --fixtures fixtures --live
 ```
+
+## CI
+
+`.github/workflows/evals.yml` runs `pytest -q` (deterministic lane only) on any
+change to `skills/`, `templates/`, or `evals/`. No secrets required: live
+skill runs and the LLM judge are behind the `live` marker and are deselected.
+Run them locally with `pytest -m live` (needs Claude Code auth).
