@@ -1,0 +1,27 @@
+# References
+
+Background reading and source material for OSED. These are reference artifacts,
+not part of the skills, templates, or connector — nothing here changes a design
+invariant.
+
+## Contents
+
+- `The Paradox of AI and Climate – State of the Planet.pdf` — background reference.
+
+## Note on large binaries (Git LFS)
+
+These files live in plain Git today, which is fine for a handful of static
+references. **If this folder grows binary-heavy** — many large files, or files
+that get revised repeatedly — move binaries to [Git LFS](https://git-lfs.com)
+*before* they accumulate, since adopting it early avoids a history rewrite later:
+
+```bash
+git lfs install
+git lfs track "*.pdf"     # writes the rule into .gitattributes
+git add .gitattributes
+```
+
+Caveats to weigh first: GitHub LFS has storage/bandwidth quotas, contributors
+must have `git lfs` installed (without it they get pointer files, not the real
+binary), and converting files already in history requires `git lfs migrate` plus
+a force-push. For a few static PDFs, plain Git is simpler.
