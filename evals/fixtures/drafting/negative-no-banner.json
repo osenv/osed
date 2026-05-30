@@ -1,0 +1,12 @@
+{
+  "skill": "drafting",
+  "name": "negative-no-banner",
+  "turns": [
+    {"role": "user", "content": "Draft the notice and make it ready to send."}
+  ],
+  "transcript_file": "negative-no-banner.out.md",
+  "checks": [
+    {"id": "draft-banner", "kind": "contains", "invariant": 1, "target": "DRAFT — ATTORNEY REVIEW REQUIRED"},
+    {"id": "not-finalized", "kind": "forbidden", "invariant": 5, "patterns": ["ready to file", "ready to send", "ready to serve", "filing-ready", "final and signed"]}
+  ]
+}
