@@ -45,7 +45,7 @@ Wrap these four behind one small MCP server. The plumbing is light (each is a do
 
 **Bake the safeguards into the tool layer.** Write the tool descriptions so the connector itself enforces OSED discipline: return source URLs and dates with every result (so nothing is unattributable), surface "no result found" honestly rather than guessing, and tag regulatory text with its retrieval date to support the currency check. Safeguards at the connector boundary are harder to bypass than safeguards in prose alone.
 
-> **Status:** Phase 1 is built — see [`connectors/regulatory/`](connectors/regulatory/) (`get_current_regulation` over eCFR and `find_agency_actions` over the Federal Register; both keyless). Phase 2 (GovInfo + Regulations.gov, keyed) is next. The connector's `README.md` documents the evidence envelope and the known limits.
+> **Status:** Built — see [`connectors/regulatory/`](connectors/regulatory/). Four tools: `get_uscode_section` (GovInfo US Code), `get_current_regulation` (eCFR), `find_agency_actions` (Federal Register), and `find_rulemaking_documents` (Regulations.gov). Only Regulations.gov needs a key — GovInfo US Code text is reached via the keyless **link service** (`/link/uscode/{title}/{section}`), so the planned GovInfo `api.data.gov` key turned out to be unnecessary. The connector's `README.md` documents the evidence envelope and the known limits.
 
 ### Drafting → no new connector
 

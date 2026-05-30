@@ -9,19 +9,24 @@ result is *evidence for a human to weigh*, never a determination. See the repo
 - **Distribution name:** `osed-connectors` · **import package:** `osed_connectors`
 - **Transport:** local stdio (FastMCP). MCPB is the eventual packaging upgrade path.
 
-## Phase 1 (this release) — keyless
+## The Gap Analysis loop
 
-The complete core deadline-suit loop, requiring **no API keys**:
+Four tools spanning the full deadline-suit analysis. **Only Regulations.gov needs
+a key** — GovInfo US Code text is reached via the keyless link service.
 
-| Tool | Question | Source |
-|---|---|---|
-| `get_current_regulation` | Does the rule exist now? | eCFR (daily-fresh) |
-| `find_agency_actions` | Did the agency act, and when? | Federal Register |
-
-**Phase 2** (not yet built) adds the bookends — GovInfo (US Code source text) and
-Regulations.gov (delay timeline). Both need free keys; see [`.env.example`](.env.example).
+| Tool | Question | Source | Key |
+|---|---|---|---|
+| `get_uscode_section` | What is the statutory duty? | GovInfo (US Code) | — |
+| `get_current_regulation` | Does the rule exist now? | eCFR (daily-fresh) | — |
+| `find_agency_actions` | Did the agency act, and when? | Federal Register | — |
+| `find_rulemaking_documents` | Delay timeline (docket/comments) | Regulations.gov v4 | ✅ |
 
 ## The tools
+
+### `get_uscode_section(title, section)`
+Current US Code section text via GovInfo's keyless link service (e.g. title=42,
+section="7409"). `source_current_as_of` is the annual edition year. A non-resolving
+citation is an honest not-found. See the duty/deadline caveats under Known limits.
 
 ### `get_current_regulation(title, part, section=None)`
 Current eCFR text for a CFR title/part (optionally a section). A not-found (HTTP
@@ -32,6 +37,12 @@ answer. `source_current_as_of` carries eCFR's own freshness date.
 Federal Register rules / proposed rules / notices matching `term`, newest first,
 with publication and effective dates. `agency` is a Federal Register slug (e.g.
 `environmental-protection-agency`); `doc_type` is `rule`, `proposed_rule`, or `notice`.
+
+### `find_rulemaking_documents(term=None, agency=None, docket_id=None, document_type=None, posted_since=None, limit=10)`
+Regulations.gov documents for the docket/comment timeline, oldest-first. Provide at
+least one of `term`, `agency` (e.g. `EPA`), or `docket_id`. **Requires**
+`REGULATIONS_GOV_API_KEY`; without it the tool returns an explicit not-found. The
+key is sent in the `X-Api-Key` header, never in a URL.
 
 ## Tool-boundary safeguards
 
@@ -59,9 +70,9 @@ Every tool returns the same **evidence envelope**:
 
 ### Known limits (surfaced, not papered over)
 - **eCFR is unofficial.** Daily-fresh, but the legally operative text is the annual GPO CFR. Results say so in `notice`.
-- **Currency applies to the duty, not just doctrine.** A regulation existing today does not confirm the underlying statutory duty is still in force; it can be amended or repealed by later statute.
-- **Statutory deadline text** may live in uncodified statutory notes or public law rather than the codified US Code, and relative deadlines need the enactment date — scoped to phase 2 (GovInfo).
-- **Regulations.gov comment dates** (phase 2) are raw evidence, not proof of agency action — they must never imply a "missed deadline" finding.
+- **Currency applies to the duty, not just doctrine.** A regulation or duty existing today does not confirm it is still in force; it can be amended or repealed by later statute.
+- **Statutory deadline text** may live in uncodified statutory notes or the public law rather than the codified US Code section, and relative deadlines ("within N years of enactment") need the enactment date. `get_uscode_section` returns the codified section and flags this in `notice`; it does not resolve it.
+- **Regulations.gov comment dates** are raw evidence, not proof of agency action — they must never imply a "missed deadline" finding.
 
 ## Setup
 
@@ -100,5 +111,10 @@ Add to your project `.mcp.json` (use the absolute path to the venv script):
 .venv/bin/pytest -m "not live"   # offline only (no network)
 ```
 
-Live smoke tests hit the real Federal Register + eCFR APIs (no keys, so CI needs
-no secrets). Phase-2 keyed tests will be gated behind env-var presence.
+Keyless live smoke tests hit the real Federal Register, eCFR, and GovInfo APIs
+(no secrets, so CI runs them by default). The one keyed test (Regulations.gov) is
+gated on `REGULATIONS_GOV_API_KEY` and skips when it is unset:
+
+```bash
+REGULATIONS_GOV_API_KEY=DEMO_KEY .venv/bin/pytest   # runs the keyed live test too
+```

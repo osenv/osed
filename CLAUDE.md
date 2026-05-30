@@ -98,10 +98,11 @@ prefix — the project dir is `regulatory/`, the import package is `osed_connect
 are intentionally different. Python, using `httpx` with per-request timeouts and a fixed
 government-host allowlist; FastMCP for the server.
 
-Build order: **Phase 1** = Federal Register + eCFR (keyless; the complete core deadline-suit
-loop — "does the rule exist now" + "did the agency act, and when"). **Phase 2** = GovInfo
-(US Code source text) + Regulations.gov (delay timeline) — both keyed and the fiddlier
-integrations. Land Phase 1 fully tested before starting Phase 2.
+Build order (both phases shipped): **Phase 1** = Federal Register + eCFR (keyless; the core
+deadline-suit loop — "does the rule exist now" + "did the agency act, and when"). **Phase 2** =
+GovInfo (US Code source text — keyless via the link service `/link/uscode/{title}/{section}`;
+the assumed `api.data.gov` key proved unnecessary) + Regulations.gov (delay timeline — the only
+keyed source, key in the `X-Api-Key` header). Four tools total.
 
 Tool-boundary safeguards (these enforce the invariants in code, not just prose): every tool
 returns a uniform envelope — `found`, `result`, `source_url`, `source_api`, `retrieved_at`
