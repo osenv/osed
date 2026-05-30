@@ -20,3 +20,17 @@ def test_broken_drafting_transcript_fails():
     # both invariants must be caught: missing banner AND finalization phrase
     assert any("draft-banner" in t for t in failed)
     assert any("not-finalized" in t for t in failed)
+
+
+import pytest
+
+
+@pytest.mark.parametrize("skill,name", [
+    ("gap-analysis", "cwa-304-review-deadline"),
+    ("precedent-retrieval", "gwaltney-ongoing-violation"),
+    ("plain-language", "state-era-explainer"),
+])
+def test_recorded_positive_fixtures_pass_deterministic_lane(skill, name):
+    fx = load_fixture(FIXTURES / skill / f"{name}.json")
+    gr = grade_fixture(fx)  # judge checks skipped; deterministic checks must pass
+    assert gr.passed is True, [e.text for e in gr.expectations if not e.passed]

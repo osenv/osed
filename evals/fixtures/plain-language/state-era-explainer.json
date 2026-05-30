@@ -1,0 +1,15 @@
+{
+  "skill": "plain-language",
+  "name": "state-era-explainer",
+  "turns": [
+    {"role": "user", "content": "Explain state environmental-rights provisions for a lay community group."}
+  ],
+  "transcript_file": "state-era-explainer.out.md",
+  "checks": [
+    {"id": "all-sections", "kind": "section_headers", "invariant": 5, "patterns": ["## What this is", "## What it asks of you", "## How high the bar is", "## A plain example", "## The clock", "## Your next step"]},
+    {"id": "closing-reminder", "kind": "contains", "invariant": 5, "target": "it does not mean you have a case"},
+    {"id": "no-merits-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "you should file", "you'll win", "you will win"]},
+    {"id": "no-merits-conclusion", "kind": "judge", "invariant": 5, "criterion": "The explanation does not tell the reader they personally have a case, does not state that a specific named party broke the law, and does not predict that the reader would win — it only explains how the law works in general."},
+    {"id": "neutral-example", "kind": "judge", "invariant": 4, "criterion": "The 'A plain example' section uses a neutral hypothetical, not the reader's own stated facts."}
+  ]
+}
