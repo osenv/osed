@@ -1806,3 +1806,31 @@ git commit -m "WI-1: CI wiring — deterministic eval suite on skills/templates/
 
 **Known gaps deferred (not WI-1):** the currency *tool* (WI-2), the golden end-to-end transcripts themselves (WI-3, though the fixture mechanism is ready for them), and skill-creator's HTML viewer integration (schema-compatible, wiring deferred).
 ```
+
+---
+
+## Execution notes (what shipped vs. this plan)
+
+Recorded during subagent-driven execution; the code is authoritative where it diverges.
+
+1. **Plain-language forbidden-check collision (Task 9).** The original `no-merits-advice`
+   forbidden list included `"you have a case"`, which is a substring of the skill's *mandatory*
+   negated disclaimer `"it does not mean you have a case"`. A blunt substring `forbidden` check
+   cannot distinguish them — negation is semantic. Fix: dropped it from the deterministic list
+   (the disclaimer stays deterministically *required*) and added a `no-merits-conclusion` judge
+   check; `markers.PLAIN_LANGUAGE_FORBIDDEN_ADVICE` corrected the same way. Lesson now in
+   `CLAUDE.md`: route negated-form phrases to a judge, not a `forbidden` substring.
+
+2. **Live runner reads `SKILL.md` (Tasks 10–11).** The as-written `run_skill_live` hoped
+   `claude -p` would auto-discover the skill. Shipped version reads the skill's `SKILL.md` from
+   disk and embeds its instructions in the prompt (with an `OSED_EVAL_SKILL_DIR` override, used by
+   the live negative control to point at the broken variant). This made prompt-building and the
+   judge's verdict-parsing **pure functions** with real deterministic unit tests
+   (`tests/test_runner.py`, `tests/test_judge.py`) — CI coverage of the live lane's logic without
+   any `claude -p` call. `__main__.py` was added so `python -m osed_evals` works.
+
+3. **Live lane is implemented but not yet live-verified.** The deterministic suite is fully green
+   in CI (live tests deselected). The `@pytest.mark.live` tests — real skill runs, the LLM judge,
+   and the live end-to-end broken-variant negative control — require a manual `pytest -m live` run
+   with Claude Code auth, which has not been executed. Treat live behavior as unproven until run.
+```
