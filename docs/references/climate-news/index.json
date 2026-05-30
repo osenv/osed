@@ -1,0 +1,252 @@
+{
+  "source": "https://news.climate.columbia.edu",
+  "generated": "2026-05-30T14:07:54",
+  "tags_used": [
+    "artificial intelligence",
+    "machine learning"
+  ],
+  "categories_used": [],
+  "count": 30,
+  "articles": [
+    {
+      "id": 70324,
+      "title": "Artificial Intelligence—A Game Changer for Climate Change and the Environment",
+      "url": "https://news.climate.columbia.edu/2018/06/05/artificial-intelligence-climate-environment/",
+      "date": "2018-06-05T08:34:08",
+      "score": 90,
+      "matched": "artificial intelligence; machine learning"
+    },
+    {
+      "id": 107010,
+      "title": "AI’s Growing Carbon Footprint",
+      "url": "https://news.climate.columbia.edu/2023/06/09/ais-growing-carbon-footprint/",
+      "date": "2023-06-09T08:30:16",
+      "score": 69,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 126239,
+      "title": "The Paradox of AI and Climate",
+      "url": "https://news.climate.columbia.edu/2026/05/21/the-paradox-of-ai-and-climate/",
+      "date": "2026-05-21T14:45:36",
+      "score": 59,
+      "matched": "artificial intelligence; machine learning"
+    },
+    {
+      "id": 121103,
+      "title": "How AI Is Revolutionizing the Recycling Industry",
+      "url": "https://news.climate.columbia.edu/2025/06/18/how-ai-is-revolutionizing-the-recycling-industry/",
+      "date": "2025-06-18T16:09:39",
+      "score": 54,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 98346,
+      "title": "Machine Learning Techniques Can Speed Up Glacier Modeling By A Thousand Times",
+      "url": "https://news.climate.columbia.edu/2022/03/25/machine-learning-techniques-can-speed-up-glacier-modeling-by-a-thousand-times/",
+      "date": "2022-03-25T09:01:47",
+      "score": 44,
+      "matched": "artificial intelligence; machine learning"
+    },
+    {
+      "id": 121301,
+      "title": "AI and Climate Justice: Balancing Risk With Opportunity",
+      "url": "https://news.climate.columbia.edu/2025/07/02/ai-and-climate-justice-balancing-risk-with-opportunity/",
+      "date": "2025-07-02T10:08:50",
+      "score": 41,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 119263,
+      "title": "Highlights: ‘From Chaos to Code: How AI Can Tame the Climate Crisis’",
+      "url": "https://news.climate.columbia.edu/2025/03/11/ai-climate-crisis-event/",
+      "date": "2025-03-11T15:16:06",
+      "score": 41,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 125064,
+      "title": "How Can AI Address Climate Justice When Women’s Voices Are Silenced?",
+      "url": "https://news.climate.columbia.edu/2026/02/27/how-can-ai-address-climate-justice-when-womens-voices-are-silenced/",
+      "date": "2026-02-27T18:09:53",
+      "score": 35,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 108029,
+      "title": "How Ecology Could Inspire Better Artificial Intelligence, and Vice Versa",
+      "url": "https://news.climate.columbia.edu/2023/09/11/how-ecology-could-inspire-better-artificial-intelligence-and-vice-versa/",
+      "date": "2023-09-11T15:00:54",
+      "score": 32,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 122918,
+      "title": "Bridging the Gap: How AI Can Help—or Hinder—the SDGs",
+      "url": "https://news.climate.columbia.edu/2025/10/08/bridging-the-gap-how-ai-can-help-or-hinder-the-sdgs/",
+      "date": "2025-10-08T14:40:56",
+      "score": 30,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 115541,
+      "title": "Can AI Help Save Our Planet?",
+      "url": "https://news.climate.columbia.edu/2024/09/19/can-ai-help-save-our-planet/",
+      "date": "2024-09-19T12:53:05",
+      "score": 27,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 126360,
+      "title": "Columbia’s Energy Tech Conference Spotlights the Race for AI’s Clean Power Future",
+      "url": "https://news.climate.columbia.edu/2026/05/20/columbias-energy-tech-conference-spotlights-the-race-for-ais-clean-power-future/",
+      "date": "2026-05-20T13:28:01",
+      "score": 20,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 114914,
+      "title": "Combating Microplastics With AI Real-Time Monitoring",
+      "url": "https://news.climate.columbia.edu/2024/08/19/combating-microplastics-with-ai-real-time-monitoring/",
+      "date": "2024-08-19T11:34:47",
+      "score": 20,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 91757,
+      "title": "An Artificial Neural Network Joins the Fight Against Receding Glaciers",
+      "url": "https://news.climate.columbia.edu/2021/05/05/artificial-neural-network-joins-fight-against-receding-glaciers/",
+      "date": "2021-05-05T08:00:10",
+      "score": 20,
+      "matched": "artificial intelligence; machine learning"
+    },
+    {
+      "id": 105970,
+      "title": "A Leap Toward a Sustainable Earth: Q+A with Climate Expert Pierre Gentine",
+      "url": "https://news.climate.columbia.edu/2023/04/21/a-leap-toward-a-sustainable-earth-qa-with-climate-expert-pierre-gentine/",
+      "date": "2023-04-21T10:17:59",
+      "score": 17,
+      "matched": "artificial intelligence; machine learning"
+    },
+    {
+      "id": 124252,
+      "title": "Can Generative AI Help Strengthen Disaster Preparedness and Resilience Among Youth?",
+      "url": "https://news.climate.columbia.edu/2025/12/16/proposing-a-genai-chatbot-framework-for-youth-disaster-risk-reduction/",
+      "date": "2025-12-16T03:02:00",
+      "score": 14,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 103595,
+      "title": "How Studying the Clouds Can Improve Climate Models",
+      "url": "https://news.climate.columbia.edu/2022/11/23/how-studying-the-clouds-can-improve-climate-models/",
+      "date": "2022-11-23T09:34:41",
+      "score": 13,
+      "matched": "machine learning"
+    },
+    {
+      "id": 124924,
+      "title": "Harnessing AI, Scientists Discover a Rise in Floating Algae Across the Global Ocean",
+      "url": "https://news.climate.columbia.edu/2026/02/17/harnessing-ai-scientists-discover-a-rise-in-floating-algae-across-the-global-ocean/",
+      "date": "2026-02-17T10:00:04",
+      "score": 12,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 106886,
+      "title": "New Method Predicts Extreme Weather Events More Accurately",
+      "url": "https://news.climate.columbia.edu/2023/05/25/new-method-predicts-extreme-weather-events-more-accurately/",
+      "date": "2023-05-25T12:25:10",
+      "score": 11,
+      "matched": "artificial intelligence; machine learning"
+    },
+    {
+      "id": 75075,
+      "title": "Using Machine Learning to Eradicate the Tsetse Fly in Sub-Saharan Africa",
+      "url": "https://news.climate.columbia.edu/2019/02/27/using-machine-learning-eradicate-tsetse-fly-sub-saharan-africa/",
+      "date": "2019-02-27T08:30:19",
+      "score": 11,
+      "matched": "machine learning"
+    },
+    {
+      "id": 70716,
+      "title": "Machine Learning May Be a Game-Changer for Climate Prediction",
+      "url": "https://news.climate.columbia.edu/2018/06/21/machine-learning-may-game-changer-climate-prediction/",
+      "date": "2018-06-21T14:13:19",
+      "score": 11,
+      "matched": "artificial intelligence; machine learning"
+    },
+    {
+      "id": 70636,
+      "title": "Researchers Develop an Artificial Intelligence to Analyze Birdsong in a Warming Arctic",
+      "url": "https://news.climate.columbia.edu/2018/06/20/artificial-intelligence-climate-change-birds/",
+      "date": "2018-06-20T14:00:09",
+      "score": 11,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 121056,
+      "title": "Rethinking Energy Systems in the Age of AI",
+      "url": "https://news.climate.columbia.edu/2025/06/10/rethinking-energy-systems-in-the-age-of-ai/",
+      "date": "2025-06-10T13:21:28",
+      "score": 10,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 94260,
+      "title": "Columbia to Launch $25 Million AI-Based Climate Modeling Center",
+      "url": "https://news.climate.columbia.edu/2021/09/09/columbia-to-launch-25-million-ai-based-climate-modeling-center/",
+      "date": "2021-09-09T15:09:15",
+      "score": 10,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 71912,
+      "title": "Using Artificial Intelligence To Locate Risky Dams",
+      "url": "https://news.climate.columbia.edu/2018/08/23/artificial-intelligence-find-risky-dams/",
+      "date": "2018-08-23T08:23:53",
+      "score": 10,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 97929,
+      "title": "hAIku: AI Generated Poetry",
+      "url": "https://news.climate.columbia.edu/2022/04/22/haiku-ai-generated-poetry/",
+      "date": "2022-04-22T09:00:44",
+      "score": 8,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 93767,
+      "title": "Harnessing Drones, Geophysics and Artificial Intelligence to Root Out Land Mines",
+      "url": "https://news.climate.columbia.edu/2021/09/20/harnessing-drones-geophysics-and-artificial-intelligence-to-root-out-land-mines/",
+      "date": "2021-09-20T08:04:35",
+      "score": 7,
+      "matched": "artificial intelligence"
+    },
+    {
+      "id": 122216,
+      "title": "What Does It Mean for Soil To Be Healthy?",
+      "url": "https://news.climate.columbia.edu/2025/09/08/what-does-it-mean-for-soil-to-be-healthy/",
+      "date": "2025-09-08T14:05:53",
+      "score": 3,
+      "matched": "machine learning"
+    },
+    {
+      "id": 113630,
+      "title": "How Much Carbon Can the Ocean Hold? Lamont Researchers Aim To Find Out",
+      "url": "https://news.climate.columbia.edu/2024/06/07/how-much-carbon-can-the-ocean-hold-lamont-researchers-aim-to-find-out/",
+      "date": "2024-06-07T09:30:05",
+      "score": 3,
+      "matched": "machine learning"
+    },
+    {
+      "id": 107085,
+      "title": "Improving Market Design for Energy Storage",
+      "url": "https://news.climate.columbia.edu/2023/06/13/improving-market-design-for-energy-storage/",
+      "date": "2023-06-13T09:00:11",
+      "score": 2,
+      "matched": "artificial intelligence"
+    }
+  ]
+}

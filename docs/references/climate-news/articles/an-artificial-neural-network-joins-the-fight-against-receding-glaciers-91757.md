@@ -1,0 +1,34 @@
+# An Artificial Neural Network Joins the Fight Against Receding Glaciers
+
+- URL: https://news.climate.columbia.edu/2021/05/05/artificial-neural-network-joins-fight-against-receding-glaciers/
+- Date: 2021-05-05T08:00:10
+- Relevance score: 20
+- Matched: artificial intelligence, machine learning
+
+---
+
+The calving front of a crevassed glacier in southwest Greenland, seen from NASA’s P-3B aircraft. Source: NASA / Christy Hansen
+
+What makes a neuron? In the 1940s, at the dawn of the computer age, researchers gave the word a second meaning. In the case of neural networks, the artificial neurons comprising them are more simple than one might expect: structure a unit of code to take in information, judge the information, pass it on, then string together thousands or millions of these “neurons” and watch as they begin to display behavior that could be described as a form of intelligence. Artificial neural networks are used all around us, from language translators to face recognition software to the tailored content feeds we’re provided on social media.
+
+Neural networks have become a critical new tool in glaciologists’ study of climate change and its effects on receding glaciers. A recent publication in The Cryosphere releases and evaluates a new neural network known as the Calving Front Machine (CALFIN), a program capable of automatically identifying the calving fronts of ocean-terminating glaciers from decades of satellite imagery. Programs such as CALFIN could make it possible to catalogue and monitor the rates of glacier loss all around the world, even at sites that scientists haven’t been able to study manually.
+
+Daniel Cheng, a Ph.D. student in computer science at the University of California, Irvine and the lead author of this publication, led CALFIN’s development to resounding success. This neural network is capable of recognizing and measuring the edges of glaciers in satellite images of Earth’s surface nearly as well as a trained scientist, except it’s autonomous, quick, and can reliably process countless more glaciers than any human being ever could.
+
+Artificial neural networks are remarkably powerful tools given the simplicity of their core components. Built on a framework of inputs and outputs, each individual neuron can take in outputs of multiple neurons behind it, then proceed to weigh each piece of information and synthesize them all into a new, single output. This straightforward process, governed by relatively basic rules of statistics, becomes capable of solving extraordinarily complex problems when stacked and iterated enough times. Tasks that were formerly cumbersome for a computer program, such as identifying characteristics of images, now become possible, precisely the capability required to measure receding glaciers from the vast datasets produced by satellite surveys.
+
+The relationships between individual neurons in a simple neural network. Each individual neuron assesses its input information before passing it on again. Source: Glosser.ca
+
+Before a neural network has seen its assigned task (identifying calving fronts, for CALFIN), its neurons will be unskilled in recognizing patterns to reach the correct conclusions (in this case, where exactly the calving front is located in the image). In a remarkable parallel to learning in human infants, neural networks can be taught—a process referred to as “training”—to perform tasks successfully by being shown hundreds or thousands of these correct conclusions. In more technical terms, each successive correct example the neural network sees during training allows it to refine the individual parameters in each neuron, which gives the whole network the ability to replicate that pathway when shown a new, unfamiliar example.
+
+CALFIN was trained to recognize calving fronts using tens of thousands of images, taking over a week and a half to complete training and process the full dataset, which spans 66 Greenlandic basins and contains images from 1972 to 2019 (including 22,678 total calving fronts). The human brain can take months to master a pattern recognition task; the CALFIN neural network only needs a matter of days. After training, CALFIN was able to measure calving fronts to within an average of 82 meters from their true locations, an improvement over previous models that exhibited errors of more than twice that distance on this dataset.
+
+William Colgan, a research climatologist at the Geological Survey of Denmark and Greenland, is enthusiastic about the progress of this technology in monitoring these rapidly changing glacial environments. “I would say that big data—machine learning in general—is going to really change the way we monitor the Greenland Ice Sheet,” wrote Colgan in an interview with GlacierHub. He described how historical glacier monitoring was focused on “benchmark” glaciers, studied manually by researchers out in the field, and unreliable when scaled up to understand regional trends. “I think machine learning now offers a robust way of up-scaling a handful of site-specific and process-level observations to tell a bigger regional story.”
+
+Glacier termini advance and retreat over time as identified by CALFIN, with average trends identified in distinct regions of Greenland. Source: Cheng et al.
+
+Lead author Cheng was focused on broader regional capabilities throughout CALFIN’s development, as he describes that “a primary goal and concern was to ensure that CALFIN could handle the wide variety of environments, geography, and issues like clouds or shadows.” CALFIN has certainly accomplished this goal. Much like the way that human brains can recognize a person’s identity even when part of their face is in bright sunlight and part in deep shadow, CALFIN too can use its training to work through an imperfect or partially shaded image and derive the correct conclusion.
+
+Cheng doesn’t intend to stop here, however, with next steps for CALFIN including improving the neural network’s accuracy, extracting different features such as coastlines or icebergs, and expanding its current count of nearly 23,000 analyzed images.
+
+The future of glaciology could soon become a joint effort between human researchers and artificial intelligence, with glaciologists using the advantages of human intuition and neural network computing power to bolster their quest for understanding. As Colgan explains, machine learning is great, but it always needs training data. Artificial intelligence may not be able to collect benchmark observations, but it does promise to make those observations more scientifically valuable and increase the efficiency of glacial monitoring. The rate of Greenland’s ice loss this century will be higher than in any other over the past 12,000 years. With consequences this grave, glaciologists need every resource available.

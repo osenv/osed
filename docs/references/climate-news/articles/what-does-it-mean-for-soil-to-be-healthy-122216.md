@@ -1,0 +1,35 @@
+# What Does It Mean for Soil To Be Healthy?
+
+- URL: https://news.climate.columbia.edu/2025/09/08/what-does-it-mean-for-soil-to-be-healthy/
+- Date: 2025-09-08T14:05:53
+- Relevance score: 3
+- Matched: machine learning
+
+---
+
+Yushu Xia collecting cover crop biomass samples in an organic field in Illinois. Credit: Michelle Wander
+
+Yushu Xia is an assistant research professor at the Lamont-Doherty Earth Observatory, a research institute of the Columbia Climate School, where she leads the Soil Systems Lab. Her research focuses on the assessment and modeling of soil health, with the overarching goal of simultaneously advancing agricultural productivity, environmental sustainability, and ecosystem benefits.
+
+By improving soil health, Xia aims to reduce negative environmental impacts, while also encouraging key positive outcomes such as carbon storage, water retention, and biodiversity. Her work bridges field-based science and advanced modeling—including artificial intelligence and process-based models—to inform more resilient land management strategies that benefit farmers, ranchers, communities and the planet.
+
+Xia came to Columbia in 2024 after completing her Ph.D. at the University of Illinois at Urbana-Champaign, as well as a postdoctoral fellowship at the Woodwell Climate Research Center. During her postdoctoral fellowship, she developed a fusion model to estimate carbon dynamics by combining remote sensing with process-based simulations. Now at Columbia, Xia continues building on that foundation by leveraging multiple types of datasets and modeling tools to improve soil management—a critical component of optimizing carbon management. Her research connects empirical field data, lab work, survey inputs, remote sensing and high-performance computing to better understand and inform sustainable land use practices.
+
+At the heart of Xia’s work is an essential question: What does it mean for soil to be healthy? Healthy soils are typically considered to be fertile and productive, directly supporting crop yields and food systems—crucial outcomes for farmers and ranchers—but soil health extends well beyond agriculture. “When we have healthy soils,” she says, “we often see increased carbon storage, better water dynamics, and more resilient ecosystems.” This carbon storage not only enhances long-term fertility, but also helps reduce atmospheric carbon dioxide. Through her research, Xia identifies and promotes land management practices that maintain and improve soil health across a range of landscapes, including agricultural land, rangelands, and forest environments.
+
+Another focus of Xia’s research is how to use the growing volume of environmental and agricultural data to better quantify soil health, as well as guide land management and decision making. Her work is at the intersection of soil science, data science and artificial intelligence. “We have field data, lab analyses, satellite imagery, and survey data—but we also have a range of modeling approaches, from machine learning to process-based simulations,” she explains. Her team uses digital soil mapping and process-based models that simulate soil processes like decomposition, hydrology and gas exchange. These tools allow for spatial and temporal projections across different scales, and can be turned into decision-support platforms for ranchers, farmers and policymakers.
+
+“Improving soil health means improving human, animal and environmental health—and securing a better future for our food and water systems, communities and the planet.”
+
+For example, on one project, Xia’s team is creating a web-based app to help ranchers and farmers visualize how different land management strategies—such as grazing intensity or precipitation variability—might impact productivity, carbon storage and water availability. Additionally, in a separate effort, Xia is leading implementation of a multi-model intercomparison and ensemble tool, collaborating with major soil modeling groups to improve estimates of key indicators related to soil carbon and nitrogen cycling. “These tools will help people see what’s working and where they can adapt,” Xia says.
+
+However, to make such tools effective, the underlying data must be improved and expanded, as Xia explains further: “Most conventional soil data comes from surveys, but the data and surveys are often limited in how well they capture change over time or reflect diverse land uses. By identifying where the gaps are—and combining those surveys with remote sensing and modeling tools—we can improve the predictions that farmers, conservationists, and policymakers rely on.”
+
+A key challenge, however, is protecting data privacy. “There must be creative methods where people with agreements can use location and management data to extract model input datasets, but can also protect that data after building the model,” Xia says. This involves bridging scientific innovation with ethical data practices, especially when working with community-based and non-federal sources. To accomplish these goals, Xia is currently leading a project in collaboration with the National Soil Survey Center to develop web tools that are both practical and trustworthy for stakeholders.
+Personal inspiration, along with deep concern for the environment, shaped Xia’s path to soil science research. “My grandfather was a geology professor and a gifted science storyteller. He used to write children’s books that made science fun and accessible,” she recalls. “I grew up playing with soil and seeing how science could be shared in a way that sparked curiosity.” At the same time, she was growing up in a world increasingly marked by news of environmental contamination and degradation. “As someone who was a concerned citizen, I wanted to work on something that could really make a difference,” she says.
+
+That sense of purpose continues to guide Xia’s work, as she is passionate about integrating research with education and public engagement. She hopes to motivate the next generation of academic scientists, as well as citizen scientists, by making her findings accessible through outreach, decision-support tools, and community partnerships. “Everyone is pretty close to soil and water in some way,” she says. “Whether it’s through food, land, or community gardens, soil is something we all interact with.”
+
+As she expands her lab, teaches agroecology, and mentors the next generation of scientists, Yushu Xia is building more than models. She is also building bridges between data and decisions, science and society, and soil and sustainability. She wants to improve understanding of how to manage our land—not just for current generations, but also for the future. Improving soil health means improving fertility, which directly benefits farmers and ranchers, but also helps store more carbon, enhances water availability, and supports animal and human health through better food systems. As Xia emphasizes, “Soil has powerful implications for communities at every scale—and that’s what motivates me to continue this work.”
+
+This article was originally published by Columbia Research as a Researcher of the Month feature.
