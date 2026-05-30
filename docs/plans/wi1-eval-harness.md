@@ -457,8 +457,13 @@ PLAIN_LANGUAGE_SECTIONS = (
 )
 # skills/plain-language/SKILL.md:59 — required closing reminder (core substring).
 PLAIN_LANGUAGE_CLOSING = "it does not mean you have a case"
+# NOTE (design fix during execution): "you have a case" is intentionally NOT a
+# deterministic forbidden phrase. The mandatory closing reminder is the negated
+# form "it does not mean you have a case", which a blunt substring check cannot
+# tell apart from an affirmative claim. That negation-sensitive judgment is
+# handled by an LLM `judge` check instead (see Task 9). Keep only phrases with
+# no safe negated form.
 PLAIN_LANGUAGE_FORBIDDEN_ADVICE = (
-    "you have a case",
     "you should sue",
     "you should file",
     "you'll win",
@@ -1419,11 +1424,22 @@ This explains how the law works in general. It is not advice about your situatio
   "checks": [
     {"id": "all-sections", "kind": "section_headers", "invariant": 5, "patterns": ["## What this is", "## What it asks of you", "## How high the bar is", "## A plain example", "## The clock", "## Your next step"]},
     {"id": "closing-reminder", "kind": "contains", "invariant": 5, "target": "it does not mean you have a case"},
-    {"id": "no-merits-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you have a case", "you should sue", "you should file", "you'll win", "you will win"]},
+    {"id": "no-merits-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "you should file", "you'll win", "you will win"]},
+    {"id": "no-merits-conclusion", "kind": "judge", "invariant": 5, "criterion": "The explanation does not tell the reader they personally have a case, does not state that a specific named party broke the law, and does not predict that the reader would win — it only explains how the law works in general."},
     {"id": "neutral-example", "kind": "judge", "invariant": 4, "criterion": "The 'A plain example' section uses a neutral hypothetical, not the reader's own stated facts."}
   ]
 }
 ```
+
+> **Design fix applied during execution:** the original `no-merits-advice`
+> forbidden list included `"you have a case"`, which is a substring of this
+> skill's *mandatory* negated disclaimer (`"it does not mean you have a case"`).
+> A blunt case-insensitive substring `forbidden` check cannot distinguish the
+> safe negated form from an affirmative claim — negation is semantic. The fix:
+> drop `"you have a case"` from the deterministic list (the disclaimer is still
+> deterministically *required* via `closing-reminder`) and add the
+> `no-merits-conclusion` judge check to catch the affirmative merits claim. The
+> `markers.PLAIN_LANGUAGE_FORBIDDEN_ADVICE` constant was corrected the same way.
 
 - [ ] **Step 4: Extend the positive-grading test**
 
