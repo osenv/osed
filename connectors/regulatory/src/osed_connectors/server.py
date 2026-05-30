@@ -15,6 +15,8 @@ from fastmcp import FastMCP
 
 from .clients import ecfr
 from .clients import federal_register as fr
+from .clients import govinfo
+from .clients import regulations_gov as rg
 
 mcp = FastMCP("osed-connectors")
 
@@ -81,6 +83,66 @@ def get_current_regulation(
         section: Optional section within the part (e.g. "50.1").
     """
     return ecfr.get_current_text(title=title, part=part, section=section)
+
+
+@mcp.tool
+def get_uscode_section(title: int, section: str) -> dict[str, Any]:
+    """Fetch current US Code section text — the "statutory duty" step of a Gap
+    Analysis (e.g. title=42, section="7409").
+
+    Keyless. On success `source_current_as_of` is the annual edition year.
+
+    Caveats carried in the result `notice`: a statutory DEADLINE may not appear in
+    the codified section — deadline clauses often live in uncodified statutory
+    notes or the public law, and a relative deadline ("within N years of
+    enactment") needs the enactment date. A duty existing today does not prove it
+    is still in force; it can be amended or repealed by later statute, so the
+    doctrinal-currency check applies to the duty itself.
+
+    Args:
+        title: US Code title number (e.g. 42).
+        section: Section number (e.g. "7409").
+    """
+    return govinfo.get_uscode_section(title=title, section=section)
+
+
+@mcp.tool
+def find_rulemaking_documents(
+    term: str | None = None,
+    agency: str | None = None,
+    docket_id: str | None = None,
+    document_type: str | None = None,
+    posted_since: str | None = None,
+    limit: int = 10,
+) -> dict[str, Any]:
+    """Search Regulations.gov for a docket/document timeline — the "delay
+    timeline" step of a Gap Analysis. Provide at least one of `term`, `agency`,
+    or `docket_id`. Results are oldest-first so they read as a timeline.
+
+    Requires a free API key in REGULATIONS_GOV_API_KEY (https://api.data.gov/signup);
+    without it the tool returns an explicit not-found explaining so.
+
+    The result `notice` is load-bearing: posting and comment-period dates are RAW
+    EVIDENCE of docket activity, not proof of agency action and not proof a
+    deadline was met or missed. Never read a comment-period close as a missed
+    deadline — that is a legal judgment.
+
+    Args:
+        term: Full-text search term.
+        agency: Regulations.gov agency id (e.g. "EPA").
+        docket_id: A specific docket id (e.g. "EPA-HQ-OAR-2021-0001").
+        document_type: e.g. "Rule", "Proposed Rule", "Notice".
+        posted_since: Earliest posted date, "YYYY-MM-DD".
+        limit: Max documents to return (default 10).
+    """
+    return rg.find_rulemaking_documents(
+        term=term,
+        agency=agency,
+        docket_id=docket_id,
+        document_type=document_type,
+        posted_since=posted_since,
+        limit=limit,
+    )
 
 
 def main() -> None:

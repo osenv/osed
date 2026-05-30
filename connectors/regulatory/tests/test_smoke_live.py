@@ -6,11 +6,14 @@ with `-m "not live"`. They assert the *contract we depend on* still holds (shape
 not specific records), and that the safeguards survive a real round-trip.
 """
 
+import os
+
 import pytest
 
 from osed_connectors.clients import ecfr
 from osed_connectors.clients import federal_register as fr
 from osed_connectors.clients import govinfo
+from osed_connectors.clients import regulations_gov as rg
 
 pytestmark = pytest.mark.live
 
@@ -76,3 +79,20 @@ def test_govinfo_bad_citation_is_honest_not_found():
     assert env["found"] is False
     assert env["result"] is None
     assert env["reason"]
+
+
+# Regulations.gov is the one keyed source: gate on the key being present so CI
+# without secrets skips it. Set REGULATIONS_GOV_API_KEY (DEMO_KEY works lightly).
+_RG_KEY = os.environ.get("REGULATIONS_GOV_API_KEY")
+
+
+@pytest.mark.skipif(not _RG_KEY, reason="REGULATIONS_GOV_API_KEY not set")
+def test_regulations_gov_returns_documents_for_epa():
+    env = rg.find_rulemaking_documents(agency="EPA", term="ozone", limit=3)
+    assert env["found"] is True
+    docs = env["result"]["documents"]
+    assert 1 <= len(docs) <= 3
+    assert all(d["posted_date"] for d in docs)
+    # key rode in a header, so it must not appear in the recorded source_url
+    assert "api_key" not in env["source_url"]
+    assert _RG_KEY not in env["source_url"]
