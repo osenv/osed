@@ -35,3 +35,6 @@ npm-debug.log*
 
 # Skill packaging output
 *.skill
+
+# Claude Code local state — personal settings and transient worktrees, not repo content
+.claude/
