@@ -39,10 +39,14 @@ def _parse_verdict(result_text: str) -> dict:
     The model may wrap the JSON in prose or code fences; take the outermost
     brace-delimited object.
     """
-    start, end = result_text.find("{"), result_text.rfind("}")
-    if start == -1 or end == -1 or end < start:
+    start = result_text.find("{")
+    if start == -1:
         raise ValueError(f"no JSON object in judge output: {result_text[:200]!r}")
-    return json.loads(result_text[start:end + 1])
+    try:
+        obj, _ = json.JSONDecoder().raw_decode(result_text, start)
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"no JSON object in judge output: {result_text[:200]!r}") from exc
+    return obj
 
 
 def _expectation_from_verdict(check: Check, verdict: dict) -> Expectation:
@@ -63,5 +67,8 @@ def evaluate_judge(check: Check, text: str, timeout: int = 120) -> Expectation:
     )
     if proc.returncode != 0:
         raise RuntimeError(f"judge claude -p failed ({proc.returncode}): {proc.stderr[:500]}")
-    result_text = json.loads(proc.stdout).get("result", "").strip()
+    try:
+        result_text = json.loads(proc.stdout).get("result", "").strip()
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"judge claude -p stdout not JSON: {proc.stdout[:200]!r}") from exc
     return _expectation_from_verdict(check, _parse_verdict(result_text))

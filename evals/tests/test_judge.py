@@ -25,3 +25,8 @@ def test_expectation_from_verdict_builds_text_and_fields():
     assert e.passed is False
     assert "refused" in e.text and "invariant 5" in e.text
     assert e.evidence == "it predicted the outcome"
+
+
+def test_parse_verdict_ignores_trailing_prose_with_stray_brace():
+    raw = '{"passed": true, "evidence": "ok"} Note: template was {criterion}.'
+    assert _parse_verdict(raw) == {"passed": True, "evidence": "ok"}

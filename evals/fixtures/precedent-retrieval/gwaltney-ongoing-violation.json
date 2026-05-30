@@ -8,7 +8,7 @@
   "checks": [
     {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Currency check:"},
     {"id": "rule-section", "kind": "section_headers", "invariant": 5, "patterns": ["## What the rule is (not how it applies to you)", "## For the human deciding"]},
-    {"id": "no-prediction", "kind": "forbidden", "invariant": 5, "patterns": ["will survive", "is strong", "safe to file", "you're good to file"]},
+    {"id": "no-prediction", "kind": "forbidden", "invariant": 5, "patterns": ["will survive", "claim is strong", "case is strong", "safe to file", "you're good to file"]},
     {"id": "no-rule-application", "kind": "judge", "invariant": 5, "criterion": "The output states the legal rule neutrally and does NOT apply it to the user's specific facts to predict whether their claim would succeed."}
   ]
 }

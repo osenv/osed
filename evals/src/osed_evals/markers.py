@@ -54,7 +54,11 @@ PRECEDENT_SECTIONS = (
 )
 PRECEDENT_FORBIDDEN_PREDICTION = (
     "will survive",
-    "is strong",
+    # "is strong" alone false-positives on neutral descriptions ("the framework
+    # is stronger"); forbid only the outcome-prediction forms. Broader semantic
+    # coverage is the judge's job.
+    "claim is strong",
+    "case is strong",
     "safe to file",
     "you're good to file",
 )

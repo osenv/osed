@@ -54,7 +54,8 @@ def evaluate_check(check: Check, text: str) -> Expectation:
         return Expectation(text=desc, passed=passed, evidence=evidence)
 
     if check.kind == "section_headers":
-        missing = [h for h in check.patterns if h not in text]
+        missing = [h for h in check.patterns
+                   if re.search(r"^" + re.escape(h), text, re.MULTILINE) is None]
         passed = not missing
         evidence = "" if passed else f"missing section(s): {missing}"
         return Expectation(text=desc, passed=passed, evidence=evidence)

@@ -40,6 +40,10 @@ def main(argv: list[str] | None = None) -> int:
                 continue  # live-only fixture; skip in deterministic lane
             results.append(grade_fixture(fx, live=False))
 
+    if not results:
+        print(f"No gradeable fixtures found under {args.fixtures} "
+              f"(skill={args.skill!r}, live={args.live}).")
+        return 2
     print(format_text_report(results))
     return 0 if summarize(results)["fixtures_failed"] == 0 else 1
 

@@ -59,7 +59,10 @@ def _run_once(prompt: str, timeout: int) -> str:
     )
     if proc.returncode != 0:
         raise RuntimeError(f"claude -p failed ({proc.returncode}): {proc.stderr[:500]}")
-    return json.loads(proc.stdout).get("result", "")
+    try:
+        return json.loads(proc.stdout).get("result", "")
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"claude -p stdout not JSON: {proc.stdout[:200]!r}") from exc
 
 
 def run_skill_live(fixture: Fixture, timeout: int = 180) -> str:

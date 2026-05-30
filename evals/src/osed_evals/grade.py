@@ -13,10 +13,10 @@ from .models import Fixture, GradeResult
 
 
 def _select_text(transcript: str, scope: str) -> str:
-    # Recorded transcripts are graded whole; multi-turn scope selection is
-    # applied by the live runner before calling grade_fixture (it passes the
-    # already-selected text as `transcript`). For recorded single outputs the
-    # whole transcript is the assistant text regardless of scope.
+    # NOTE: `scope` ("final"/"any"/"all") is currently a no-op. Every transcript
+    # — recorded or from a single `claude -p` result — is graded whole. True
+    # per-turn scope selection is deferred until multi-turn transcripts are
+    # captured turn-by-turn (not needed by any current fixture). TODO when that lands.
     return transcript
 
 
