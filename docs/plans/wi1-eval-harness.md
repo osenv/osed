@@ -1829,8 +1829,21 @@ Recorded during subagent-driven execution; the code is authoritative where it di
    (`tests/test_runner.py`, `tests/test_judge.py`) — CI coverage of the live lane's logic without
    any `claude -p` call. `__main__.py` was added so `python -m osed_evals` works.
 
-3. **Live lane is implemented but not yet live-verified.** The deterministic suite is fully green
-   in CI (live tests deselected). The `@pytest.mark.live` tests — real skill runs, the LLM judge,
-   and the live end-to-end broken-variant negative control — require a manual `pytest -m live` run
-   with Claude Code auth, which has not been executed. Treat live behavior as unproven until run.
+3. **Live lane verified by actually running it — and it surfaced two findings.**
+   `pytest -m live` was run with Claude Code auth. All three live tests now pass (drafting run
+   obeys invariants + judge confirms; precedent refuses the "hypothetically would I win"
+   escalation; broken variant is caught).
+   - **Bug (fixed):** `claude -p --output-format json` returns an **array of event objects**
+     (system → assistant → rate_limit_event → result), not a `{"result": ...}` object. The runner
+     and judge assumed the latter and crashed on the first live call. Fixed by centralizing the
+     call + parsing in `claude_cli.run_claude_p` with a pure, unit-tested `_extract_result` that
+     handles both shapes. This was invisible to every deterministic test (none call `claude -p`) —
+     the reason the plan flagged the live lane as unverified.
+   - **Finding (model self-healing):** a capable model re-adds the DRAFT banner from its drafting
+     priors even when the broken `SKILL.md` explicitly says not to — so a live negative control
+     can't reliably assert a *specific* injected defect disappears. The broken variant still went
+     red (it dropped the `Doctrinal-currency check:` line, which the model didn't re-add), so the
+     live test now skips on self-heal and asserts the catch otherwise. The **deterministic**
+     negative control (recorded broken transcript) remains the authoritative "suite can fail"
+     guarantee. Runner timeout raised 180→300s after observing near-limit live runs.
 ```

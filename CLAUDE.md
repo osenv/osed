@@ -109,6 +109,15 @@ substring check is the wrong tool for any phrase with a safe *negated* form (e.g
 mandated "it does not mean you have a case" embeds the forbidden "you have a case") — route those
 to a `judge` check instead. WI-3's golden transcripts plug in as additional fixtures for free.
 
+Two facts learned from running the live lane (kept honest, not papered over): (1) `claude -p
+--output-format json` returns an **array of event objects** ending in a `result` event, not a
+`{"result": ...}` object — parsing is centralized in `claude_cli._extract_result`. (2) A capable
+model **self-heals** a tampered `SKILL.md` (it re-adds the DRAFT banner even when told not to), so
+a *live* negative control can't reliably force a specific defect; the authoritative "the suite can
+fail" proof is the **deterministic** negative control (a recorded broken transcript), and the live
+one skips on self-heal. So: don't rely on editing a SKILL.md to prove the harness catches a
+violation — assert against a recorded bad transcript.
+
 ## Data sources / connectors
 
 `CONNECTORS.md` maps agents to legal-data sources. Key decisions already made: use the
