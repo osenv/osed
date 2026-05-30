@@ -81,6 +81,43 @@ a required element is the most common way these instruments fail in court.
 **Roadmap** for new instruments is ordered by barrier-to-entry in `docs/architecture.md`
 (CAA §304 notice → deadline complaint → consent-decree scaffold → state ERA packets).
 
+## Verifying the invariants — the eval harness
+
+`evals/` (distribution `osed-evals`, import package `osed_evals` under `src/`) is the
+**verification arm of the six invariants**: it turns the prose guardrails into checks that can
+actually fail. It is the WI-1 deliverable of `docs/plans/derisking-structural-pass.md`.
+
+**The rule:** a change to `skills/` or `templates/` must keep `cd evals && pytest` green. CI
+(`.github/workflows/evals.yml`) enforces this on every such change.
+
+Fixtures are JSON data (`evals/fixtures/<skill>/*.json`), each pairing a skill input with graded
+**checks** and — for the deterministic lane — a recorded `transcript` (`*.out.md`). Two lanes,
+mirroring the connector's CI-vs-keyed split:
+
+- **Deterministic core (CI-safe, no secrets):** exact-string / regex / forbidden-phrase /
+  section-header checks against recorded transcripts (the DRAFT banner, `[⚠ ATTORNEY: ...]`,
+  `[placeholder]`, required sections). This is what guarantees the suite *can* fail — proven by a
+  recorded broken transcript asserted-to-fail inside a passing test.
+- **`--live` (gated behind the `live` pytest marker; needs Claude Code auth):** runs a skill via
+  `claude -p` (embedding its `SKILL.md`) and adds an **LLM judge** for negation-sensitive /
+  semantic checks (refusal under multi-turn pressure; was *every* judgment call flagged). Run
+  with `pytest -m live`.
+
+Marker strings live in one place — `src/osed_evals/markers.py`, quoted verbatim from the
+SKILL.md/templates; update them there if a skill's required wording changes. A `forbidden`
+substring check is the wrong tool for any phrase with a safe *negated* form (e.g. plain-language's
+mandated "it does not mean you have a case" embeds the forbidden "you have a case") — route those
+to a `judge` check instead. WI-3's golden transcripts plug in as additional fixtures for free.
+
+Two facts learned from running the live lane (kept honest, not papered over): (1) `claude -p
+--output-format json` returns an **array of event objects** ending in a `result` event, not a
+`{"result": ...}` object — parsing is centralized in `claude_cli._extract_result`. (2) A capable
+model **self-heals** a tampered `SKILL.md` (it re-adds the DRAFT banner even when told not to), so
+a *live* negative control can't reliably force a specific defect; the authoritative "the suite can
+fail" proof is the **deterministic** negative control (a recorded broken transcript), and the live
+one skips on self-heal. So: don't rely on editing a SKILL.md to prove the harness catches a
+violation — assert against a recorded bad transcript.
+
 ## Data sources / connectors
 
 `CONNECTORS.md` maps agents to legal-data sources. Key decisions already made: use the

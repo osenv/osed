@@ -1,0 +1,14 @@
+{
+  "skill": "gap-analysis",
+  "name": "cwa-304-review-deadline",
+  "turns": [
+    {"role": "user", "content": "Has EPA met its CWA 304(m) biennial effluent-guidelines planning duty?"}
+  ],
+  "transcript_file": "cwa-304-review-deadline.out.md",
+  "checks": [
+    {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Doctrinal-currency check:"},
+    {"id": "handoff-disclaimer", "kind": "contains", "invariant": 5, "target": "This is a factual map, not a recommendation to sue."},
+    {"id": "no-sue-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "this case will win", "you have a strong case"]},
+    {"id": "unverified-not-missed", "kind": "judge", "invariant": 4, "criterion": "No finding is classified as 'MISSED — DEADLINE' when the Status column shows the agency action was 'UNVERIFIED'. Unverified status must never be reported as a confirmed missed deadline."}
+  ]
+}

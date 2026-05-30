@@ -53,10 +53,17 @@ osed/
 │   ├── drafting/SKILL.md
 │   ├── plain-language/SKILL.md
 │   └── precedent-retrieval/SKILL.md
-└── templates/
-    ├── cwa-505-notice-of-intent.md
-    └── rulemaking-petition.md
+├── templates/
+│   ├── cwa-505-notice-of-intent.md
+│   └── rulemaking-petition.md
+├── connectors/
+│   └── regulatory/                ← thin wrapper over federal regulatory APIs (Gap Analysis)
+└── evals/                         ← eval & red-team harness: verifies skills obey the six invariants
 ```
+
+`evals/` is the verification arm of the design invariants — exact-marker checks (DRAFT banner,
+attorney flags, placeholders) plus a gated live + LLM-judge lane. A change to `skills/` or
+`templates/` must keep `cd evals && pytest` green (enforced by CI). See `evals/README.md`.
 
 ## Quick start
 
