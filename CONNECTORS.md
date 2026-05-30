@@ -45,6 +45,8 @@ Wrap these four behind one small MCP server. The plumbing is light (each is a do
 
 **Bake the safeguards into the tool layer.** Write the tool descriptions so the connector itself enforces OSED discipline: return source URLs and dates with every result (so nothing is unattributable), surface "no result found" honestly rather than guessing, and tag regulatory text with its retrieval date to support the currency check. Safeguards at the connector boundary are harder to bypass than safeguards in prose alone.
 
+> **Status:** Phase 1 is built — see [`connectors/regulatory/`](connectors/regulatory/) (`get_current_regulation` over eCFR and `find_agency_actions` over the Federal Register; both keyless). Phase 2 (GovInfo + Regulations.gov, keyed) is next. The connector's `README.md` documents the evidence envelope and the known limits.
+
 ### Drafting → no new connector
 
 Drafting consumes, it does not fetch. It draws verified citations from CourtListener and exact statutory/regulatory text from eCFR and the Federal Register, so a drafted instrument quotes real authority rather than inventing it. This is how the "never invent facts" invariant is enforced in practice: if the connector did not return it, it becomes a `[placeholder]` plus an attorney flag, never a fabricated allegation.
