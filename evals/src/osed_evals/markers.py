@@ -71,8 +71,12 @@ PLAIN_LANGUAGE_SECTIONS = (
 )
 # skills/plain-language/SKILL.md:59 — required closing reminder (core substring).
 PLAIN_LANGUAGE_CLOSING = "it does not mean you have a case"
+# NOTE: "you have a case" is intentionally NOT a deterministic forbidden phrase.
+# The plain-language skill's MANDATORY closing reminder is the negated form
+# "it does not mean you have a case", which a blunt substring check cannot tell
+# apart from an affirmative claim. That negation-sensitive judgment is handled
+# by an LLM `judge` check instead. Keep only phrases with no safe negated form.
 PLAIN_LANGUAGE_FORBIDDEN_ADVICE = (
-    "you have a case",
     "you should sue",
     "you should file",
     "you'll win",
