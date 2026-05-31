@@ -46,11 +46,33 @@ When in doubt, the honest move is to flag, not to assume. "I could not confirm t
 
 ## Worth tracking (non-exhaustive, will go stale — verify)
 
+**Law-as-of: 2026-05-31.** Each anchor below carries the date it was last verified and the date it
+must be re-verified by. Re-verifying means: confirm in primary sources, update both dates, and add
+an entry to `CHANGELOG.md`. A stamp records that a human checked — it is never a substitute for
+checking.
+
 This list itself is subject to the currency rule. It is a prompt to check, not a substitute for checking.
 
-- *Loper Bright* (2024) ended Chevron deference — courts now interpret statutes themselves. Cuts for and against challengers alike.
-- *Seven County* (2025) narrowed NEPA review scope.
-- Major Questions Doctrine continues to constrain agency action on "major" economic/political questions.
-- Standing doctrine for environmental plaintiffs remains active and contested.
+- *Loper Bright* (2024) ended Chevron deference — courts now interpret statutes themselves. Cuts for and against challengers alike. (verified 2026-05-31; re-verify by 2026-08-31)
+- *Seven County* (2025) narrowed NEPA review scope. (verified 2026-05-31; re-verify by 2026-08-31)
+- Major Questions Doctrine continues to constrain agency action on "major" economic/political questions. (verified 2026-05-31; re-verify by 2026-08-31)
+- Standing doctrine for environmental plaintiffs remains active and contested. (verified 2026-05-31; re-verify by 2026-08-31)
 
 Re-verify all of the above before relying on any of it.
+
+## Re-verification cadence
+
+The "Worth tracking" anchors above carry stamps so they do not quietly rot. Keep them honest:
+
+- **Who.** Maintainers, and any contributor whose change relies on or touches an anchor.
+- **How often.** Re-verify each anchor by its `re-verify by` date; the default cadence is
+  **quarterly**. **Always** re-verify before relying on an anchor in a real matter. Sweep the
+  deference / standing / major-questions anchors **after the U.S. Supreme Court term ends** (late
+  June / early July), when the most consequential shifts land.
+- **The rule.** Re-verifying means confirming in primary sources, then updating *both* stamp dates
+  on the anchor and adding an entry to `CHANGELOG.md`. The stamp records that a human checked; it is
+  never a substitute for checking, and a present stamp does not mean an anchor is current — only that
+  someone confirmed it on the verified date.
+
+`evals/tests/test_freshness.py` enforces that each anchor stays stamped (it checks the stamp is
+present and well-formed, not whether a date is past due).

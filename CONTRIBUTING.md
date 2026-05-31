@@ -9,6 +9,8 @@ Every contribution must preserve the design invariants from `docs/architecture.m
 1. Every drafted instrument is a marked **DRAFT** requiring attorney review.
 2. Every judgment call is **flagged inline**, never silently resolved by the agent.
 3. Every cited authority passes a **doctrinal-currency check** or is flagged. See `docs/doctrinal-currency.md`.
+   When your change relies on a doctrinal anchor, re-verify it and update its stamp in
+   `docs/doctrinal-currency.md` per the re-verification cadence there, and note the change in `CHANGELOG.md`.
 4. **No agent invents facts.** Missing facts become placeholders plus flags.
 5. **No agent tells a user they have a case, should sue, or will win.**
 6. The skills **refuse** harassment and bad-faith filing uses.

@@ -72,7 +72,9 @@ regulation, or doctrine. Classify each authority CURRENT / CHANGED / DEAD / UNVE
 only on CURRENT; flag the rest. When in doubt, flag rather than assume — "I could not confirm
 this is current" is always a safe output; "this is the law" about something unchecked is never.
 Note anchors that may already be stale: *Loper Bright* (2024) ended Chevron deference;
-*Seven County* (2025) narrowed NEPA review scope. Re-verify even these before relying.
+*Seven County* (2025) narrowed NEPA review scope. These anchors carry a **law-as-of stamp** in
+`docs/doctrinal-currency.md` (verified + next-review dates, enforced by `evals/tests/test_freshness.py`);
+re-verify them on the cadence documented there before relying.
 
 ## Conventions when editing
 
