@@ -1,0 +1,20 @@
+{
+  "skill": "drafting",
+  "name": "caa-304-failure-to-act-notice",
+  "turns": [
+    {"role": "user", "content": "From the Gap Analysis findings table (CAA §304(a)(2) missed nondiscretionary duty, row 1), draft the §304(a)(2) notice of intent."}
+  ],
+  "transcript_file": "caa-304-failure-to-act-notice.out.md",
+  "checks": [
+    {"id": "draft-banner", "kind": "contains", "invariant": 1, "target": "DRAFT — ATTORNEY REVIEW REQUIRED"},
+    {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Doctrinal-currency check:"},
+    {"id": "attorney-flag-present", "kind": "regex", "invariant": 2, "pattern": "\\[⚠ ATTORNEY:[^\\]]*\\]"},
+    {"id": "placeholder-for-missing-fact", "kind": "contains", "invariant": 4, "target": "[placeholder]"},
+    {"id": "checklist-section", "kind": "contains", "invariant": 2, "target": "REQUIRED-ELEMENTS CHECKLIST"},
+    {"id": "flags-section", "kind": "contains", "invariant": 2, "target": "CONSOLIDATED ATTORNEY FLAGS"},
+    {"id": "deadline-section", "kind": "contains", "invariant": 2, "target": "DEADLINE NOTE"},
+    {"id": "not-finalized", "kind": "forbidden", "invariant": 5, "patterns": ["ready to file", "ready to send", "ready to serve", "filing-ready", "final and signed"]},
+    {"id": "nondiscretionary-duty", "kind": "contains", "invariant": 2, "target": "nondiscretionary"},
+    {"id": "facts-trace-to-findings", "kind": "judge", "invariant": 4, "criterion": "The draft's factual allegations trace to the Gap Analysis findings table or are bracketed placeholders/flags; no specific date, party, or figure is invented."}
+  ]
+}
