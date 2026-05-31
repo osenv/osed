@@ -59,3 +59,20 @@ This list itself is subject to the currency rule. It is a prompt to check, not a
 - Standing doctrine for environmental plaintiffs remains active and contested. (verified 2026-05-31; re-verify by 2026-08-31)
 
 Re-verify all of the above before relying on any of it.
+
+## Re-verification cadence
+
+The "Worth tracking" anchors above carry stamps so they do not quietly rot. Keep them honest:
+
+- **Who.** Maintainers, and any contributor whose change relies on or touches an anchor.
+- **How often.** Re-verify each anchor by its `re-verify by` date; the default cadence is
+  **quarterly**. **Always** re-verify before relying on an anchor in a real matter. Sweep the
+  deference / standing / major-questions anchors **after the U.S. Supreme Court term ends** (late
+  June / early July), when the most consequential shifts land.
+- **The rule.** Re-verifying means confirming in primary sources, then updating *both* stamp dates
+  on the anchor and adding an entry to `CHANGELOG.md`. The stamp records that a human checked; it is
+  never a substitute for checking, and a present stamp does not mean an anchor is current — only that
+  someone confirmed it on the verified date.
+
+`evals/tests/test_freshness.py` enforces that each anchor stays stamped (it checks the stamp is
+present and well-formed, not whether a date is past due).
