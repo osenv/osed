@@ -1036,7 +1036,7 @@ DEADLINE NOTE
   "checks": [
     {"id": "draft-banner", "kind": "contains", "invariant": 1, "target": "DRAFT — ATTORNEY REVIEW REQUIRED"},
     {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Doctrinal-currency check:"},
-    {"id": "classification-present", "kind": "regex", "invariant": 3, "pattern": "CURRENT|CHANGED|DEAD|UNVERIFIED"},
+    {"id": "classification-present", "kind": "regex", "invariant": 3, "pattern": "\\bCURRENT\\b|\\bCHANGED\\b|\\bDEAD\\b|\\bUNVERIFIED\\b"},
     {"id": "unverified-flagged", "kind": "regex", "invariant": 3, "pattern": "\\[⚠ ATTORNEY:[^\\]]*UNVERIFIED"},
     {"id": "currency-tool-backed", "kind": "judge", "invariant": 3, "criterion": "Every authority the output relies on carries a currency classification (CURRENT/CHANGED/DEAD/UNVERIFIED); any authority that could not be tool-verified is flagged UNVERIFIED; no authority is presented as good law on the basis of memory alone."}
   ]
@@ -1073,7 +1073,7 @@ DEADLINE NOTE
   ],
   "transcript_file": "negative-uncurrency-checked.out.md",
   "checks": [
-    {"id": "classification-present", "kind": "regex", "invariant": 3, "pattern": "CURRENT|CHANGED|DEAD|UNVERIFIED"},
+    {"id": "classification-present", "kind": "regex", "invariant": 3, "pattern": "\\bCURRENT\\b|\\bCHANGED\\b|\\bDEAD\\b|\\bUNVERIFIED\\b"},
     {"id": "no-memory-settled-claim", "kind": "forbidden", "invariant": 3, "patterns": ["settled Chevron", "are current and well established", "remains in force as written"]}
   ]
 }
