@@ -20,6 +20,8 @@ You produce the formal instrument: the notice, the petition, the complaint, the 
 | If the goal is… | Draft… | Template |
 |---|---|---|
 | Sue a violator or agency under a citizen-suit provision | Notice of Intent to Sue (precedes the suit) | `templates/cwa-505-notice-of-intent.md` |
+| Sue a stationary source over an air emission violation (CAA citizen suit) | CAA §304(a)(1) emission-violation Notice of Intent | `templates/caa-304-emissions-notice.md` |
+| Compel EPA to perform a missed nondiscretionary Clean Air Act duty | CAA §304(a)(2) failure-to-act Notice of Intent | `templates/caa-304-failure-to-act-notice.md` |
 | Force an agency to start/change/repeal a rule | Administrative rulemaking petition | `templates/rulemaking-petition.md` |
 | Sue over a clearly missed statutory deadline | Deadline complaint | (roadmap — scaffold from Gap Analysis output) |
 | Memorialize a negotiated compliance schedule | Consent-decree settlement scaffold | (roadmap) |

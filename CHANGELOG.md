@@ -8,6 +8,13 @@ and adds an entry here.
 
 ## [Unreleased]
 
+### Added
+- Clean Air Act §304 citizen-suit notice instrument: two templates — `templates/caa-304-emissions-notice.md` (§304(a)(1) emission violations) and `templates/caa-304-failure-to-act-notice.md` (§304(a)(2) failure to perform a nondiscretionary duty).
+
+### Changed
+- `skills/drafting` routes the two CAA §304 notice types to the new templates.
+- `skills/intake` now routes Clean Air Act concerns to the built §304 pathway (previously "on the roadmap, not yet built").
+
 ## [0.1.0] — 2026-05-31 — seed
 
 The de-risking structural pass (`docs/plans/derisking-structural-pass.md`): turned OSED's prose

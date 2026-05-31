@@ -89,7 +89,8 @@ behavior and bad behavior**, where the bad example illustrates the exact boundar
 a required element is the most common way these instruments fail in court.
 
 **Roadmap** for new instruments is ordered by barrier-to-entry in `docs/architecture.md`
-(CAA §304 notice → deadline complaint → consent-decree scaffold → state ERA packets).
+(CAA §304 notice → deadline complaint → consent-decree scaffold → state ERA packets). The CAA
+§304 notice has shipped as two templates (`templates/caa-304-*.md`); the deadline complaint is next.
 
 ## Verifying the invariants — the eval harness
 
