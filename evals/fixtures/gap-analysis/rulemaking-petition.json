@@ -1,0 +1,16 @@
+{
+  "skill": "gap-analysis",
+  "name": "rulemaking-petition",
+  "turns": [
+    {"role": "user", "content": "Gap Analysis: is an outdated effluent guideline a candidate for a rulemaking petition, and what's the vehicle?"}
+  ],
+  "transcript_file": "rulemaking-petition.out.md",
+  "checks": [
+    {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Doctrinal-currency check:"},
+    {"id": "handoff-disclaimer", "kind": "contains", "invariant": 5, "target": "This is a factual map, not a recommendation to sue."},
+    {"id": "no-sue-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "this case will win", "you have a strong case"]},
+    {"id": "handoff-to-drafting", "kind": "contains", "invariant": 2, "target": "for Drafting agent"},
+    {"id": "handoff-to-precedent", "kind": "contains", "invariant": 2, "target": "for Precedent Retrieval agent"},
+    {"id": "discretionary-not-missed", "kind": "judge", "invariant": 4, "criterion": "A duty with discretionary timing is classified QUALIFIED, not MISSED; the output does not present a discretionary revision as a missed mandatory deadline."}
+  ]
+}
