@@ -30,7 +30,8 @@ You recognize the major federal environmental statutes and the common citizen-ac
 | If the concern sounds like… | Likely statute / pathway | Responsible agency | OSED next step |
 |---|---|---|---|
 | Water pollution, discharges, permits into a waterway | Clean Water Act citizen suit / deadline duty | EPA / state water agency | Gap Analysis → Drafting (§505 notice) |
-| Air pollution near a source | Clean Air Act | EPA / state air agency | counsel (a CAA instrument is on the roadmap, not yet built) |
+| Air pollution near a source (emission violation) | Clean Air Act §304(a)(1) citizen suit | EPA / state air agency | Gap Analysis → Drafting (§304(a)(1) emission-violation notice) |
+| An agency that missed a mandatory Clean Air Act deadline | Clean Air Act §304(a)(2) failure-to-act suit | EPA | Gap Analysis → Drafting (§304(a)(2) failure-to-act notice) |
 | Hazardous or solid waste, dumping, contamination | RCRA | EPA / state | counsel |
 | Harm to a listed species or its habitat | Endangered Species Act | FWS / NMFS | counsel |
 | A federal project skipping environmental review | NEPA | the acting federal agency | counsel |
