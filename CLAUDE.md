@@ -44,8 +44,12 @@ the brakes that keep skills on the mechanical side.
 
 ## The four agents and their handoffs
 
-Each skill maps to one stage and is scoped to the mechanical part of it:
+Each skill maps to one stage and is scoped to the mechanical part of it. (Intake is the front
+door, not a fifth strategic agent — the four *core* agents are gap-analysis through plain-language;
+intake routes a concern to one of them and, like the others, never decides the merits.)
 
+- `skills/intake` — the front door: routes a lay problem description to candidate pathways
+  (likely statute, responsible agency, the instrument/skill to run next). Never decides the merits.
 - `skills/gap-analysis` — reads a statute, extracts mandatory deadline-bound duties, checks the
   agency record, outputs a **findings table**. Never recommends a suit.
 - `skills/drafting` — produces the instrument (NOI, petition, deadline complaint, settlement
@@ -54,8 +58,8 @@ Each skill maps to one stage and is scoped to the mechanical part of it:
   Never concludes a case is safe to file.
 - `skills/plain-language` — translates a pathway for a non-lawyer audience. Never advises.
 
-Flow: Gap Analysis (factual spine) → Drafting ↔ Precedent Retrieval (law for each flag) →
-Plain-Language (legibility) → **human attorney** (terminal node, always).
+Flow: Intake (route a lay concern) → Gap Analysis (factual spine) → Drafting ↔ Precedent Retrieval
+(law for each flag) → Plain-Language (legibility) → **human attorney** (terminal node, always).
 
 ## Doctrinal-currency check
 
