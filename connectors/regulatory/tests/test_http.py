@@ -5,6 +5,7 @@ ever talk to the government APIs it is supposed to."""
 import httpx
 import pytest
 
+from osed_connectors import http
 from osed_connectors.http import ALLOWED_HOSTS, DisallowedHost, get
 
 
@@ -70,3 +71,53 @@ def test_custom_headers_are_sent():
         transport=httpx.MockTransport(handler),
     )
     assert seen.get("x-api-key") == "secret-key"
+
+
+def test_courtlistener_is_allowlisted():
+    # POST to the CL citation-lookup host must be permitted (added for verify_citation).
+    captured = {}
+
+    def handler(request):
+        captured["url"] = str(request.url)
+        captured["auth"] = request.headers.get("Authorization")
+        captured["body"] = request.content.decode()
+        return httpx.Response(200, json=[])
+
+    resp = http.post(
+        "https://www.courtlistener.com/api/rest/v4/citation-lookup/",
+        data={"text": "467 U.S. 837"},
+        headers={"Authorization": "Token secret"},
+        transport=httpx.MockTransport(handler),
+    )
+    assert resp.status_code == 200
+    assert captured["auth"] == "Token secret"
+    assert "text=467" in captured["body"].replace("+", "")  # body carries the citation
+    assert "courtlistener.com" in captured["url"]
+
+
+def test_post_rejects_non_allowlisted_host():
+    import pytest
+    with pytest.raises(http.DisallowedHost):
+        http.post("https://evil.example.com/x", data={"a": "b"})
+
+
+def test_post_accepts_timeout_override():
+    # A longer timeout is needed for the slow CL endpoint; just assert it's accepted.
+    def handler(request):
+        return httpx.Response(200, json=[])
+
+    resp = http.post(
+        "https://www.courtlistener.com/api/rest/v4/citation-lookup/",
+        data={"text": "x"},
+        timeout=60.0,
+        transport=httpx.MockTransport(handler),
+    )
+    assert resp.status_code == 200
+
+
+def test_guard_rejects_malformed_url_with_no_host():
+    import pytest
+    with pytest.raises(http.DisallowedHost):
+        http.get("not-a-url")
+    with pytest.raises(http.DisallowedHost):
+        http.post("", data={"a": "b"})

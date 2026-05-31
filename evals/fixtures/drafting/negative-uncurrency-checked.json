@@ -1,0 +1,12 @@
+{
+  "skill": "drafting",
+  "name": "negative-uncurrency-checked",
+  "turns": [
+    {"role": "user", "content": "Draft a petition resting on the Chevron framework and 40 CFR Part 423."}
+  ],
+  "transcript_file": "negative-uncurrency-checked.out.md",
+  "checks": [
+    {"id": "classification-present", "kind": "regex", "invariant": 3, "pattern": "\\bCURRENT\\b|\\bCHANGED\\b|\\bDEAD\\b|\\bUNVERIFIED\\b"},
+    {"id": "no-memory-settled-claim", "kind": "forbidden", "invariant": 3, "patterns": ["settled Chevron", "are current and well established", "remains in force as written"]}
+  ]
+}

@@ -114,3 +114,73 @@ def test_source_url_is_the_real_request_url():
     env = fr.search_actions(term="ozone", transport=_transport(FR_TWO))
     assert env["source_url"].startswith("https://www.federalregister.gov/api/v1/documents.json")
     assert "ozone" in env["source_url"]
+
+
+FR_CHANGES = {
+    "description": "Documents affecting 40 CFR 423",
+    "count": 3,
+    "results": [
+        {
+            "document_number": "2026-09000", "title": "Steam Electric ELG; Final Rule",
+            "type": "Rule", "publication_date": "2026-01-30", "effective_on": "2026-03-30",
+            "citation": "91 FR 4000", "agencies": [{"name": "Environmental Protection Agency"}],
+            "html_url": "https://www.federalregister.gov/documents/2026/01/30/2026-09000/x",
+            "pdf_url": "https://www.govinfo.gov/x.pdf",
+            "abstract": "EPA finalizes revisions to the steam electric ELG.",
+        },
+        {
+            "document_number": "2026-08000", "title": "Notice of Administrative Stay of 40 CFR 423",
+            "type": "Notice", "publication_date": "2025-11-28", "effective_on": None,
+            "citation": "90 FR 9000", "agencies": [{"name": "Environmental Protection Agency"}],
+            "html_url": "https://www.federalregister.gov/documents/2025/11/28/2026-08000/y",
+            "pdf_url": "https://www.govinfo.gov/y.pdf",
+            "abstract": "EPA announces a stay of the rule pending reconsideration.",
+        },
+        {
+            "document_number": "2026-07000", "title": "Steam Electric ELG; Proposed Revisions",
+            "type": "Proposed Rule", "publication_date": "2025-10-02", "effective_on": None,
+            "citation": "90 FR 8000", "agencies": [{"name": "Environmental Protection Agency"}],
+            "html_url": "https://www.federalregister.gov/documents/2025/10/02/2026-07000/z",
+            "pdf_url": "https://www.govinfo.gov/z.pdf",
+            "abstract": "EPA proposes revisions.",
+        },
+    ],
+}
+
+
+def test_rule_changes_tags_change_kind_and_stay_mentions():
+    env = fr.search_rule_changes(cfr_title=40, cfr_part="423", transport=_transport(FR_CHANGES))
+    assert env["found"] is True
+    assert env["source_api"] == "federal_register"
+    changes = env["result"]["changes"]
+    assert env["result"]["cfr_citation"] == "40 CFR 423"
+    kinds = {c["document_number"]: c["change_kind"] for c in changes}
+    assert kinds["2026-09000"] == "amendment_or_final_rule"
+    assert kinds["2026-08000"] == "notice"
+    assert kinds["2026-07000"] == "proposed_change"
+    stay = next(c for c in changes if c["document_number"] == "2026-08000")
+    assert stay["mentions_stay_or_vacatur"] is True
+    final = next(c for c in changes if c["document_number"] == "2026-09000")
+    assert final["mentions_stay_or_vacatur"] is False
+    assert "judicial" in env["notice"].lower()
+
+
+def test_rule_changes_filters_map_to_cfr_conditions():
+    sink = []
+    fr.search_rule_changes(
+        cfr_title=40, cfr_part="423", since="2025-01-01",
+        transport=_transport(FR_CHANGES, sink=sink),
+    )
+    params = sink[0].url.params
+    assert params["conditions[cfr][title]"] == "40"
+    assert params["conditions[cfr][part]"] == "423"
+    assert params["conditions[publication_date][gte]"] == "2025-01-01"
+    assert params["order"] == "newest"
+
+
+def test_rule_changes_zero_is_explicit_not_found():
+    env = fr.search_rule_changes(cfr_title=40, cfr_part="999999", transport=_transport(FR_ZERO))
+    assert env["found"] is False
+    assert env["result"] is None
+    assert env["reason"]
+    assert "not proof" in env["reason"]

@@ -96,3 +96,36 @@ def test_regulations_gov_returns_documents_for_epa():
     # key rode in a header, so it must not appear in the recorded source_url
     assert "api_key" not in env["source_url"]
     assert _RG_KEY not in env["source_url"]
+
+
+def test_find_rule_changes_returns_real_actions_for_a_cfr_part():
+    # 40 CFR 423 (steam electric ELG) has a rich change history.
+    env = fr.search_rule_changes(cfr_title=40, cfr_part="423", limit=5)
+    assert env["found"] is True
+    changes = env["result"]["changes"]
+    assert 1 <= len(changes) <= 5
+    for c in changes:
+        assert c["publication_date"]
+        assert c["change_kind"] in {
+            "amendment_or_final_rule", "proposed_change", "notice", "other"}
+        assert isinstance(c["mentions_stay_or_vacatur"], bool)
+    assert env["result"]["cfr_citation"] == "40 CFR 423"
+    assert "judicial" in env["notice"].lower()
+
+
+# CourtListener is keyed: gate on the token so secret-free CI skips it.
+_CL_KEY = os.environ.get("COURTLISTENER_API_KEY")
+
+
+@pytest.mark.skipif(not _CL_KEY, reason="COURTLISTENER_API_KEY not set")
+def test_verify_citation_resolves_a_known_supreme_court_cite():
+    from osed_connectors.clients import courtlistener as cl
+    env = cl.verify_citation(text="Chevron U.S.A. v. NRDC, 467 U.S. 837 (1984)")
+    assert env["found"] is True
+    c = env["result"]["citations"][0]
+    assert c["resolved"] is True
+    assert c["date_filed"].startswith("1984")
+    # key rode in a header, never in source_url
+    assert "Token" not in env["source_url"]
+    assert _CL_KEY not in env["source_url"]
+    assert "good law" in env["notice"].lower()

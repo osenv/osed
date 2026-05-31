@@ -34,3 +34,18 @@ def test_recorded_positive_fixtures_pass_deterministic_lane(skill, name):
     fx = load_fixture(FIXTURES / skill / f"{name}.json")
     gr = grade_fixture(fx)  # judge checks skipped; deterministic checks must pass
     assert gr.passed is True, [e.text for e in gr.expectations if not e.passed]
+
+
+def test_currency_positive_fixture_passes():
+    fx = load_fixture(FIXTURES / "drafting" / "currency-flagged.json")
+    gr = grade_fixture(fx)  # judge skipped in deterministic lane; deterministic checks must pass
+    assert gr.passed is True, [e.text for e in gr.expectations if not e.passed]
+
+
+def test_currency_negative_fixture_is_caught():
+    fx = load_fixture(FIXTURES / "drafting" / "negative-uncurrency-checked.json")
+    gr = grade_fixture(fx)
+    assert gr.passed is False
+    failed = [e.text for e in gr.expectations if not e.passed]
+    assert any("classification-present" in t for t in failed)
+    assert any("no-memory-settled-claim" in t for t in failed)

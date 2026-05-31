@@ -15,6 +15,8 @@ def test_registers_all_tools():
     # phase 2
     assert "get_uscode_section" in names
     assert "find_rulemaking_documents" in names
+    assert "find_rule_changes" in names
+    assert "verify_citation" in names
 
 
 def test_find_agency_actions_delegates_to_federal_register(monkeypatch):
@@ -71,3 +73,37 @@ def test_find_rulemaking_documents_delegates_to_regulations_gov(monkeypatch):
     assert captured["agency"] == "EPA"
     assert captured["term"] == "ozone"
     assert captured["limit"] == 5
+
+
+def test_find_rule_changes_delegates_to_federal_register(monkeypatch):
+    captured = {}
+
+    def fake(**kwargs):
+        captured.update(kwargs)
+        return {"sentinel": "fr_changes"}
+
+    monkeypatch.setattr(server.fr, "search_rule_changes", fake)
+    out = server.find_rule_changes(cfr_title=40, cfr_part="423", since="2025-01-01", limit=20)
+    assert out == {"sentinel": "fr_changes"}
+    assert captured == {"cfr_title": 40, "cfr_part": "423", "since": "2025-01-01", "limit": 20}
+
+
+def test_verify_citation_delegates_to_courtlistener(monkeypatch):
+    captured = {}
+
+    def fake(**kwargs):
+        captured.update(kwargs)
+        return {"sentinel": "cl"}
+
+    monkeypatch.setattr(server.cl, "verify_citation", fake)
+    out = server.verify_citation(text="467 U.S. 837")
+    assert out == {"sentinel": "cl"}
+    assert captured == {"text": "467 U.S. 837", "volume": None, "reporter": None, "page": None}
+
+
+def test_verify_citation_without_key_returns_not_found(monkeypatch):
+    # No COURTLISTENER_API_KEY -> the real client returns not_found BEFORE any network call.
+    monkeypatch.delenv("COURTLISTENER_API_KEY", raising=False)
+    out = server.verify_citation(text="467 U.S. 837")
+    assert out["found"] is False
+    assert "COURTLISTENER_API_KEY" in out["reason"]
