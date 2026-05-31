@@ -37,7 +37,7 @@ The agents are designed to hand off to each other: Gap Analysis finds the miss, 
 
 **1. The templatable / judgment line.** The instruments (decree, notice, petition) are templatable. The suit types (deadline, unreasonable delay) are semi-templatable. The gating doctrines (standing, ripeness) are judgment. Every skill keeps the agent on the mechanical side of that line and routes judgment calls — with retrieved precedent attached — to a human reviewer. An agent that blurs this line produces filings that get dismissed or sanctioned.
 
-**2. The doctrinal-currency check.** Law changes underneath you. A strategy that assumed *Chevron* deference (overturned by *Loper Bright*, 2024) now gives backwards advice; *Seven County* (2025) narrowed NEPA review scope. Before any skill drafts on a doctrine, it runs a currency check. Confident drafting on dead law is the most expensive error this project can make. See [`docs/doctrinal-currency.md`](docs/doctrinal-currency.md).
+**2. The doctrinal-currency check.** Law changes underneath you. A strategy that assumed *Chevron* deference (overturned by *Loper Bright*, 2024) now gives backwards advice; *Seven County* (2025) narrowed NEPA review scope. Before any skill drafts on a doctrine, it runs a currency check. Confident drafting on dead law is the most expensive error this project can make. Each tracked anchor carries a law-as-of stamp (verified and next-review dates) in [`docs/doctrinal-currency.md`](docs/doctrinal-currency.md) — re-verify before relying.
 
 ---
 
