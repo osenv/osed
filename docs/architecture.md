@@ -26,6 +26,13 @@ An agent that drifts leftward stays useful. An agent that drifts rightward — t
 
 ```
         ┌──────────────────┐
+        │     INTAKE       │  routes a lay problem description to candidate
+        │  (front door)    │  pathways (statute / agency / instrument); never
+        │                  │  decides the merits
+        └────────┬─────────┘
+                 │ a routed pathway (which statute/agency/instrument fits)
+                 ▼
+        ┌──────────────────┐
         │  GAP ANALYSIS    │  reads statute → finds missed mandatory
         │                  │  deadline → structured findings table
         └────────┬─────────┘
@@ -52,6 +59,7 @@ An agent that drifts leftward stays useful. An agent that drifts rightward — t
 
 The handoffs are deliberate:
 
+- **Intake → Gap Analysis.** A non-lawyer's concern is routed to the likely statute/agency/instrument. Intake identifies the *pathway*, never the *merits* — it makes no strategic call, so it stays on the mechanical side of the line.
 - **Gap Analysis → Drafting.** The findings table is the factual spine of the instrument. Drafting never invents facts; it draws them from the verified table or flags them as needed.
 - **Drafting ↔ Precedent Retrieval.** Wherever Drafting hits a judgment call (is the violation "ongoing"? does standing exist?), it doesn't resolve it — it requests the controlling precedent so the human reviewer sees the law and the question together.
 - **Anything → Plain-Language.** Whenever the audience is a non-lawyer, Plain-Language translates without crossing into advice.
@@ -60,6 +68,8 @@ The handoffs are deliberate:
 ## Why these four, and not more
 
 These four cover the litigation pipeline end to end — find the problem, build the instrument, ground it in law, make it legible — while each stays cleanly on the mechanical side of one stage. Adding agents that make strategic calls (a "should we sue" agent, a "will we win" agent) would violate the core design and is explicitly out of scope.
+
+Intake is a front door, not a fifth strategic agent: it routes a concern to one of these stages, and like the others it stays on the mechanical side — it never decides whether the law was broken or whether to sue.
 
 ## Roadmap — instruments to template next
 

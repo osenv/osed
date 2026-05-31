@@ -22,6 +22,7 @@ Each agent is a skill. Each maps to a stage of the litigation workflow, and each
 
 | Agent | Skill | What it does | What it never does |
 |---|---|---|---|
+| **Intake** | [`skills/intake`](skills/intake) | Routes a non-lawyer's environmental concern to candidate pathways: likely statute, responsible agency, and the OSED skill to run next. | Decide whether you have a case or whether anyone broke the law. |
 | **Gap Analysis** | [`skills/gap-analysis`](skills/gap-analysis) | Reads a statute, extracts mandatory duties and their deadlines, cross-references the agency's actual record, flags actionable misses. | Decide whether a miss is worth suing over. |
 | **Drafting** | [`skills/drafting`](skills/drafting) | Produces the formal instrument: notice of intent, rulemaking petition, deadline complaint, settlement scaffold. | Sign, file, or assert that the instrument is ready to file. |
 | **Plain-Language** | [`skills/plain-language`](skills/plain-language) | Translates a legal pathway into terms a non-lawyer can act on. | Give legal advice or predict outcomes. |
