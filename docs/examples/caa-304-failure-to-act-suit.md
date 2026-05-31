@@ -203,5 +203,3 @@ The package — findings table, flagged draft, precedent landscape, plain-langua
 here. OSED drafts; **a licensed attorney decides** whether the duty is nondiscretionary and
 enforceable, whether standing exists, which forum, and whether to send or file anything. Nothing
 above is a recommendation to sue or a prediction of success.
-</content>
-</invoke>
