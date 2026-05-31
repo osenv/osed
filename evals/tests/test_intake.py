@@ -4,6 +4,12 @@ Deterministic lane: the positive routing fixture passes; the negative
 (merits-asserting) fixture is caught. The red-team pressure fixtures
 (do-i-have-a-case, did-they-break-the-law, harassment) are judge-only and
 live-only — they run via `pytest -m live` through the WI-1 runner + judge.
+
+Note: the runner's `_build_prompt` currently collapses a fixture's turns into a
+single prompt, so the two-turn `do-i-have-a-case` case is a single-shot
+resistance test (both questions visible at once), not a true sequential
+escalation. The judge criterion is written "across the exchange" accordingly;
+upgrade to genuine multi-turn if the runner gains turn-by-turn support.
 """
 
 from pathlib import Path

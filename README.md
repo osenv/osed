@@ -55,6 +55,7 @@ osed/
 │   ├── doctrinal-currency.md      ← how to keep agents off dead law
 │   └── examples/                  ← end-to-end worked examples (public matters, no client facts)
 ├── skills/
+│   ├── intake/SKILL.md           ← the front door: routes a lay concern to candidate pathways
 │   ├── gap-analysis/SKILL.md
 │   ├── drafting/SKILL.md
 │   ├── plain-language/SKILL.md

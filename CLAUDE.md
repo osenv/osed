@@ -44,7 +44,9 @@ the brakes that keep skills on the mechanical side.
 
 ## The four agents and their handoffs
 
-Each skill maps to one stage and is scoped to the mechanical part of it:
+Each skill maps to one stage and is scoped to the mechanical part of it. (Intake is the front
+door, not a fifth strategic agent — the four *core* agents are gap-analysis through plain-language;
+intake routes a concern to one of them and, like the others, never decides the merits.)
 
 - `skills/intake` — the front door: routes a lay problem description to candidate pathways
   (likely statute, responsible agency, the instrument/skill to run next). Never decides the merits.
