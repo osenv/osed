@@ -156,3 +156,95 @@ def search_actions(
         query_echo=query_echo,
         notice=_NOTICE,
     )
+
+
+_STAY_TERMS = ("stay", "vacat", "remand")
+
+_CHANGE_KIND = {
+    "Rule": "amendment_or_final_rule",
+    "Proposed Rule": "proposed_change",
+    "Notice": "notice",
+}
+
+_CHANGES_NOTICE = (
+    "Evidence of Federal Register actions affecting this CFR citation — amendments, "
+    "corrections, and agency notices (including agency-announced stays). This is NOT a "
+    "currency determination, and it does NOT capture judicial vacaturs or court-ordered "
+    "stays, which are court actions found in case law (e.g. CourtListener), sometimes with "
+    "a lagging FR notice. Classifying the rule CURRENT / CHANGED / DEAD / UNVERIFIED is a "
+    "judgment for a licensed attorney."
+)
+
+
+def _tag_change(doc: dict[str, Any]) -> dict[str, Any]:
+    base = _normalize(doc)
+    haystack = f"{base.get('title') or ''} {base.get('abstract') or ''}".lower()
+    base["change_kind"] = _CHANGE_KIND.get(base.get("type"), "other")
+    base["mentions_stay_or_vacatur"] = any(t in haystack for t in _STAY_TERMS)
+    return base
+
+
+def search_rule_changes(
+    *,
+    cfr_title: int | str,
+    cfr_part: int | str,
+    since: str | None = None,
+    limit: int = 20,
+    transport: httpx.BaseTransport | None = None,
+) -> dict[str, Any]:
+    """Find Federal Register documents affecting a CFR citation — the "did this rule
+    change?" step of a currency check.
+
+    Returns later amendments, corrections, and agency notices (incl. agency-announced
+    stays) for `cfr_title`/`cfr_part`, newest first. EVIDENCE only: it does not classify
+    the rule's currency, and it does not see judicial vacaturs/stays (those are case law).
+    `since` is an optional earliest publication date, "YYYY-MM-DD".
+    """
+    cfr_citation = f"{cfr_title} CFR {cfr_part}"
+    query_echo = {"cfr_title": str(cfr_title), "cfr_part": str(cfr_part),
+                  "since": since, "limit": limit}
+
+    params: list[tuple[str, str]] = [
+        ("conditions[cfr][title]", str(cfr_title)),
+        ("conditions[cfr][part]", str(cfr_part)),
+        ("order", "newest"),
+        ("per_page", str(max(_MIN_PER_PAGE, limit))),
+    ]
+    for field in _FIELDS:
+        params.append(("fields[]", field))
+    if since:
+        params.append(("conditions[publication_date][gte]", since))
+
+    try:
+        resp = http.get(_ENDPOINT, params=params, transport=transport)
+    except httpx.HTTPError as exc:
+        return not_found(
+            source_api=_SOURCE_API, source_url=_ENDPOINT,
+            reason=f"Federal Register request failed: {exc}", query_echo=query_echo,
+        )
+
+    source_url = str(resp.request.url)
+    if resp.status_code != 200:
+        return not_found(
+            source_api=_SOURCE_API, source_url=source_url,
+            reason=f"Federal Register returned HTTP {resp.status_code}.", query_echo=query_echo,
+        )
+
+    data = resp.json()
+    results = data.get("results")
+    if not results:
+        return not_found(
+            source_api=_SOURCE_API, source_url=source_url,
+            reason=(f"No Federal Register actions affecting {cfr_citation} found"
+                    f"{' since ' + since if since else ''} (count={data.get('count', 0)}). "
+                    f"Absence of an FR action is not proof the rule is unchanged."),
+            query_echo=query_echo,
+        )
+
+    changes = [_tag_change(d) for d in results[:limit]]
+    return found(
+        source_api=_SOURCE_API, source_url=source_url,
+        result={"cfr_citation": cfr_citation, "count": data.get("count"),
+                "returned": len(changes), "changes": changes},
+        query_echo=query_echo, notice=_CHANGES_NOTICE,
+    )
