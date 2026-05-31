@@ -17,7 +17,7 @@ Build and verify this before drafting prose. Each must be present or carry an at
 - [ ] The **statutory deadline** and the **date it came due** `[⚠ ATTORNEY: confirm the deadline and that the duty is nondiscretionary and enforceable under §304(a)(2)]`
 - [ ] The fact of non-performance, drawn from the agency record (use `[placeholder]` + flag where the record isn't supplied)
 - [ ] Notice served on **the Administrator** `[⚠ ATTORNEY: confirm service list/addresses per 40 C.F.R. Part 54, and the certified-mail/postmark service rules]`
-- [ ] Whether the **§7412(i)(3)(A)/(f)(4) or §7413(a) immediate-suit exception** applies (i.e., whether the 60-day wait is even required) `[⚠ ATTORNEY: assess immediate-suit eligibility for the specific duty at issue]`
+- [ ] Whether the **§7412(i)(3)(A)/(f)(4) or §7413(a) immediate-suit exception** applies (i.e., whether the 60-day wait is even required) `[⚠ ATTORNEY: assess immediate-suit eligibility for the specific duty at issue]` `[⚠ ATTORNEY: these immediate-suit hooks apply only if the underlying duty involves these provisions; confirm whether the 60-day wait applies here.]`
 - [ ] Signature of/over review by the responsible attorney
 
 ---
@@ -36,6 +36,8 @@ To: Administrator, U.S. Environmental Protection Agency
 
 Re:  Notice of Intent to Sue under Section 304(a)(2) of the Clean Air Act,
      42 U.S.C. § 7604(a)(2) — failure to perform a nondiscretionary duty
+     — [placeholder — identify the duty, e.g., "failure to promulgate/review
+     [rule or standard] under CAA § ___"]
 
 Dear Administrator:
 
@@ -59,15 +61,13 @@ failure to perform a nondiscretionary act or duty under the Clean Air Act.
     and the date it came due; for a relative deadline, the triggering event
     and the enactment/trigger date it runs from]. [⚠ ATTORNEY: confirm the
     deadline and that the duty is nondiscretionary and enforceable under
-    §304(a)(2); do not allege a date that is not supported by the record.]
+    §304(a)(2) in the chosen circuit; do not allege a date unsupported by
+    the record.]
 
 4.  Failure to perform. [placeholder — describe, drawn from the agency
     record, that the Administrator has not performed the duty as of [date]].
     [⚠ ATTORNEY: do not allege non-performance that is not supported by
     record evidence.]
-
-[⚠ ATTORNEY: confirm the duty is nondiscretionary and enforceable under
-§304(a)(2) in the chosen circuit before relying on the deadline theory.]
 
 Unless the duty described above is performed, [notifying party] intends to
 file suit under 42 U.S.C. § 7604 after the expiration of the 60-day notice
@@ -88,7 +88,7 @@ Sincerely,
 
 ## Deadline note
 
-The §304(b)(2) 60-day clock is a fact for counsel to verify and a clock for counsel to track; this software does not track it. The §7412(i)(3)(A)/(f)(4) or §7413(a) immediate-suit exception may remove the 60-day wait — confirm with counsel.
+The §304(b)(2) 60-day clock is for counsel to verify and track; this software does not track it. (Whether an immediate-suit exception applies is addressed in the consolidated flags below.)
 
 ## Consolidated attorney flags (carry forward into the Drafting agent's output)
 
