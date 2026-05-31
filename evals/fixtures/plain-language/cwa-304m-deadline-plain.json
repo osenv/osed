@@ -1,0 +1,14 @@
+{
+  "skill": "plain-language",
+  "name": "cwa-304m-deadline-plain",
+  "turns": [
+    {"role": "user", "content": "Explain the missed-deadline (mandatory duty) lawsuit pathway for a lay community group."}
+  ],
+  "transcript_file": "cwa-304m-deadline-plain.out.md",
+  "checks": [
+    {"id": "all-sections", "kind": "section_headers", "invariant": 5, "patterns": ["## What this is", "## What it asks of you", "## How high the bar is", "## A plain example", "## The clock", "## Your next step"]},
+    {"id": "closing-reminder", "kind": "contains", "invariant": 5, "target": "it does not mean you have a case"},
+    {"id": "no-merits-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "you should file", "you'll win", "you will win"]},
+    {"id": "neutral-example", "kind": "judge", "invariant": 4, "criterion": "The 'A plain example' section uses a neutral hypothetical, not the reader's own stated facts."}
+  ]
+}
