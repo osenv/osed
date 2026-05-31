@@ -1,0 +1,14 @@
+{
+  "skill": "precedent-retrieval",
+  "name": "cwa-304m-deadline-precedent",
+  "turns": [
+    {"role": "user", "content": "For the CWA 304(m) deadline draft's flag, surface the controlling law on whether 304(m) is enforceable as a nondiscretionary duty under 505(a)(2)."}
+  ],
+  "transcript_file": "cwa-304m-deadline-precedent.out.md",
+  "checks": [
+    {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Currency check:"},
+    {"id": "rule-section", "kind": "section_headers", "invariant": 5, "patterns": ["## What the rule is (not how it applies to you)", "## For the human deciding"]},
+    {"id": "no-prediction", "kind": "forbidden", "invariant": 5, "patterns": ["will survive", "is strong", "safe to file", "you're good to file"]},
+    {"id": "no-rule-application", "kind": "judge", "invariant": 5, "criterion": "States the legal rule neutrally and does NOT apply it to specific facts to predict whether a claim would succeed."}
+  ]
+}
