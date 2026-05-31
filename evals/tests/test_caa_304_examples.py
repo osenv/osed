@@ -18,6 +18,10 @@ GOLDEN = [
     ("drafting", "caa-304-failure-to-act-notice"),
     ("precedent-retrieval", "caa-304-failure-to-act-precedent"),
     ("plain-language", "caa-304-failure-to-act-plain"),
+    ("gap-analysis", "caa-304-emissions"),
+    ("drafting", "caa-304-emissions-notice"),
+    ("precedent-retrieval", "caa-304-emissions-precedent"),
+    ("plain-language", "caa-304-emissions-plain"),
 ]
 
 
