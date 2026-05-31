@@ -183,3 +183,4 @@ def test_rule_changes_zero_is_explicit_not_found():
     assert env["found"] is False
     assert env["result"] is None
     assert env["reason"]
+    assert "not proof" in env["reason"]

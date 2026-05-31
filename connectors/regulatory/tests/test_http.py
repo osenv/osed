@@ -113,3 +113,11 @@ def test_post_accepts_timeout_override():
         transport=httpx.MockTransport(handler),
     )
     assert resp.status_code == 200
+
+
+def test_guard_rejects_malformed_url_with_no_host():
+    import pytest
+    with pytest.raises(http.DisallowedHost):
+        http.get("not-a-url")
+    with pytest.raises(http.DisallowedHost):
+        http.post("", data={"a": "b"})

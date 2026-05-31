@@ -40,7 +40,7 @@ class DisallowedHost(ValueError):
 
 def _guard(url: str) -> None:
     host = urlparse(url).hostname
-    if host not in ALLOWED_HOSTS:
+    if not host or host not in ALLOWED_HOSTS:
         raise DisallowedHost(
             f"Refusing request to non-allowlisted host: {host!r}. "
             f"Allowed: {sorted(ALLOWED_HOSTS)}"

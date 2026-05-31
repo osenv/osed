@@ -99,3 +99,11 @@ def test_verify_citation_delegates_to_courtlistener(monkeypatch):
     out = server.verify_citation(text="467 U.S. 837")
     assert out == {"sentinel": "cl"}
     assert captured == {"text": "467 U.S. 837", "volume": None, "reporter": None, "page": None}
+
+
+def test_verify_citation_without_key_returns_not_found(monkeypatch):
+    # No COURTLISTENER_API_KEY -> the real client returns not_found BEFORE any network call.
+    monkeypatch.delenv("COURTLISTENER_API_KEY", raising=False)
+    out = server.verify_citation(text="467 U.S. 837")
+    assert out["found"] is False
+    assert "COURTLISTENER_API_KEY" in out["reason"]

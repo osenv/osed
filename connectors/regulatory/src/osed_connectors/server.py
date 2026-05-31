@@ -1,10 +1,14 @@
 """OSED regulatory connector — FastMCP stdio server.
 
-Exposes the phase-1 Gap Analysis tools (Federal Register + eCFR, both keyless).
-Each tool returns the evidence envelope defined in ``envelope.py``: a result with
-its source URL and retrieval time, or an explicit not-found with a reason — never
-a determination. The tool docstrings below are what an agent reads to decide when
-to call them, so they state the safeguards inline.
+Exposes the Gap Analysis + doctrinal-currency tools over stdio: find_agency_actions
+and find_rule_changes (Federal Register), get_current_regulation (eCFR),
+get_uscode_section (GovInfo), find_rulemaking_documents (Regulations.gov, keyed), and
+verify_citation (CourtListener, keyed). Each tool returns the evidence envelope defined
+in ``envelope.py``: a result with its source URL and retrieval time, or an explicit
+not-found with a reason — never a determination. The currency tools (find_rule_changes,
+verify_citation) return EVIDENCE that FEEDS the CURRENT/CHANGED/DEAD/UNVERIFIED
+classification; they never make it. The tool docstrings below are what an agent reads to
+decide when to call them, so they state the safeguards inline.
 """
 
 from __future__ import annotations
