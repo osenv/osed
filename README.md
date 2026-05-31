@@ -1,26 +1,18 @@
 # OSED — Open Source Environmental Defense
 
-**A library of AI agent skills that turn proven environmental-litigation instruments into something a local actor, in any state, can run again.**
+## What is OSED?
+
+OSED is a library of AI agent skills that turn proven environmental-litigation instruments into something a local actor, in any state, can run again. Those skills are modular, inspectable instruction sets, and together they draft the formal documents of environmental litigation: the citizen-suit notice letter, the rulemaking petition, the deadline complaint, the settlement scaffold.
+
+Each skill reads the governing statute and the facts you provide, drafts a clean first version, and flags every point that calls for legal judgment. A licensed attorney then reviews the draft and decides. That handoff — OSED drafts, an attorney decides — is the whole design, and every skill enforces it. See [`DISCLAIMER.md`](DISCLAIMER.md) before anything else.
 
 ---
 
-## What this is, in plain terms
+## Why OSED?
 
-Suppose a government agency is supposed to do something under an environmental law — issue a rule, clean up a hazard, answer a formal request — and it hasn't. Holding the agency to that duty usually means hiring a litigation team, which most community groups can't afford just to get started.
+Suppose a government agency is required to do something under an environmental law — issue a rule, clean up a hazard, answer a formal petition — and it hasn't. Holding it to that duty starts with formal paperwork, and that paperwork is the reusable engine of the law: its structure repeats from one case to the next and from state to state, while the facts and the politics are what change. Producing each document to standard has always taken scarce lawyer hours — the resource a community group, a county commission, or a small public-interest shop is most likely to lack. OSED puts that drafting capacity within reach, so the question becomes the merits of the matter rather than the cost of a first draft.
 
-OSED helps you produce a clean **first draft** of the formal documents that process uses — the notice letters, petitions, and complaints that lawyers call "instruments." You bring the facts and the goal; OSED handles the repetitive structure and **flags every spot where a human judgment call is needed**.
-
-What OSED does **not** do: it does not give legal advice, tell you whether you have a case, or file anything. A licensed attorney must review and decide before any document leaves your hands. See [`DISCLAIMER.md`](DISCLAIMER.md).
-
-The rest of this page explains how that works in more detail, and then how to install it. If you're not technical, you can stop reading at [Repository layout](#repository-layout) — everything before it is meant for you.
-
----
-
-## The idea in one paragraph
-
-The most replicable asset in a half-century of environmental litigation is not a marquee Supreme Court win. It is procedural machinery: the citizen-suit notice letter, the deadline suit, the administrative petition, the consent-decree scaffold. Cases that turn on singular facts and a particular political moment do not transfer. Instruments do. OSED packages that machinery as a set of [Claude Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) — modular, inspectable instruction sets — so that a community group, a county commission, or a small public-interest shop can draft a clean, well-formed legal instrument without first hiring a litigation team.
-
-OSED drafts. A licensed attorney decides. That line is the whole design, and it is enforced in every skill. See [`DISCLAIMER.md`](DISCLAIMER.md) before anything else.
+Not technical? Everything meant for you is above [Repository layout](#repository-layout); the rest of this page covers installing the skills.
 
 ---
 
