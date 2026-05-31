@@ -1,14 +1,18 @@
 # OSED — Open Source Environmental Defense
 
-**A library of AI agent skills that turn proven environmental-litigation instruments into something a local actor, in any state, can run again.**
+## What is OSED?
+
+OSED is a library of AI agent skills that turn proven environmental-litigation instruments into something a local actor, in any state, can run again. Those skills are modular, inspectable instruction sets, and together they draft the formal documents of environmental litigation: the citizen-suit notice letter, the rulemaking petition, the deadline complaint, the settlement scaffold.
+
+Each skill reads the governing statute and the facts you provide, drafts a clean first version, and flags every point that calls for legal judgment. A licensed attorney then reviews the draft and decides. That handoff — OSED drafts, an attorney decides — is the whole design, and every skill enforces it. See [`DISCLAIMER.md`](DISCLAIMER.md) before anything else.
 
 ---
 
-## The idea in one paragraph
+## Why OSED?
 
-The most replicable asset in a half-century of environmental litigation is not a marquee Supreme Court win. It is procedural machinery: the citizen-suit notice letter, the deadline suit, the administrative petition, the consent-decree scaffold. Cases that turn on singular facts and a particular political moment do not transfer. Instruments do. OSED packages that machinery as a set of [Claude Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) — modular, inspectable instruction sets — so that a community group, a county commission, or a small public-interest shop can draft a clean, well-formed legal instrument without first hiring a litigation team.
+Suppose a government agency is required to do something under an environmental law — issue a rule, clean up a hazard, answer a formal petition — and it hasn't. Holding it to that duty starts with formal paperwork, and that paperwork is the reusable engine of the law: its structure repeats from one case to the next and from state to state, while the facts and the politics are what change. Producing each document to standard has always taken scarce lawyer hours — the resource a community group, a county commission, or a small public-interest shop is most likely to lack. OSED puts that drafting capacity within reach, so the question becomes the merits of the matter rather than the cost of a first draft.
 
-OSED drafts. A licensed attorney decides. That line is the whole design, and it is enforced in every skill. See [`DISCLAIMER.md`](DISCLAIMER.md) before anything else.
+Not technical? Everything meant for you is above [Repository layout](#repository-layout); the rest of this page covers installing the skills.
 
 ---
 
@@ -21,7 +25,7 @@ Each agent is a skill. Each maps to a stage of the litigation workflow, and each
 | **Gap Analysis** | [`skills/gap-analysis`](skills/gap-analysis) | Reads a statute, extracts mandatory duties and their deadlines, cross-references the agency's actual record, flags actionable misses. | Decide whether a miss is worth suing over. |
 | **Drafting** | [`skills/drafting`](skills/drafting) | Produces the formal instrument: notice of intent, rulemaking petition, deadline complaint, settlement scaffold. | Sign, file, or assert that the instrument is ready to file. |
 | **Plain-Language** | [`skills/plain-language`](skills/plain-language) | Translates a legal pathway into terms a non-lawyer can act on. | Give legal advice or predict outcomes. |
-| **Plain-Precedent Retrieval** | [`skills/precedent-retrieval`](skills/precedent-retrieval) | Surfaces controlling case law for the relevant circuit so a human can judge whether a case survives. | Conclude that a case is safe to file. |
+| **Precedent Retrieval** | [`skills/precedent-retrieval`](skills/precedent-retrieval) | Surfaces controlling case law for the relevant circuit so a human can judge whether a case survives. | Conclude that a case is safe to file. |
 
 The agents are designed to hand off to each other: Gap Analysis finds the miss, Drafting produces the instrument, Precedent Retrieval attaches the controlling law, Plain-Language makes the whole package legible to the person who has to decide.
 
