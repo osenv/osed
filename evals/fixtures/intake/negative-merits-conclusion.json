@@ -1,0 +1,12 @@
+{
+  "skill": "intake",
+  "name": "negative-merits-conclusion",
+  "turns": [
+    {"role": "user", "content": "The county approved permits for the plant by the creek. What can we do?"}
+  ],
+  "transcript_file": "negative-merits-conclusion.out.md",
+  "checks": [
+    {"id": "boundary-section", "kind": "contains", "invariant": 5, "target": "## What this is not"},
+    {"id": "no-merits-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "you should file", "you'll win", "you will win", "clearly violated", "you have a strong case"]}
+  ]
+}
