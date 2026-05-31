@@ -49,13 +49,15 @@ Re:  Notice of Intent to Sue under Section 304 of the Clean Air Act,
 Dear [Name]:
 
 This letter provides notice, under Section 304(b)(1) of the Clean Air Act,
-42 U.S.C. § 7604(b)(1), of the intent of [notifying party] to file suit
+42 U.S.C. § 7604(b)(1) [⚠ ATTORNEY: confirm the exact notice subsection and
+its content/service requirements for a §304(a)(1) suit.], of the intent of
+[notifying party] to file suit
 against [alleged violator] for violations of an emission standard,
 limitation, or order under the Clean Air Act at [facility name and location].
 
 1.  Notifying party. This notice is given by [placeholder — full name,
-    address]. [Notifying party] is represented by [placeholder — counsel
-    name, firm, address]. [⚠ ATTORNEY: confirm representation block.]
+    address]. [placeholder — if represented: counsel name, firm, address;
+    omit if pro se]. [⚠ ATTORNEY: confirm representation block.]
 
 2.  Alleged violator. [placeholder — full legal name and address of the
     violator; owner and operator if different].
@@ -100,11 +102,12 @@ Sincerely,
 
 ## Deadline note
 
-The Clean Air Act citizen-suit provision (§304(b)(1)) requires that this notice be given **60 days before** filing suit. That is a fact for counsel to verify and a clock for counsel to track; this software does not track it. Serving suit before the period runs can defeat the case. Note that the §7412(i)(3)(A)/(f)(4) and §7413(a) immediate-suit exception may remove the 60-day wait for certain hazardous-air-pollutant standards and orders, and that a diligent-prosecution bar — where EPA or the State has commenced and is diligently prosecuting a civil action — can foreclose the suit entirely; both can change the analysis.
+The §304(b)(1) 60-day clock is a fact for counsel to verify and a clock for counsel to track; this software does not track it. The §7412(i)(3)(A)/(f)(4) or §7413(a) immediate-suit exception may remove the 60-day wait and the diligent-prosecution bar may foreclose the suit — confirm both with counsel.
 
 ## Consolidated attorney flags (carry forward into the Drafting agent's output)
 
 - Confirm the current notice regulation, service list, and service rules (40 C.F.R. Part 54 — certified mail or personal service on the violator; notice deemed given on the postmark date) and any circuit notice-sufficiency precedent.
+- Confirm the representation block (counsel if any; omit if pro se).
 - Cite the exact emission standard, limitation, or order alleged violated, with its statutory/regulatory basis.
 - Supply and verify all dates from record evidence; do not allege unsupported dates.
 - Make the ongoing/recurring-violation characterization under controlling circuit law.
