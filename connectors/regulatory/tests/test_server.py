@@ -15,6 +15,7 @@ def test_registers_all_tools():
     # phase 2
     assert "get_uscode_section" in names
     assert "find_rulemaking_documents" in names
+    assert "find_rule_changes" in names
 
 
 def test_find_agency_actions_delegates_to_federal_register(monkeypatch):
@@ -71,3 +72,16 @@ def test_find_rulemaking_documents_delegates_to_regulations_gov(monkeypatch):
     assert captured["agency"] == "EPA"
     assert captured["term"] == "ozone"
     assert captured["limit"] == 5
+
+
+def test_find_rule_changes_delegates_to_federal_register(monkeypatch):
+    captured = {}
+
+    def fake(**kwargs):
+        captured.update(kwargs)
+        return {"sentinel": "fr_changes"}
+
+    monkeypatch.setattr(server.fr, "search_rule_changes", fake)
+    out = server.find_rule_changes(cfr_title=40, cfr_part="423", since="2025-01-01", limit=20)
+    assert out == {"sentinel": "fr_changes"}
+    assert captured == {"cfr_title": 40, "cfr_part": "423", "since": "2025-01-01", "limit": 20}
