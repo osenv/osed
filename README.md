@@ -65,6 +65,8 @@ osed/
 │   └── precedent-retrieval/SKILL.md
 ├── templates/
 │   ├── cwa-505-notice-of-intent.md
+│   ├── caa-304-emissions-notice.md
+│   ├── caa-304-failure-to-act-notice.md
 │   └── rulemaking-petition.md
 ├── connectors/
 │   └── regulatory/                ← thin wrapper over federal regulatory APIs (Gap Analysis)
