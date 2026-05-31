@@ -42,11 +42,11 @@ Every task sits on a spectrum (`docs/architecture.md`):
 A skill that drifts toward deciding judgment calls is broken. The flags and DRAFT banners are
 the brakes that keep skills on the mechanical side.
 
-## The four agents and their handoffs
+## The agents and their handoffs
 
 Each skill maps to one stage and is scoped to the mechanical part of it. (Intake is the front
 door, not a fifth strategic agent — the four *core* agents are gap-analysis through plain-language;
-intake routes a concern to one of them and, like the others, never decides the merits.)
+intake is the front door and pipeline the conductor, and like the others neither decides the merits.)
 
 - `skills/intake` — the front door: routes a lay problem description to candidate pathways
   (likely statute, responsible agency, the instrument/skill to run next). Never decides the merits.
@@ -57,6 +57,10 @@ intake routes a concern to one of them and, like the others, never decides the m
 - `skills/precedent-retrieval` — surfaces controlling case law by jurisdiction + currency.
   Never concludes a case is safe to file.
 - `skills/plain-language` — translates a pathway for a non-lawyer audience. Never advises.
+- `skills/pipeline` — the conductor: runs intake → gap-analysis → drafting ↔ precedent →
+  plain-language end to end and assembles a flagged DRAFT case package with a consolidated attorney
+  checklist. Automates the handoffs, never the judgment; halts on a refusal or a merits-laden
+  choice; terminates at the human attorney. See `docs/runbook.md`.
 
 Flow: Intake (route a lay concern) → Gap Analysis (factual spine) → Drafting ↔ Precedent Retrieval
 (law for each flag) → Plain-Language (legibility) → **human attorney** (terminal node, always).

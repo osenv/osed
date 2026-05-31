@@ -22,7 +22,7 @@ the instruments        the suit types            the gating doctrines
 
 An agent that drifts leftward stays useful. An agent that drifts rightward — that starts deciding whether to sue — produces filings that get dismissed or sanctioned and damages real cases. The skills are written to resist that drift; the disclaimers and flags are the brakes.
 
-## The four agents and how they hand off
+## The agents and how they hand off
 
 ```
         ┌──────────────────┐
@@ -64,6 +64,14 @@ The handoffs are deliberate:
 - **Drafting ↔ Precedent Retrieval.** Wherever Drafting hits a judgment call (is the violation "ongoing"? does standing exist?), it doesn't resolve it — it requests the controlling precedent so the human reviewer sees the law and the question together.
 - **Anything → Plain-Language.** Whenever the audience is a non-lawyer, Plain-Language translates without crossing into advice.
 - **Everything → Human.** The terminal node is always a licensed attorney. No agent output is final.
+
+**The conductor.** `skills/pipeline` runs this whole sequence end to end so a non-lawyer need not
+chain the skills by hand: it threads each artifact into the next (findings table → draft spine;
+draft flags → precedent requests) and assembles one flagged DRAFT case package with a consolidated
+attorney checklist. It automates the handoffs, never the judgment — every banner, flag, and currency
+check is carried forward intact, it halts rather than guess past a refusal or a merits-laden choice,
+and it terminates at the human attorney. `docs/runbook.md` is the same flow for a human to drive by
+hand.
 
 ## Why these four, and not more
 
