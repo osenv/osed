@@ -102,9 +102,10 @@ Retrieved: [2026-05-30]  |  Currency check: [FLAGS]
 ## Controlling authority
 | Case | Court / year | Jurisdiction & weight | Holding (plain) | Current status |
 |---|---|---|---|---|
-| Massachusetts v. EPA | U.S. 2007 | U.S. — binding | An agency must respond to a rulemaking petition; a denial is reviewable and may be set aside if arbitrary and capricious | CURRENT (verified via verify_citation) |
+| Massachusetts v. EPA | U.S. 2007 | U.S. — binding (decided under the Clean Air Act) | An agency may not decline to respond to a rulemaking petition for reasons outside the governing statute; a denial is reviewable and may be set aside if arbitrary and capricious | CURRENT (verified via verify_citation) |
 
 ## Splits / tensions
+- *Massachusetts v. EPA* arose under the Clean Air Act. For a Clean Water Act effluent-guideline petition, the general right to petition rests on APA § 553(e) and review of a denial on APA § 706 (and the D.C. Circuit's application of it) — [⚠ ATTORNEY: confirm the directly applicable duty-to-respond / standard-of-review authority for a CWA petition in the chosen forum; do not rely on Massachusetts v. EPA as the sole basis outside the CAA].
 - Later decisions on agency authority (e.g., the major-questions line) can bear on what an agency may do in response — [⚠ ATTORNEY: confirm the current scope of EPA's authority for the specific revision sought; verify any further cite via verify_citation].
 
 ## What the rule is (not how it applies to you)

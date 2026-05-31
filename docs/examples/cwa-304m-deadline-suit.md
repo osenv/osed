@@ -21,11 +21,11 @@ Analyzed: [2026-05-30]  |  Doctrinal-currency check: [FLAGS — see notes]
 
 | # | Duty (cite) | Verb | Deadline (computed) | Trigger | Status | Evidence relied on | What a human must decide |
 |---|---|---|---|---|---|---|---|
-| 1 | CWA § 304(m)(1)(A) biennial effluent-guidelines plan | shall publish | every 2 years | prior plan publication | MISSED — UNREASONABLE DELAY | find_agency_actions returned no biennial plan since [placeholder — last plan date]; verify | whether the lapse supports a § 505(a)(2) claim |
+| 1 | CWA § 304(m)(1)(A) biennial effluent-guidelines plan | shall publish | [placeholder — last plan date] + 2 years | prior plan publication | MISSED — DEADLINE | find_agency_actions returned no biennial plan since [placeholder — last plan date]; verify | whether the lapse supports a § 505(a)(2) claim |
 | 2 | CWA § 304(m)(1)(B) annual review of categories | shall review | annual | each calendar year | UNVERIFIED | could not confirm from available sources | whether the review in fact occurred |
 
 ## Notes and currency flags
-- § 304(m) text verified via get_uscode_section (33 U.S.C. § 1314(m)). find_rule_changes on 40 C.F.R. Part 423 returned a 2025 agency action (CHANGED) — confirm whether it discharges the planning duty before relying on row 1.
+- § 304(m) text verified via get_uscode_section (33 U.S.C. § 1314(m)). The currency check targets the planning duty itself: find_agency_actions found no biennial plan in the Federal Register since [placeholder — last plan date] — confirm before relying on row 1.
 - Duty 2 is UNVERIFIED and is NOT reported as a confirmed gap.
 
 ## Handoff
@@ -77,7 +77,7 @@ REQUIRED-ELEMENTS CHECKLIST
 CONSOLIDATED ATTORNEY FLAGS
 - [⚠ ATTORNEY: needed — notifying-party identity; last-plan date from the record]
 - [⚠ ATTORNEY: confirm § 304(m) nondiscretionary-duty enforceability under § 505(a)(2)]
-- [⚠ ATTORNEY: currency — § 304(m) verified via get_uscode_section; 40 C.F.R. Part 423 checked via find_rule_changes (CHANGED — a 2025 action); confirm in force]
+- [⚠ ATTORNEY: currency — § 304(m) verified via get_uscode_section; confirm via the Federal Register (find_agency_actions) that no biennial plan has issued, and confirm the duty remains in force]
 
 DEADLINE NOTE
 - CWA § 505(b) requires 60 days' written notice before filing a § 505(a)(2) action —

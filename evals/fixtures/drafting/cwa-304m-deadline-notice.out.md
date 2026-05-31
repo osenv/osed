@@ -30,7 +30,7 @@ REQUIRED-ELEMENTS CHECKLIST
 CONSOLIDATED ATTORNEY FLAGS
 - [⚠ ATTORNEY: needed — notifying-party identity; last-plan date from the record]
 - [⚠ ATTORNEY: confirm § 304(m) nondiscretionary-duty enforceability under § 505(a)(2)]
-- [⚠ ATTORNEY: currency — § 304(m) verified via get_uscode_section; 40 C.F.R. Part 423 checked via find_rule_changes (CHANGED — a 2025 action); confirm in force]
+- [⚠ ATTORNEY: currency — § 304(m) verified via get_uscode_section; confirm via the Federal Register (find_agency_actions) that no biennial plan has issued, and confirm the duty remains in force]
 
 DEADLINE NOTE
 - CWA § 505(b) requires 60 days' written notice before filing a § 505(a)(2) action —
