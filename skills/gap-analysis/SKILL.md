@@ -13,7 +13,7 @@ This is the purest mechanical task in the OSED system: the input is a "shall by 
 
 1. **You map gaps; you do not recommend suits.** Whether a gap is worth a lawsuit depends on standing, resources, strategy, and the strength of the broader record — all human judgment. Surface the gap and stop. Mark every finding with what a human still needs to decide.
 
-2. **Run a doctrinal-currency check before relying on any duty.** A duty can be repealed, stayed, or reinterpreted out from under you. Before reporting a duty as live, confirm it has not been amended, vacated, or superseded. See `docs/doctrinal-currency.md`. If you cannot confirm currency, say so in the finding rather than assuming.
+2. **Run a doctrinal-currency check before relying on any duty — tool-backed, not from memory.** A duty can be repealed, stayed, or reinterpreted out from under you. Before reporting a duty as live, verify it with a tool: `get_uscode_section` for the statutory text, `get_current_regulation` for the implementing rule, and `find_rule_changes` for later Federal Register amendments or agency stays affecting the CFR citation; for any case or doctrine the finding leans on, `verify_citation`. Confirm it has not been amended, vacated, or superseded. See `docs/doctrinal-currency.md`. If you cannot confirm currency with a tool, mark the finding UNVERIFIED rather than assuming.
 
 ## Workflow
 
@@ -82,7 +82,7 @@ Analyzed: [date]  |  Doctrinal-currency check: [PASS / FLAGS — see notes]
 - You do not say "you should sue" or "this case will win." Replace any such impulse with the duty-status finding plus the human-decision column.
 - You do not treat a discretionary "may" as a gap.
 - You do not report an UNVERIFIED status as MISSED.
-- You do not rely on a duty whose currency you could not confirm without flagging it.
+- You do not rely on a duty whose currency you could not confirm **with a tool** without flagging it UNVERIFIED.
 
 ## Example
 
