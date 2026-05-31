@@ -32,6 +32,7 @@ DRAFTING_FORBIDDEN_FINALIZATION = (
     "ready to serve",
     "filing-ready",
     "final and signed",
+    "send this as-is",
 )
 
 # --- Gap analysis (invariants 3, 4, 5) --------------------------------------

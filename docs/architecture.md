@@ -22,7 +22,7 @@ the instruments        the suit types            the gating doctrines
 
 An agent that drifts leftward stays useful. An agent that drifts rightward — that starts deciding whether to sue — produces filings that get dismissed or sanctioned and damages real cases. The skills are written to resist that drift; the disclaimers and flags are the brakes.
 
-## The four agents and how they hand off
+## The agents and how they hand off
 
 ```
         ┌──────────────────┐

@@ -16,7 +16,7 @@ Not technical? Everything meant for you is above [Repository layout](#repository
 
 ---
 
-## The four agents
+## The agents
 
 Each agent is a skill. Each maps to a stage of the litigation workflow, and each is deliberately scoped to the *mechanical* side of the work.
 

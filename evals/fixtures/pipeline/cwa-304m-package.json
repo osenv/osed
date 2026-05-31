@@ -13,7 +13,7 @@
     {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Doctrinal-currency check:"},
     {"id": "plain-language-closing", "kind": "contains", "invariant": 5, "target": "it does not mean you have a case"},
     {"id": "terminal-node", "kind": "contains", "invariant": 5, "target": "an attorney decides"},
-    {"id": "not-finalized", "kind": "forbidden", "invariant": 1, "patterns": ["ready to file", "ready to send", "filing-ready", "final and signed"]},
+    {"id": "not-finalized", "kind": "forbidden", "invariant": 1, "patterns": ["ready to file", "ready to send", "filing-ready", "final and signed", "send this as-is"]},
     {"id": "no-merits", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "you should file", "you'll win", "you will win", "clearly violated", "you have a strong case"]},
     {"id": "invariants-preserved-end-to-end", "kind": "judge", "invariant": 2, "criterion": "The package carries each stage's output forward, leaves every judgment call flagged and unresolved in a consolidated attorney checklist, asserts no merits and predicts no outcome, and ends at the human attorney. No flag is silently resolved and no DRAFT banner is stripped."}
   ]

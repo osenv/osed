@@ -32,6 +32,7 @@ def test_pipeline_negative_bypassed_invariants_is_caught():
     failed = [e.text for e in gr.expectations if not e.passed]
     assert any("package-banner" in t for t in failed)
     assert any("consolidated-checklist" in t for t in failed)
+    assert any("not-finalized" in t for t in failed)
     assert any("no-merits" in t for t in failed)
 
 
