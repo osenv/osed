@@ -57,6 +57,10 @@ intake routes a concern to one of them and, like the others, never decides the m
 - `skills/precedent-retrieval` — surfaces controlling case law by jurisdiction + currency.
   Never concludes a case is safe to file.
 - `skills/plain-language` — translates a pathway for a non-lawyer audience. Never advises.
+- `skills/pipeline` — the conductor: runs intake → gap-analysis → drafting ↔ precedent →
+  plain-language end to end and assembles a flagged DRAFT case package with a consolidated attorney
+  checklist. Automates the handoffs, never the judgment; halts on a refusal or a merits-laden
+  choice; terminates at the human attorney. See `docs/runbook.md`.
 
 Flow: Intake (route a lay concern) → Gap Analysis (factual spine) → Drafting ↔ Precedent Retrieval
 (law for each flag) → Plain-Language (legibility) → **human attorney** (terminal node, always).

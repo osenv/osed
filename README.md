@@ -27,6 +27,7 @@ Each agent is a skill. Each maps to a stage of the litigation workflow, and each
 | **Drafting** | [`skills/drafting`](skills/drafting) | Produces the formal instrument: notice of intent, rulemaking petition, deadline complaint, settlement scaffold. | Sign, file, or assert that the instrument is ready to file. |
 | **Plain-Language** | [`skills/plain-language`](skills/plain-language) | Translates a legal pathway into terms a non-lawyer can act on. | Give legal advice or predict outcomes. |
 | **Precedent Retrieval** | [`skills/precedent-retrieval`](skills/precedent-retrieval) | Surfaces controlling case law for the relevant circuit so a human can judge whether a case survives. | Conclude that a case is safe to file. |
+| **Pipeline** | [`skills/pipeline`](skills/pipeline) | Runs the whole sequence end to end and assembles a flagged DRAFT case package with a consolidated attorney checklist. | Resolve a flag, strip the DRAFT banner, or decide the merits. |
 
 The agents are designed to hand off to each other: Gap Analysis finds the miss, Drafting produces the instrument, Precedent Retrieval attaches the controlling law, Plain-Language makes the whole package legible to the person who has to decide.
 
@@ -53,9 +54,11 @@ osed/
 ├── docs/
 │   ├── architecture.md            ← the four-agent system, in depth
 │   ├── doctrinal-currency.md      ← how to keep agents off dead law
-│   └── examples/                  ← end-to-end worked examples (public matters, no client facts)
+│   ├── examples/                  ← end-to-end worked examples (public matters, no client facts)
+│   └── runbook.md               ← run the pipeline by hand, with invariant checkpoints
 ├── skills/
 │   ├── intake/SKILL.md           ← the front door: routes a lay concern to candidate pathways
+│   ├── pipeline/SKILL.md        ← the conductor: runs the pipeline, assembles the package
 │   ├── gap-analysis/SKILL.md
 │   ├── drafting/SKILL.md
 │   ├── plain-language/SKILL.md

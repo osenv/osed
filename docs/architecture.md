@@ -65,6 +65,14 @@ The handoffs are deliberate:
 - **Anything → Plain-Language.** Whenever the audience is a non-lawyer, Plain-Language translates without crossing into advice.
 - **Everything → Human.** The terminal node is always a licensed attorney. No agent output is final.
 
+**The conductor.** `skills/pipeline` runs this whole sequence end to end so a non-lawyer need not
+chain the skills by hand: it threads each artifact into the next (findings table → draft spine;
+draft flags → precedent requests) and assembles one flagged DRAFT case package with a consolidated
+attorney checklist. It automates the handoffs, never the judgment — every banner, flag, and currency
+check is carried forward intact, it halts rather than guess past a refusal or a merits-laden choice,
+and it terminates at the human attorney. `docs/runbook.md` is the same flow for a human to drive by
+hand.
+
 ## Why these four, and not more
 
 These four cover the litigation pipeline end to end — find the problem, build the instrument, ground it in law, make it legible — while each stays cleanly on the mechanical side of one stage. Adding agents that make strategic calls (a "should we sue" agent, a "will we win" agent) would violate the core design and is explicitly out of scope.
