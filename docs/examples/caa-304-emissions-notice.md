@@ -102,7 +102,7 @@ REQUIRED-ELEMENTS CHECKLIST
     its statutory/regulatory hook
 [⚠ needed] The activity, location (facility, emission unit/stack), and dates of
     the violation, drawn from the monitoring record — do not allege unsupported dates
-[⚠ needed] Permit / standard identifier(s) (Title V permit number, NSPS/NESHAP subpart)
+[⚠ needed] Permit / standard identifier(s): [placeholder] (Title V permit number, NSPS/NESHAP subpart)
 [⚠ needed] The ongoing/recurring characterization under controlling circuit law
 [⚠ needed] Service on the alleged violator, the EPA Administrator, AND the State
     air agency per 40 C.F.R. Part 54 (certified mail / postmark date)
