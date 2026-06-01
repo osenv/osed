@@ -1,0 +1,191 @@
+# Template — Clean Water Act §505(a)(2) Deadline Complaint (Failure to Perform a Nondiscretionary Duty)
+
+> **DRAFT SCAFFOLD — NOT FOR FILING.** This template encodes the *required elements* of a federal-court complaint under Clean Water Act §505(a)(2) to compel the EPA Administrator to perform a nondiscretionary duty missed by its statutory deadline. A defective complaint is dismissable regardless of merit, and **standing is jurisdictional** — the court's to decide, not this template's. Every element below must be present or flagged, and the whole document must be reviewed and signed by a licensed attorney under **FRCP 11** before filing. This template is a starting structure, not legal advice. See `../DISCLAIMER.md`.
+
+## Why the form matters
+
+A federal complaint must satisfy **FRCP 8(a)** — a short and plain statement of the grounds for the court's jurisdiction, of the claim showing the pleader is entitled to relief, and of the relief sought — and **FRCP 11** — signed, well-grounded, and not frivolous. The §505(a)(2) track compels the EPA Administrator to perform a **nondiscretionary** duty; it is not a vehicle for unreasonable-delay relief. **Standing** (injury-in-fact, causation, redressability) is jurisdictional and the court's to decide: plead its elements as allegations, never assert it is established. And the **§505(b) pre-suit notice** must already be satisfied — served on the Administrator with its 60-day period run — before this complaint is filed.
+
+> [⚠ ATTORNEY: confirm jurisdiction (28 U.S.C. § 1331 and CWA § 505 / 33 U.S.C. § 1365(a)), venue, and that the § 505(b) notice was served and its 60-day period has run before filing.]
+
+## Required elements checklist
+
+Build and verify this before drafting prose. Each must be present or carry an attorney flag.
+
+- [ ] **Caption** — court and division `[⚠ ATTORNEY: confirm the proper court and venue]`; full party names; civil-action number `[placeholder]`
+- [ ] **Jurisdiction** — 28 U.S.C. § 1331 (federal question) + CWA § 505(a) / 33 U.S.C. § 1365(a) (citizen-suit jurisdiction)
+- [ ] **Venue** `[⚠ ATTORNEY: confirm venue (e.g., 28 U.S.C. § 1391(e) for an action against a federal agency/officer) for the chosen forum]`
+- [ ] **Parties and standing** — plaintiff's standing elements pleaded as allegations `[⚠ ATTORNEY: standing (injury-in-fact, causation, redressability) is jurisdictional and the court's to decide — plead the elements; do not assert standing is established]`; defendant (the EPA Administrator)
+- [ ] **Notice precondition satisfied** — the § 505(b) notice was served on the Administrator and its 60-day period ran `[⚠ ATTORNEY: confirm the notice was properly served per 40 C.F.R. Part 135 and the 60-day period has run before filing]`
+- [ ] **The nondiscretionary duty** + its statutory hook + the statutory deadline + the missed-deadline facts (from the findings table) `[⚠ ATTORNEY: confirm the duty is nondiscretionary and the deadline computation]`
+- [ ] **Count I** — Failure to Perform a Nondiscretionary Duty
+- [ ] **Prayer for relief** — declaratory judgment; a mandatory injunction/order compelling the action **by a date certain**; retention of jurisdiction; costs and reasonable attorney/expert fees under CWA § 505(d) / 33 U.S.C. § 1365(d); any other just relief
+- [ ] **FRCP 11 signature block**
+
+---
+
+## DRAFT
+
+```
+IN THE UNITED STATES DISTRICT COURT FOR THE
+[⚠ ATTORNEY: district] [⚠ ATTORNEY: confirm the proper court, division, and venue]
+
+------------------------------------------------------------------
+[placeholder — full legal name of plaintiff],
+
+                 Plaintiff,
+
+       v.                                  Civil Action No. [placeholder]
+
+[placeholder — name of the EPA Administrator],
+in [his/her] official capacity as Administrator
+of the U.S. Environmental Protection Agency,
+
+                 Defendant.
+------------------------------------------------------------------
+
+                          COMPLAINT
+
+NATURE OF THE ACTION
+
+1.  This is a civil action under the citizen-suit provision of the
+    Clean Water Act, § 505(a)(2), 33 U.S.C. § 1365(a)(2), to compel
+    the Administrator of the U.S. Environmental Protection Agency to
+    perform a nondiscretionary duty that the Clean Water Act required
+    the Administrator to perform by a date certain and that remains
+    unperformed.
+
+2.  Plaintiff seeks a declaratory judgment that the Administrator has
+    failed to perform the nondiscretionary duty described below, and an
+    order compelling performance by a date certain. [⚠ ATTORNEY: this is
+    a deadline-suit theory (failure to perform by a statutory deadline),
+    not an unreasonable-delay claim — confirm the theory fits the duty.]
+
+JURISDICTION AND VENUE
+
+3.  This Court has jurisdiction under 28 U.S.C. § 1331 (federal question)
+    and under CWA § 505(a), 33 U.S.C. § 1365(a), which grants the district
+    courts jurisdiction over citizen suits to enforce the Act, including
+    actions to compel performance of a nondiscretionary duty.
+
+4.  Venue is proper in this district. [⚠ ATTORNEY: confirm venue (e.g.,
+    28 U.S.C. § 1391(e) for an action against a federal agency/officer)
+    for the chosen forum.]
+
+5.  Plaintiff satisfied the pre-suit notice precondition of CWA § 505(b),
+    33 U.S.C. § 1365(b): plaintiff gave notice of this action to the
+    Administrator, and more than 60 days have elapsed since that notice.
+    [⚠ ATTORNEY: confirm the § 505(b) notice was properly served on the
+    Administrator per 40 C.F.R. Part 135 and that the 60-day period has
+    run before filing.]
+
+PARTIES
+
+6.  Plaintiff is [placeholder — identity of plaintiff].
+
+7.  Plaintiff is injured by the Administrator's failure to perform the
+    duty described below. [placeholder — facts of plaintiff's concrete,
+    particularized injury-in-fact; the causal connection between that
+    injury and the unperformed duty; and how the requested order would
+    redress the injury.] [⚠ ATTORNEY: standing (injury-in-fact, causation,
+    redressability) is jurisdictional and the court's to decide — plead
+    the elements as allegations; do not assert standing is established.]
+
+8.  Defendant is [placeholder — name], Administrator of the U.S.
+    Environmental Protection Agency, sued in [his/her] official capacity.
+    The Administrator is the officer charged by the Clean Water Act with
+    performing the duty described below.
+
+STATUTORY BACKGROUND
+
+9.  The Clean Water Act imposes on the Administrator a nondiscretionary
+    duty to [placeholder — describe the duty, e.g., "publish a biennial
+    plan under CWA § 304(m)"] by [placeholder — the statutory deadline],
+    under [placeholder — the statutory hook, e.g., "CWA § 304(m)(1)(A),
+    33 U.S.C. § 1314(m)"]. [⚠ ATTORNEY: confirm the duty is nondiscretionary
+    and enforceable under § 505(a)(2) in the chosen circuit, and confirm the
+    statutory citation against the current Code.]
+
+10. CWA § 505(a)(2), 33 U.S.C. § 1365(a)(2), authorizes any citizen to
+    commence a civil action against the Administrator where there is
+    alleged a failure of the Administrator to perform any act or duty
+    under the Act which is not discretionary.
+
+11. CWA § 505(b), 33 U.S.C. § 1365(b), conditions such an action on
+    pre-suit notice to the Administrator and a 60-day waiting period, in
+    the form the Administrator prescribes by regulation. The notice
+    requirement is prescribed by 40 C.F.R. Part 135, which requires
+    written notice. [⚠ ATTORNEY: confirm the current notice regulation
+    and that "written" notice and the service rules of 40 C.F.R. Part 135
+    were satisfied.]
+
+FACTUAL ALLEGATIONS
+
+12. The Clean Water Act required the Administrator to [placeholder — the
+    duty] by [placeholder — the statutory deadline]. [⚠ ATTORNEY: confirm
+    the deadline computation; for a relative deadline, identify the
+    triggering event and the enactment/trigger date it runs from.]
+
+13. The deadline has passed. [placeholder — the date the deadline came due,
+    from the record.] [⚠ ATTORNEY: do not allege unsupported dates — every
+    date must be supported by record evidence.]
+
+14. As of [placeholder — date], the Administrator has not performed the
+    duty. [placeholder — the fact of non-performance, drawn from the
+    agency record.] [⚠ ATTORNEY: do not allege non-performance that is not
+    supported by record evidence.]
+
+CLAIM FOR RELIEF — COUNT I: Failure to Perform a Nondiscretionary Duty
+
+15. Plaintiff incorporates the preceding paragraphs.
+
+16. The duty described above is a nondiscretionary duty under the Clean
+    Water Act. [⚠ ATTORNEY: confirm the duty is nondiscretionary and
+    enforceable under § 505(a)(2) in the chosen circuit.]
+
+17. The Administrator has failed to perform that duty by the statutory
+    deadline and has not performed it since.
+
+18. That failure is actionable under CWA § 505(a)(2), 33 U.S.C.
+    § 1365(a)(2).
+
+PRAYER FOR RELIEF
+
+WHEREFORE, plaintiff respectfully requests that this Court:
+
+A.  Declare that the Administrator has failed to perform the
+    nondiscretionary duty described above;
+
+B.  Order the Administrator to perform that duty by a date certain
+    [⚠ ATTORNEY: propose a specific compliance date supported by the
+    record];
+
+C.  Retain jurisdiction over this action until the Administrator has
+    performed the duty;
+
+D.  Award plaintiff its costs of litigation, including reasonable
+    attorney and expert witness fees, under CWA § 505(d), 33 U.S.C.
+    § 1365(d); and
+
+E.  Grant any other relief the Court deems just and proper.
+
+Respectfully submitted,
+
+[⚠ ATTORNEY: signature block — responsible attorney must review and sign
+under FRCP 11.]
+```
+
+---
+
+## Precondition / deadline note
+
+The CWA § 505(b) pre-suit notice must already be satisfied **before** this complaint is filed: served on the Administrator per 40 C.F.R. Part 135, with its 60-day period run. That is a precondition for counsel to verify, not a step this complaint performs. This complaint seeks an order compelling the missed action **by a date certain** — a deadline-suit remedy — **not** unreasonable-delay relief; the two theories are distinct and counsel must confirm the duty fits the deadline track. This software does not track the 60-day clock or any other date.
+
+## Consolidated attorney flags (carry forward into the Drafting agent's output)
+
+- **Jurisdiction and venue** — confirm 28 U.S.C. § 1331 and CWA § 505(a) / 33 U.S.C. § 1365(a) jurisdiction, and venue (e.g., 28 U.S.C. § 1391(e)) for the chosen forum.
+- **Standing** — plead injury-in-fact, causation, and redressability as allegations; standing is jurisdictional and the court's to decide; do not assert it is established.
+- **Notice precondition** — confirm the § 505(b) notice was served on the Administrator per 40 C.F.R. Part 135 and that the 60-day period has run before filing.
+- **Nondiscretionary duty and deadline** — confirm the duty is nondiscretionary and enforceable under § 505(a)(2) in the chosen circuit, confirm the statutory hook against the current Code, and confirm the deadline computation; supply and verify all dates and non-performance from record evidence.
+- **Fees** — costs and reasonable attorney/expert fees are sought under CWA § 505(d), 33 U.S.C. § 1365(d); confirm entitlement.
+- **FRCP 11** — review and sign before filing; the complaint must be non-frivolous and well-grounded.
