@@ -46,7 +46,7 @@ When in doubt, the honest move is to flag, not to assume. "I could not confirm t
 
 ## Worth tracking (non-exhaustive, will go stale — verify)
 
-**Law-as-of: 2026-05-31.** Each anchor below carries the date it was last verified and the date it
+**Law-as-of: 2026-06-01.** Each anchor below carries the date it was last verified and the date it
 must be re-verified by. Re-verifying means: confirm in primary sources, update both dates, and add
 an entry to `CHANGELOG.md`. A stamp records that a human checked — it is never a substitute for
 checking.
@@ -57,6 +57,10 @@ This list itself is subject to the currency rule. It is a prompt to check, not a
 - *Seven County* (2025) narrowed NEPA review scope. (verified 2026-05-31; re-verify by 2026-08-31)
 - Major Questions Doctrine continues to constrain agency action on "major" economic/political questions. (verified 2026-05-31; re-verify by 2026-08-31)
 - Standing doctrine for environmental plaintiffs remains active and contested. (verified 2026-05-31; re-verify by 2026-08-31)
+- **Pennsylvania Art. I § 27** (Environmental Rights Amendment) — a developed public-trust line (PEDF v. Commonwealth, 161 A.3d 911 (Pa. 2017); Robinson Twp. v. Commonwealth, 83 A.3d 901 (Pa. 2013)) gives the provision real force; confirm the current standard before relying. (verified 2026-06-01; re-verify by 2026-09-01)
+- **Montana Art. II § 3 & art. IX § 1** — a robust state ERA: a self-executing fundamental right (MEIC v. DEQ, 988 P.2d 1236 (Mont. 1999)) recently applied in major litigation (Held v. State, 560 P.3d 1235 (Mont. 2024)); confirm the current standard. (verified 2026-06-01; re-verify by 2026-09-01)
+- **New York Art. I § 19** (Green Amendment, ratified 2021) — DEVELOPING law; the enforceable standard is still being defined by the courts and no controlling appellate test is settled; do not assume a settled standard. (verified 2026-06-01; re-verify by 2026-09-01)
+- **Hawaiʻi Art. XI** (environmental rights "as provided by law"; public-trust doctrine, In re Water Use Permit Applications (Waiāhole), 9 P.3d 409 (Haw. 2000)) — the § 9 individual right is DEVELOPING and statute-dependent; the public-trust line is more established; confirm. (verified 2026-06-01; re-verify by 2026-09-01)
 
 Re-verify all of the above before relying on any of it.
 

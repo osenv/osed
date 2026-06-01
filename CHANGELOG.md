@@ -9,6 +9,7 @@ and adds an entry here.
 ## [Unreleased]
 
 ### Added
+- Four state-ERA doctrinal anchors (PA Art. I §27, MT Art. II §3/Art. IX §1, NY Art. I §19 Green Amendment, HI Art. XI) added to the tracked "Worth tracking" list in `docs/doctrinal-currency.md`, each law-as-of stamped.
 - Clean Air Act §304 citizen-suit notice instrument: two templates — `templates/caa-304-emissions-notice.md` (§304(a)(1) emission violations) and `templates/caa-304-failure-to-act-notice.md` (§304(a)(2) failure to perform a nondiscretionary duty).
 - Deadline-complaint instrument (the first court filing): `templates/cwa-505-deadline-complaint.md` (CWA §505(a)(2)) and `templates/caa-304-deadline-complaint.md` (CAA §304(a)(2)) — citizen-suit "failure to perform a nondiscretionary duty" complaints, with standing/jurisdiction/venue flagged for counsel.
 - A "Stage 5 — Deadline Complaint" added to both deadline worked-examples (`docs/examples/cwa-304m-deadline-suit.md`, `docs/examples/caa-304-failure-to-act-suit.md`), each registered as a drafting eval fixture.
