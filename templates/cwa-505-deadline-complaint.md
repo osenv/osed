@@ -39,7 +39,7 @@ IN THE UNITED STATES DISTRICT COURT FOR THE
        v.                                  Civil Action No. [placeholder]
 
 [placeholder — name of the EPA Administrator],
-in [his/her] official capacity as Administrator
+in their official capacity as Administrator
 of the U.S. Environmental Protection Agency,
 
                  Defendant.
@@ -93,7 +93,7 @@ PARTIES
     the elements as allegations; do not assert standing is established.]
 
 8.  Defendant is [placeholder — name], Administrator of the U.S.
-    Environmental Protection Agency, sued in [his/her] official capacity.
+    Environmental Protection Agency, sued in their official capacity.
     The Administrator is the officer charged by the Clean Water Act with
     performing the duty described below.
 
@@ -172,6 +172,8 @@ E.  Grant any other relief the Court deems just and proper.
 
 Respectfully submitted,
 
+[placeholder — counsel name, bar number (if represented), firm, address, phone, email; or pro se filer name and address]
+
 [⚠ ATTORNEY: signature block — responsible attorney must review and sign
 under FRCP 11.]
 ```
@@ -187,7 +189,7 @@ The CWA § 505(b)(2) pre-suit notice must already be satisfied **before** this c
 - **Jurisdiction and venue** — confirm 28 U.S.C. § 1331 and CWA § 505(a) / 33 U.S.C. § 1365(a) jurisdiction, and venue (e.g., 28 U.S.C. § 1391(e)) for the chosen forum.
 - **Standing** — plead injury-in-fact, causation, and redressability as allegations; standing is jurisdictional and the court's to decide; do not assert it is established.
 - **Notice precondition** — confirm the § 505(b)(2) / 33 U.S.C. § 1365(b)(2) notice was served on the Administrator per 40 C.F.R. Part 135 and that the 60-day period has run before filing.
-- [⚠ ATTORNEY: assess whether the CWA §§ 1316 / 1317(a) immediate-suit exception eliminates the 60-day notice wait for the specific duty]
+- **Immediate-suit exception** — assess whether the CWA §§ 1316 / 1317(a) immediate-suit exception eliminates the 60-day notice wait for the specific duty at issue.
 - **Nondiscretionary duty and deadline** — confirm the duty is nondiscretionary and enforceable under § 505(a)(2) in the chosen circuit, confirm the statutory hook against the current Code, and confirm the deadline computation; supply and verify all dates and non-performance from record evidence.
-- **Fees** — costs and reasonable attorney/expert fees are sought under CWA § 505(d), 33 U.S.C. § 1365(d); confirm entitlement.
+- **Fees** — costs and reasonable attorney and expert witness fees are sought under CWA § 505(d), 33 U.S.C. § 1365(d); confirm entitlement.
 - **FRCP 11** — review and sign before filing; the complaint must be non-frivolous and well-grounded.
