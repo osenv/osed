@@ -91,7 +91,8 @@ a required element is the most common way these instruments fail in court.
 **Roadmap** for new instruments is ordered by barrier-to-entry in `docs/architecture.md`
 (CAA §304 notice → deadline complaint → consent-decree scaffold → state ERA packets). The CAA
 §304 notice and the deadline complaint have shipped as templates (`templates/caa-304-*.md`,
-`templates/*-deadline-complaint.md`); the consent-decree scaffold is next.
+`templates/*-deadline-complaint.md`, `templates/consent-decree-deadline.md`); the state ERA packets
+are next.
 
 ## Verifying the invariants — the eval harness
 

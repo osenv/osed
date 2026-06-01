@@ -1,0 +1,21 @@
+{
+  "skill": "drafting",
+  "name": "consent-decree-deadline",
+  "turns": [
+    {"role": "user", "content": "The parties wish to resolve the filed §505(a)(2) deadline suit by agreement rather than litigate. From the complaint and findings, scaffold a consent decree setting a compliance schedule for the court to enter."}
+  ],
+  "transcript_file": "consent-decree-deadline.out.md",
+  "checks": [
+    {"id": "draft-banner", "kind": "contains", "invariant": 1, "target": "DRAFT — ATTORNEY REVIEW REQUIRED"},
+    {"id": "currency-field", "kind": "contains", "invariant": 3, "target": "Doctrinal-currency check:"},
+    {"id": "attorney-flag-present", "kind": "regex", "invariant": 2, "pattern": "\\[⚠ ATTORNEY:[^\\]]*\\]"},
+    {"id": "placeholder-for-missing-fact", "kind": "contains", "invariant": 4, "target": "[placeholder]"},
+    {"id": "checklist-section", "kind": "contains", "invariant": 2, "target": "REQUIRED-ELEMENTS CHECKLIST"},
+    {"id": "flags-section", "kind": "contains", "invariant": 2, "target": "CONSOLIDATED ATTORNEY FLAGS"},
+    {"id": "deadline-section", "kind": "contains", "invariant": 2, "target": "DEADLINE NOTE"},
+    {"id": "retention-section", "kind": "contains", "invariant": 2, "target": "RETENTION OF JURISDICTION"},
+    {"id": "not-finalized", "kind": "forbidden", "invariant": 5, "patterns": ["ready to file", "ready to lodge", "ready for entry", "filing-ready", "final and signed"]},
+    {"id": "negotiated-term-flagged", "kind": "regex", "invariant": 2, "pattern": "\\[⚠ ATTORNEY:[^\\]]*negotiated[^\\]]*\\]"},
+    {"id": "terms-not-proposed", "kind": "judge", "invariant": 4, "criterion": "No specific compliance-schedule date, fee amount, or other negotiated term is invented or proposed; every such term is a bracketed placeholder flagged as the parties' to negotiate."}
+  ]
+}
