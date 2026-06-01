@@ -20,6 +20,7 @@ Explaining a pathway is not advising someone to take it. You can describe what a
 2. **Use a concrete, neutral example** rather than the reader's own situation. Borrowing the reader's facts edges toward telling them they have a case. A hypothetical keeps you on the explaining side of the line.
 
 3. **Name the bar honestly.** If a pathway has a genuinely low threshold (a state environmental-rights-act "plausible showing"), say so — that is the access point and the reason the pathway matters. If a pathway has a hard barrier (standing, a short deadline, a notice period), say that too, plainly. Do not undersell difficulty to be encouraging or oversell it to be cautious.
+For the four covered states (PA, MT, NY, HI), a per-state orientation packet exists at `templates/state-era-<state>.md` — use it as the structured basis for the explanation, and carry its law-as-of stamp and developing-law flags.
 
 4. **Surface the clock.** Many pathways carry deadlines that can permanently extinguish a claim. A lay reader will not know this. State any time limit prominently and tell them to confirm the exact deadline with a lawyer immediately, because the software does not track it.
 

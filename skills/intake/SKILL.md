@@ -36,7 +36,7 @@ You recognize the major federal environmental statutes and the common citizen-ac
 | Harm to a listed species or its habitat | Endangered Species Act | FWS / NMFS | counsel |
 | A federal project skipping environmental review | NEPA | the acting federal agency | counsel |
 | An agency that should issue or update a rule and hasn't | Administrative rulemaking petition | the relevant agency | Drafting (rulemaking petition) |
-| A state-constitutional right to a healthful environment | State environmental-rights act | state courts | Plain-Language + counsel |
+| A state-constitutional right to a healthful environment | State environmental-rights act | state courts | Plain-Language → state-ERA packet (`templates/state-era-<state>.md`) → state counsel |
 
 This table is a starting map, not a determination. Verify the governing law before relying on any row (it is subject to the doctrinal-currency rule).
 
