@@ -20,7 +20,14 @@ their templates + the regulatory MCP connector. v1 ships full functionality, inc
   every file a skill reads must be bundled and referenced via `${CLAUDE_PLUGIN_ROOT}`.
 - **`${CLAUDE_PLUGIN_ROOT}`** = the (ephemeral) install dir. **`${CLAUDE_PLUGIN_DATA}`** = a
   *persistent* dir (`~/.claude/plugins/data/{id}/`) the docs explicitly recommend for "Python virtual
-  environments" — it survives plugin updates.
+  environments" — it survives plugin updates. **Both are usable in MCP/hook/command *configs* only.**
+- **Skill-content path variable (verified, corrects an earlier assumption):** SKILL.md *prose*
+  substitutes a different, smaller set of variables — and the path one is **`${CLAUDE_SKILL_DIR}`**
+  (the directory of the skill's own `SKILL.md`), which "resolves correctly whether the skill is
+  installed at the personal, project, or plugin level." **`${CLAUDE_PLUGIN_ROOT}` is NOT substituted
+  in skill body text.** So a skill reaches shared, plugin-root resources via
+  `${CLAUDE_SKILL_DIR}/../..` — and because `${CLAUDE_SKILL_DIR}` is environment-agnostic, no
+  dev-vs-installed branching is needed in the prose.
 - **MCP servers**: declared in `.mcp.json` (plugin root) or inline `plugin.json.mcpServers`, with
   `command`/`args`/`env`/`cwd` and `${...}` substitution. They go through per-server approval like a
   project `.mcp.json`.
@@ -61,21 +68,29 @@ WI-3 examples) **and** installed (cache; cwd = user's project):
   reference). 12 references, all in this one file.
 - `skills/{drafting,gap-analysis,precedent-retrieval}/SKILL.md` → `docs/doctrinal-currency.md`.
 
-**Fix:** because SKILL.md is instructions to a reasoning agent (not code), make each reference state
-the location for both modes rather than hard-swap to a single path — e.g.: *"read the template from
-`${CLAUDE_PLUGIN_ROOT}/templates/<file>` when running as an installed plugin, or `templates/<file>`
-from the repo root in development."* A single shared sentence/footnote per file is enough; the
-individual table cells can stay as `templates/<file>` so the table reads cleanly, with the
-location note stated once near the table.
+**Fix (a single environment-agnostic pointer — the clean abstraction):** every skill that reads a
+shared resource uses **`${CLAUDE_SKILL_DIR}`** — the one path variable that *is* substituted in skill
+content and resolves identically at the personal, project, and plugin levels. Because all skills live
+at `skills/<name>/`, the plugin/repo root is `${CLAUDE_SKILL_DIR}/../..`, so:
+- drafting → `${CLAUDE_SKILL_DIR}/../../templates/<file>`;
+- the currency-check skills → `${CLAUDE_SKILL_DIR}/../../docs/doctrinal-currency.md`.
+
+There is **no dev-vs-installed branching** in the prose — the variable handles both. The convention
+("OSED's shared resources are reachable from any skill at `${CLAUDE_SKILL_DIR}/../..`") is stated
+once, canonically, in `CONTRIBUTING.md`, so it's a designed abstraction rather than scattered
+environment-aware sentences. (For drafting's instrument table, the cells can keep a bare
+`templates/<file>` label for readability, with the resolved `${CLAUDE_SKILL_DIR}/../../templates/`
+path given once in the "read the template" instruction above the table.)
 
 **Eval-safety:** the deterministic markers (`markers.py`) assert skill *output* (banners, flags,
-section headers), not these path strings, so the suite stays green. The live-eval lane reads SKILL.md
-in-repo (no `${CLAUDE_PLUGIN_ROOT}`), and the "repo root in development" half of the sentence keeps it
-resolvable.
+section headers), not these path strings, so the CI suite stays green regardless of the path change.
 
-**Honest limit (architectural smell, accepted):** the skill prose becomes environment-aware. This is
-a pragmatic workaround, not a clean abstraction; a future cleanup could centralize "where my data
-lives." Documented, not hidden.
+**Live-lane caveat (documented, honest):** the gated `-m live` eval lane runs `claude -p` with the
+raw SKILL.md text, which is **not** the skill-loading path, so `${CLAUDE_SKILL_DIR}` is not
+guaranteed to be substituted there. The plan handles this by having the live runner export
+`CLAUDE_SKILL_DIR` for the subprocess (it already curates that env), or by accepting the live lane as
+best-effort (it is already gated, secrets-dependent, and noted in WI-1 as imperfect). The
+deterministic CI lane — the real regression gate — is unaffected.
 
 ## Component 3 — The regulatory MCP connector (Python-only, canonical pattern)
 
@@ -113,9 +128,12 @@ Root-as-plugin copies `docs/doctrinal-currency.md` into the install cache, so it
    to refresh them, and **always re-verify before relying** (consistent with the doc's own rule and
    the skills' currency step).
 2. **Add one sentence to the currency-check instruction** the three skills already carry: when running
-   as an installed plugin, treat the bundled `doctrinal-currency.md` as a snapshot, prefer the live
-   doc at the repo URL for the current stamp, and re-verify. (No behavior change to the invariants —
-   the stamp was never authoritative; this just keeps the snapshot from being mistaken for live.)
+   as an installed plugin, treat the bundled `doctrinal-currency.md` as a **snapshot as of the
+   installed plugin version** — run `/plugin marketplace update` to refresh it, and re-verify before
+   relying. (Per the user's choice, this stays purely "update + re-verify" with **no external-URL /
+   live-doc pointer** — the skill instruction references only the bundled doc and the update command.
+   No behavior change to the invariants; the stamp was never authoritative — this just keeps the
+   snapshot from being mistaken for live.)
 
 This is the single most important correctness item; it is called out for the legal-soundness-style
 review at the end.
@@ -152,7 +170,9 @@ silently masquerade as live, and Component 3 ensures the verification tools' ava
 
 - No publishing to any third-party plugin index; no LSP/agents/output-styles/channels.
 - No bundled secrets — API keys stay user-provided (`userConfig` or env).
-- The path-reference approach is a pragmatic workaround (Component 2), not an architectural cleanup.
+- The shared-resource path reference uses `${CLAUDE_SKILL_DIR}/../..` — clean and environment-agnostic
+  for the loaded-skill path, but it is not substituted in the gated `claude -p` live-eval lane (the
+  deterministic CI lane is unaffected; see Component 2's live-lane caveat).
 - The connector requires `python3` on the user's machine; if absent, the connector is unavailable and
   the skills degrade to UNVERIFIED (made visible per Component 3). Windows path specifics
   (`Scripts/osed-connectors.exe` vs `bin/osed-connectors`) are a known cross-platform wrinkle the plan
