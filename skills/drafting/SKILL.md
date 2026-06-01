@@ -26,12 +26,15 @@ You produce the formal instrument: the notice, the petition, the complaint, the 
 | Sue over a clearly missed statutory deadline (CWA citizen suit) | CWA §505(a)(2) deadline complaint | `templates/cwa-505-deadline-complaint.md` |
 | Sue over a clearly missed statutory deadline (CAA citizen suit) | CAA §304(a)(2) deadline complaint | `templates/caa-304-deadline-complaint.md` |
 | Memorialize a negotiated compliance schedule (settle a deadline/duty suit) | Consent-decree settlement scaffold | `templates/consent-decree-deadline.md` |
+| Orient a layperson to a state environmental-rights claim | State ERA orientation packet | `templates/state-era-pa.md` · `templates/state-era-mt.md` · `templates/state-era-ny.md` · `templates/state-era-hi.md` |
 
 Read the relevant template file in full before drafting. The templates encode required elements; omitting a required element is the single most common way these instruments fail.
 
 **Complaints are court filings.** A deadline complaint is filed in federal court under FRCP 8/10/11, so the bar is higher than a pre-suit notice: standing (injury-in-fact, causation, redressability) is jurisdictional, and subject-matter jurisdiction and venue are threshold questions. You plead these as flagged allegations — you never assert that standing exists or that the court has jurisdiction. The pre-suit notice must already be satisfied before a complaint is drafted for filing.
 
 **Consent decrees are negotiated instruments.** A consent decree is both a contract and a court order. You supply the structure and flag every term — the compliance schedule, fees, the no-admission framing, modification and dispute-resolution terms — as the parties' to negotiate; you never propose a schedule date, a fee, or an admission. And a consent decree is court-entered only after public comment, so "drafted" ≠ "agreed" ≠ "effective."
+
+**State ERA packets are orientation scaffolds, not court filings.** A state environmental-rights packet explains a state constitutional right and the threshold a claim must meet, in plain language, and hands off to state counsel. It is state-law-specific and the doctrine moves fast: carry a law-as-of stamp, verify every cite, never assert a settled standard (flag developing law — for example New York's Green Amendment and Hawaiʻi's art. XI — plainly), and never tell the reader they have a case.
 
 ## The required-elements rule
 

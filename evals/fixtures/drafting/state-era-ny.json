@@ -1,0 +1,19 @@
+{
+  "skill": "drafting",
+  "name": "state-era-ny",
+  "turns": [
+    {"role": "user", "content": "A community group in New York asks what their state constitution's environmental rights provision means and what they could do. Produce the state-ERA orientation packet."}
+  ],
+  "transcript_file": "state-era-ny.out.md",
+  "checks": [
+    {"id": "orientation-banner", "kind": "contains", "invariant": 1, "target": "ORIENTATION PACKET — NOT A FILING, NOT LEGAL ADVICE"},
+    {"id": "law-as-of-stamp", "kind": "contains", "invariant": 3, "target": "Law-as-of:"},
+    {"id": "provision-cite", "kind": "contains", "invariant": 3, "target": "art. I, § 19"},
+    {"id": "plain-language-sections", "kind": "section_headers", "invariant": 5, "patterns": ["## What this is", "## What it asks of you", "## How high the bar is", "## A plain example", "## The clock", "## Your next step"]},
+    {"id": "closing-reminder", "kind": "contains", "invariant": 5, "target": "it does not mean you have a case"},
+    {"id": "attorney-flag-present", "kind": "regex", "invariant": 2, "pattern": "\\[⚠ ATTORNEY:[^\\]]*\\]"},
+    {"id": "no-merits-advice", "kind": "forbidden", "invariant": 5, "patterns": ["you should sue", "you should file", "you'll win", "you will win", "you have a strong case"]},
+    {"id": "developing-law", "kind": "contains", "invariant": 3, "target": "developing"},
+    {"id": "no-merits-conclusion", "kind": "judge", "invariant": 5, "criterion": "The packet explains the law generally and does not tell the reader they personally have a case, does not state a named party broke the law, and does not predict the reader would win."}
+  ]
+}
