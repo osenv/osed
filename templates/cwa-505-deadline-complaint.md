@@ -4,9 +4,9 @@
 
 ## Why the form matters
 
-A federal complaint must satisfy **FRCP 8(a)** — a short and plain statement of the grounds for the court's jurisdiction, of the claim showing the pleader is entitled to relief, and of the relief sought — and **FRCP 11** — signed, well-grounded, and not frivolous. The §505(a)(2) track compels the EPA Administrator to perform a **nondiscretionary** duty; it is not a vehicle for unreasonable-delay relief. **Standing** (injury-in-fact, causation, redressability) is jurisdictional and the court's to decide: plead its elements as allegations, never assert it is established. And the **§505(b) pre-suit notice** must already be satisfied — served on the Administrator with its 60-day period run — before this complaint is filed.
+A federal complaint must satisfy **FRCP 8(a)** — a short and plain statement of the grounds for the court's jurisdiction, of the claim showing the pleader is entitled to relief, and of the relief sought — and **FRCP 11** — signed, well-grounded, and not frivolous. The §505(a)(2) track compels the EPA Administrator to perform a **nondiscretionary** duty; it is not a vehicle for unreasonable-delay relief. **Standing** (injury-in-fact, causation, redressability) is jurisdictional and the court's to decide: plead its elements as allegations, never assert it is established. And the **§505(b)(2) pre-suit notice** must already be satisfied — served on the Administrator with its 60-day period run — before this complaint is filed.
 
-> [⚠ ATTORNEY: confirm jurisdiction (28 U.S.C. § 1331 and CWA § 505 / 33 U.S.C. § 1365(a)), venue, and that the § 505(b) notice was served and its 60-day period has run before filing.]
+> [⚠ ATTORNEY: confirm jurisdiction (28 U.S.C. § 1331 and CWA § 505 / 33 U.S.C. § 1365(a)), venue, and that the § 505(b)(2) notice was served and its 60-day period has run before filing.]
 
 ## Required elements checklist
 
@@ -16,7 +16,8 @@ Build and verify this before drafting prose. Each must be present or carry an at
 - [ ] **Jurisdiction** — 28 U.S.C. § 1331 (federal question) + CWA § 505(a) / 33 U.S.C. § 1365(a) (citizen-suit jurisdiction)
 - [ ] **Venue** `[⚠ ATTORNEY: confirm venue (e.g., 28 U.S.C. § 1391(e) for an action against a federal agency/officer) for the chosen forum]`
 - [ ] **Parties and standing** — plaintiff's standing elements pleaded as allegations `[⚠ ATTORNEY: standing (injury-in-fact, causation, redressability) is jurisdictional and the court's to decide — plead the elements; do not assert standing is established]`; defendant (the EPA Administrator)
-- [ ] **Notice precondition satisfied** — the § 505(b) notice was served on the Administrator and its 60-day period ran `[⚠ ATTORNEY: confirm the notice was properly served per 40 C.F.R. Part 135 and the 60-day period has run before filing]`
+- [ ] **Notice precondition satisfied** — the § 505(b)(2) notice was served on the Administrator and its 60-day period ran `[⚠ ATTORNEY: confirm the notice was properly served per 40 C.F.R. Part 135 and the 60-day period has run before filing]`
+- [ ] **Immediate-suit exception** — Whether the CWA §§ 1316 / 1317(a) immediate-suit exception applies (i.e., whether the 60-day notice wait is required for the specific duty) `[⚠ ATTORNEY: assess whether an immediate-suit exception eliminates the 60-day wait here]`
 - [ ] **The nondiscretionary duty** + its statutory hook + the statutory deadline + the missed-deadline facts (from the findings table) `[⚠ ATTORNEY: confirm the duty is nondiscretionary and the deadline computation]`
 - [ ] **Count I** — Failure to Perform a Nondiscretionary Duty
 - [ ] **Prayer for relief** — declaratory judgment; a mandatory injunction/order compelling the action **by a date certain**; retention of jurisdiction; costs and reasonable attorney/expert fees under CWA § 505(d) / 33 U.S.C. § 1365(d); any other just relief
@@ -72,10 +73,10 @@ JURISDICTION AND VENUE
     28 U.S.C. § 1391(e) for an action against a federal agency/officer)
     for the chosen forum.]
 
-5.  Plaintiff satisfied the pre-suit notice precondition of CWA § 505(b),
-    33 U.S.C. § 1365(b): plaintiff gave notice of this action to the
+5.  Plaintiff satisfied the pre-suit notice precondition of CWA § 505(b)(2),
+    33 U.S.C. § 1365(b)(2): plaintiff gave notice of this action to the
     Administrator, and more than 60 days have elapsed since that notice.
-    [⚠ ATTORNEY: confirm the § 505(b) notice was properly served on the
+    [⚠ ATTORNEY: confirm the § 505(b)(2) notice was properly served on the
     Administrator per 40 C.F.R. Part 135 and that the 60-day period has
     run before filing.]
 
@@ -111,7 +112,7 @@ STATUTORY BACKGROUND
     alleged a failure of the Administrator to perform any act or duty
     under the Act which is not discretionary.
 
-11. CWA § 505(b), 33 U.S.C. § 1365(b), conditions such an action on
+11. CWA § 505(b)(2), 33 U.S.C. § 1365(b)(2), conditions such an action on
     pre-suit notice to the Administrator and a 60-day waiting period, in
     the form the Administrator prescribes by regulation. The notice
     requirement is prescribed by 40 C.F.R. Part 135, which requires
@@ -179,13 +180,14 @@ under FRCP 11.]
 
 ## Precondition / deadline note
 
-The CWA § 505(b) pre-suit notice must already be satisfied **before** this complaint is filed: served on the Administrator per 40 C.F.R. Part 135, with its 60-day period run. That is a precondition for counsel to verify, not a step this complaint performs. This complaint seeks an order compelling the missed action **by a date certain** — a deadline-suit remedy — **not** unreasonable-delay relief; the two theories are distinct and counsel must confirm the duty fits the deadline track. This software does not track the 60-day clock or any other date.
+The CWA § 505(b)(2) pre-suit notice must already be satisfied **before** this complaint is filed: served on the Administrator per 40 C.F.R. Part 135, with its 60-day period run. That is a precondition for counsel to verify, not a step this complaint performs. This complaint seeks an order compelling the missed action **by a date certain** — a deadline-suit remedy — **not** unreasonable-delay relief; the two theories are distinct and counsel must confirm the duty fits the deadline track. This software does not track the 60-day clock or any other date.
 
 ## Consolidated attorney flags (carry forward into the Drafting agent's output)
 
 - **Jurisdiction and venue** — confirm 28 U.S.C. § 1331 and CWA § 505(a) / 33 U.S.C. § 1365(a) jurisdiction, and venue (e.g., 28 U.S.C. § 1391(e)) for the chosen forum.
 - **Standing** — plead injury-in-fact, causation, and redressability as allegations; standing is jurisdictional and the court's to decide; do not assert it is established.
-- **Notice precondition** — confirm the § 505(b) notice was served on the Administrator per 40 C.F.R. Part 135 and that the 60-day period has run before filing.
+- **Notice precondition** — confirm the § 505(b)(2) / 33 U.S.C. § 1365(b)(2) notice was served on the Administrator per 40 C.F.R. Part 135 and that the 60-day period has run before filing.
+- [⚠ ATTORNEY: assess whether the CWA §§ 1316 / 1317(a) immediate-suit exception eliminates the 60-day notice wait for the specific duty]
 - **Nondiscretionary duty and deadline** — confirm the duty is nondiscretionary and enforceable under § 505(a)(2) in the chosen circuit, confirm the statutory hook against the current Code, and confirm the deadline computation; supply and verify all dates and non-performance from record evidence.
 - **Fees** — costs and reasonable attorney/expert fees are sought under CWA § 505(d), 33 U.S.C. § 1365(d); confirm entitlement.
 - **FRCP 11** — review and sign before filing; the complaint must be non-frivolous and well-grounded.
