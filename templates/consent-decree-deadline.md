@@ -52,12 +52,13 @@ IN THE UNITED STATES DISTRICT COURT FOR THE
 
 [⚠ ATTORNEY: caption must match the complaint — confirm court and parties.]
 
-WHEREAS, plaintiff commenced this action under the citizen-suit
-provision invoked in the complaint (e.g., Clean Water Act § 505(a)(2),
-33 U.S.C. § 1365(a)(2)), alleging that defendant failed to perform a
-nondiscretionary duty by a statutory deadline [⚠ ATTORNEY: confirm the
-statute and the duty from the complaint — this scaffold is statute-
-agnostic; the specific authorities are filled from the underlying suit];
+WHEREAS, plaintiff commenced this action under the underlying
+citizen-suit statute [⚠ ATTORNEY: cite the statute and subsection of
+the underlying suit — e.g., CWA § 505(a)(2), 33 U.S.C. § 1365(a)(2)],
+alleging that defendant failed to perform a nondiscretionary duty by a
+statutory deadline [⚠ ATTORNEY: confirm the statute and the duty from
+the complaint — this scaffold is statute-agnostic; the specific
+authorities are filled from the underlying suit];
 
 WHEREAS, the parties wish to resolve this action without further
 litigation, and **without any admission of law, fact, or liability** by
@@ -78,42 +79,48 @@ Court ORDERED, ADJUDGED, and DECREED as follows:
     jurisdictional basis from the complaint (e.g., 28 U.S.C. § 1331 and
     CWA § 505(a) / 33 U.S.C. § 1365(a)).]
 
-2.  COMPLIANCE SCHEDULE
+2.  DEFINITIONS
+
+    [placeholder — defined terms used in this Decree, e.g., "the Plan,"
+    "Day," "Effective Date."] [⚠ ATTORNEY: the defined terms are a
+    negotiated drafting choice; the software proposes none.]
+
+3.  COMPLIANCE SCHEDULE
 
     Defendant shall perform the duty described in the recitals by
     [placeholder — the agreed compliance date(s)]. [⚠ ATTORNEY:
     negotiated term — the parties set the schedule; the software does
     not propose dates.]
 
-3.  NO ADMISSION
+4.  NO ADMISSION
 
     [placeholder — the no-admission-of-liability provision]. This decree
     resolves the action without any admission of law, fact, or liability
     by any party. [⚠ ATTORNEY: negotiated term — the parties set the
     no-admission framing; the software does not propose it.]
 
-4.  REPORTING
+5.  REPORTING
 
     [placeholder — defendant's reporting and progress obligations].
     [⚠ ATTORNEY: negotiated term.]
 
-5.  MODIFICATION / FORCE MAJEURE
+6.  MODIFICATION / FORCE MAJEURE
 
     [placeholder — the modification, good-cause-extension, and
     force-majeure provisions]. [⚠ ATTORNEY: negotiated term.]
 
-6.  DISPUTE RESOLUTION
+7.  DISPUTE RESOLUTION
 
     [placeholder — the dispute-resolution procedure]. [⚠ ATTORNEY:
     negotiated term.]
 
-7.  COSTS AND FEES
+8.  COSTS AND FEES
 
     [placeholder — the provision for costs and attorney/expert fees].
     [⚠ ATTORNEY: negotiated term — the parties set any fee amount; the
     software does not propose a figure.]
 
-8.  PUBLIC COMMENT AND ENTRY
+9.  PUBLIC COMMENT AND ENTRY
 
     This decree shall be lodged with the Court and published for public
     comment before entry [placeholder — the agreed lodging-and-comment
@@ -125,13 +132,13 @@ Court ORDERED, ADJUDGED, and DECREED as follows:
     with the court, and the United States may withdraw consent); the
     decree is not effective until entered.]
 
-9.  RETENTION OF JURISDICTION
+10. RETENTION OF JURISDICTION
 
     The Court retains jurisdiction over this action to enforce the terms
     of this decree. [⚠ ATTORNEY: confirm the scope and duration of
     retained jurisdiction — this is a negotiated term.]
 
-10. EFFECTIVE DATE / TERMINATION
+11. EFFECTIVE DATE / TERMINATION
 
     [placeholder — the effective-date and termination provisions]. This
     decree takes effect upon entry by the Court. [⚠ ATTORNEY: negotiated
@@ -149,7 +156,7 @@ address, phone, email]
 [⚠ ATTORNEY: signature area — all parties and their counsel must review
 and sign; the software supplies the blocks, not the signatures.]
 
-SO ORDERED this [placeholder — date] day of [placeholder — month], [placeholder — year].
+SO ORDERED this [placeholder — date of entry].
 
 _________________________________
 United States District Judge
@@ -161,13 +168,13 @@ United States District Judge
 
 ## Negotiated-terms & comment/entry note
 
-The compliance schedule and **every other term** in this scaffold are negotiated terms: the parties and their counsel set them, and the software proposes none of them — no date, no fee, no admission, no modification or termination term. A consent decree is also a court order, so it is **lodged, published for public comment, and entered by the court** — after a fairness, reasonableness, and statutory-consistency review — before it is effective. The software proposes no term and tracks no clock; the lodging, comment, and entry deadlines are for counsel to confirm and the court to apply.
+This scaffold proposes no term and is not effective until lodged, published for comment, and entered by the court. This software tracks no clock.
 
 ## Consolidated attorney flags (carry forward into the Drafting agent's output)
 
 - **Every term is negotiated** — the parties and their counsel set the compliance schedule, fees, definitions, reporting, modification/force-majeure, dispute resolution, effective date, and termination; the software proposes none of them.
 - **No-admission framing** — the resolution without admission of law, fact, or liability is a negotiated term the parties set.
-- **Retention of jurisdiction** — confirm the scope and duration of the court's retained jurisdiction to enforce the decree.
+- **Retention of jurisdiction** — confirm the scope and duration of the court's retained jurisdiction to enforce the decree (a negotiated term).
 - **Comment/entry procedure** — confirm the applicable lodging/comment/entry procedure (e.g., 28 C.F.R. § 50.7); the decree is not effective until the court enters it.
 - **Court's review** — the court enters the decree only after reviewing it for fairness, reasonableness, and consistency with the statute the suit was brought under.
 - **Counsel review and signature** — all parties and their counsel must review and sign before the decree is presented to the court.
