@@ -12,11 +12,13 @@ and adds an entry here.
 - Clean Air Act §304 citizen-suit notice instrument: two templates — `templates/caa-304-emissions-notice.md` (§304(a)(1) emission violations) and `templates/caa-304-failure-to-act-notice.md` (§304(a)(2) failure to perform a nondiscretionary duty).
 - Deadline-complaint instrument (the first court filing): `templates/cwa-505-deadline-complaint.md` (CWA §505(a)(2)) and `templates/caa-304-deadline-complaint.md` (CAA §304(a)(2)) — citizen-suit "failure to perform a nondiscretionary duty" complaints, with standing/jurisdiction/venue flagged for counsel.
 - A "Stage 5 — Deadline Complaint" added to both deadline worked-examples (`docs/examples/cwa-304m-deadline-suit.md`, `docs/examples/caa-304-failure-to-act-suit.md`), each registered as a drafting eval fixture.
+- Consent-decree settlement scaffold (`templates/consent-decree-deadline.md`): the negotiated resolution of a deadline/duty suit, statute-agnostic, with every term flagged for the parties to negotiate (the software proposes none). A "Stage 6 — Consent Decree" was added to the CWA §304(m) worked example and registered as a drafting eval fixture.
 
 ### Changed
 - `skills/drafting` routes the two CAA §304 notice types to the new templates.
 - `skills/intake` now routes Clean Air Act concerns to the built §304 pathway (previously "on the roadmap, not yet built").
 - `skills/drafting` routes deadline complaints to the new templates and marks complaints as court filings.
+- `skills/drafting` routes the consent-decree scaffold to its template and marks decrees as negotiated instruments.
 
 ## [0.1.0] — 2026-05-31 — seed
 
