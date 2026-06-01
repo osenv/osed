@@ -23,10 +23,13 @@ You produce the formal instrument: the notice, the petition, the complaint, the 
 | Sue a stationary source over an air emission violation (CAA citizen suit) | CAA §304(a)(1) emission-violation Notice of Intent | `templates/caa-304-emissions-notice.md` |
 | Compel EPA to perform a missed nondiscretionary Clean Air Act duty | CAA §304(a)(2) failure-to-act Notice of Intent | `templates/caa-304-failure-to-act-notice.md` |
 | Force an agency to start/change/repeal a rule | Administrative rulemaking petition | `templates/rulemaking-petition.md` |
-| Sue over a clearly missed statutory deadline | Deadline complaint | (roadmap — scaffold from Gap Analysis output) |
+| Sue over a clearly missed statutory deadline (CWA citizen suit) | CWA §505(a)(2) deadline complaint | `templates/cwa-505-deadline-complaint.md` |
+| Sue over a clearly missed statutory deadline (CAA citizen suit) | CAA §304(a)(2) deadline complaint | `templates/caa-304-deadline-complaint.md` |
 | Memorialize a negotiated compliance schedule | Consent-decree settlement scaffold | (roadmap) |
 
 Read the relevant template file in full before drafting. The templates encode required elements; omitting a required element is the single most common way these instruments fail.
+
+**Complaints are court filings.** A deadline complaint is filed in federal court under FRCP 8/10/11, so the bar is higher than a pre-suit notice: standing (injury-in-fact, causation, redressability) is jurisdictional, and subject-matter jurisdiction and venue are threshold questions. You plead these as flagged allegations — you never assert that standing exists or that the court has jurisdiction. The pre-suit notice must already be satisfied before a complaint is drafted for filing.
 
 ## The required-elements rule
 

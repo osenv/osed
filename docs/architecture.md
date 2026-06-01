@@ -86,7 +86,7 @@ Ordered by barrier-to-entry, lowest first, because the lowest-barrier instrument
 1. **Administrative rulemaking petition** — done (`templates/rulemaking-petition.md`). No court, no lawyer required to file.
 2. **CWA §505 Notice of Intent** — done (`templates/cwa-505-notice-of-intent.md`). The formulaic gateway to citizen suits.
 3. **Clean Air Act §304 notice** — done (`templates/caa-304-emissions-notice.md`, `templates/caa-304-failure-to-act-notice.md`). The two §304 tracks: §304(a)(1) emission-violation (served on Administrator + State + violator) and §304(a)(2) failure-to-act (served on the Administrator).
-4. **Deadline complaint** — scaffold directly from a Gap Analysis findings table.
+4. **Deadline complaint** — done (`templates/cwa-505-deadline-complaint.md`, `templates/caa-304-deadline-complaint.md`). The first court filing: a citizen-suit "failure to perform a nondiscretionary duty" complaint, scaffolded from a Gap Analysis findings table after the notice period runs. Standing/jurisdiction/venue are flagged, never asserted.
 5. **Consent-decree settlement scaffold** — the negotiated, court-enforceable schedule; teaches the system to generate settlement structure, not just complaints.
 6. **State environmental-rights-act claim packet** — per-state variants (PA Art. I §27, NY Green Amendment, MT, HI). High access-to-justice value; heavy Plain-Language involvement.
 
