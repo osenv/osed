@@ -19,6 +19,7 @@ GOLDEN = [
     ("drafting", "cwa-304m-deadline-notice"),
     ("precedent-retrieval", "cwa-304m-deadline-precedent"),
     ("plain-language", "cwa-304m-deadline-plain"),
+    ("drafting", "cwa-505-deadline-complaint"),
     ("gap-analysis", "rulemaking-petition"),
     ("drafting", "rulemaking-petition-draft"),
     ("precedent-retrieval", "rulemaking-petition-precedent"),
