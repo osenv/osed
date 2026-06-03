@@ -32,6 +32,23 @@ These exist because the cost of getting the mechanical layer wrong is high — a
 4. For templates, include the required-elements checklist and the attorney flags. Cite the governing authority and mark it for currency verification.
 5. If you are not a lawyer, say so in the PR, and flag any element you're unsure carries legal weight. That's helpful, not a problem — it tells reviewers where to look.
 
+### Resource references in skills (plugin-safe paths)
+
+OSED ships as a Claude Code plugin, and an installed plugin is copied to a cache where a skill can
+only read files inside the plugin directory. So when a skill needs a shared OSED resource (a template
+or the doctrinal-currency doc), it must reference it through the one path variable that is substituted
+in skill content and resolves at every install level: **`${CLAUDE_SKILL_DIR}`** (the skill's own
+directory).
+
+Every skill lives at `skills/<name>/`, so the OSED root is `${CLAUDE_SKILL_DIR}/../..`. Reference
+shared resources as:
+- a template → `${CLAUDE_SKILL_DIR}/../../templates/<file>`
+- the currency doc → `${CLAUDE_SKILL_DIR}/../../docs/doctrinal-currency.md`
+
+Do **not** use `${CLAUDE_PLUGIN_ROOT}` in skill body text — it is only substituted in MCP/hook/command
+configs, not in `SKILL.md` prose. This convention keeps skills working identically in development and
+when installed, with no environment-aware branching.
+
 ## Review
 
 Substantive legal content should get review from a contributor with relevant legal expertise before merge. Plain-language content should get review from someone close to the intended audience. Maintainers will route PRs accordingly. When in doubt, a contribution that flags its own uncertainty is more useful than one that hides it.
