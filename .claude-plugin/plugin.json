@@ -5,5 +5,30 @@
   "author": { "name": "Behrang Garakani" },
   "homepage": "https://github.com/bgarakani/osed",
   "repository": "https://github.com/bgarakani/osed",
-  "license": "MIT"
+  "license": "MIT",
+  "userConfig": {
+    "courtlistener_api_key": {
+      "type": "string",
+      "title": "CourtListener API token",
+      "description": "Optional CourtListener API token for verify_citation (case-law currency). Keyless sources work without it.",
+      "sensitive": true,
+      "required": false
+    },
+    "regulations_gov_api_key": {
+      "type": "string",
+      "title": "Regulations.gov API key",
+      "description": "Optional Regulations.gov API key for find_rulemaking_documents. Keyless sources work without it.",
+      "sensitive": true,
+      "required": false
+    }
+  },
+  "mcpServers": {
+    "osed-regulatory": {
+      "command": "${CLAUDE_PLUGIN_DATA}/connector-venv/bin/osed-connectors",
+      "env": {
+        "COURTLISTENER_API_KEY": "${user_config.courtlistener_api_key}",
+        "REGULATIONS_GOV_API_KEY": "${user_config.regulations_gov_api_key}"
+      }
+    }
+  }
 }
