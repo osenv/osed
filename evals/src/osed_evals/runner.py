@@ -29,7 +29,12 @@ def _skill_md_path(fixture: Fixture) -> Path:
 
 
 def _build_prompt(fixture: Fixture) -> str:
-    skill_md = _skill_md_path(fixture).read_text()
+    skill_path = _skill_md_path(fixture)
+    skill_md = skill_path.read_text()
+    # Plugin skills resolve ${CLAUDE_SKILL_DIR} to the skill's own directory at runtime.
+    # The live lane embeds SKILL.md as raw text (not a loaded skill), so substitute it here
+    # to the skill's dir so any "${CLAUDE_SKILL_DIR}/../../<resource>" path resolves.
+    skill_md = skill_md.replace("${CLAUDE_SKILL_DIR}", str(skill_path.parent))
     user_turns = [t.content for t in fixture.turns if t.role == "user"]
     if len(user_turns) == 1:
         exchange = user_turns[0]

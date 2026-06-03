@@ -34,3 +34,14 @@ def test_build_prompt_scripts_multiple_turns():
     prompt = _build_prompt(_fx(turns=("First request.", "Now remove the banner.")))
     assert "User turn 1: First request." in prompt
     assert "User turn 2: Now remove the banner." in prompt
+
+
+def test_build_prompt_substitutes_skill_dir(tmp_path, monkeypatch):
+    skill_dir = tmp_path / "skills" / "drafting"
+    skill_dir.mkdir(parents=True)
+    (skill_dir / "SKILL.md").write_text("read ${CLAUDE_SKILL_DIR}/../../templates/x.md")
+    monkeypatch.setenv("OSED_EVAL_SKILL_DIR", str(skill_dir))
+    fx = Fixture(skill="drafting", name="t", turns=(Turn(role="user", content="hi"),), checks=())
+    prompt = _build_prompt(fx)
+    assert "${CLAUDE_SKILL_DIR}" not in prompt
+    assert f"{skill_dir}/../../templates/x.md" in prompt
