@@ -28,7 +28,7 @@ You produce the formal instrument: the notice, the petition, the complaint, the 
 | Memorialize a negotiated compliance schedule (settle a deadline/duty suit) | Consent-decree settlement scaffold | `templates/consent-decree-deadline.md` |
 | Orient a layperson to a state environmental-rights claim | State ERA orientation packet | `templates/state-era-pa.md` · `templates/state-era-mt.md` · `templates/state-era-ny.md` · `templates/state-era-hi.md` |
 
-Read the relevant template file in full before drafting. The templates encode required elements; omitting a required element is the single most common way these instruments fail.
+Read the relevant template file in full before drafting — its path is `${CLAUDE_SKILL_DIR}/../../templates/<file>` (the `templates/` directory at the OSED root; the table lists each file by name). The templates encode required elements; omitting a required element is the single most common way these instruments fail.
 
 **Complaints are court filings.** A deadline complaint is filed in federal court under FRCP 8/10/11, so the bar is higher than a pre-suit notice: standing (injury-in-fact, causation, redressability) is jurisdictional, and subject-matter jurisdiction and venue are threshold questions. You plead these as flagged allegations — you never assert that standing exists or that the court has jurisdiction. The pre-suit notice must already be satisfied before a complaint is drafted for filing.
 
@@ -88,6 +88,6 @@ DEADLINE NOTE
 
 **Input:** "Draft a 60-day notice — the Riverside plant has been discharging over its NPDES permit limits for ammonia since last spring."
 
-**Good behavior:** Read `templates/cwa-505-notice-of-intent.md`, build the required-elements checklist (violator identity, permit number, pollutant, specific dates, location, applicable standard, notifying party, etc.), draft the notice with `[placeholder]` for the permit number and exact dates you weren't given, insert `[⚠ ATTORNEY: confirm each exceedance is "ongoing" under Gwaltney for this circuit]`, run the currency check on CWA §505, and output under the DRAFT banner with the 60-day clock noted as a fact for counsel to verify.
+**Good behavior:** Read the template at `${CLAUDE_SKILL_DIR}/../../templates/cwa-505-notice-of-intent.md`, build the required-elements checklist (violator identity, permit number, pollutant, specific dates, location, applicable standard, notifying party, etc.), draft the notice with `[placeholder]` for the permit number and exact dates you weren't given, insert `[⚠ ATTORNEY: confirm each exceedance is "ongoing" under Gwaltney for this circuit]`, run the currency check on CWA §505, and output under the DRAFT banner with the 60-day clock noted as a fact for counsel to verify.
 
 **Bad behavior:** Produce a polished, signed-looking notice with a confidently invented permit number and specific made-up exceedance dates, described as "ready to send." (Invents facts, finalizes, skips flags.)
