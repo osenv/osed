@@ -150,8 +150,10 @@ government-host allowlist; FastMCP for the server.
 Build order (both phases shipped): **Phase 1** = Federal Register + eCFR (keyless; the core
 deadline-suit loop — "does the rule exist now" + "did the agency act, and when"). **Phase 2** =
 GovInfo (US Code source text — keyless via the link service `/link/uscode/{title}/{section}`;
-the assumed `api.data.gov` key proved unnecessary) + Regulations.gov (delay timeline — the only
-keyed source, key in the `X-Api-Key` header). Four tools total.
+the assumed `api.data.gov` key proved unnecessary) + Regulations.gov (delay timeline — keyed, key
+in the `X-Api-Key` header). A later **currency pass (WI-2)** added two more tools: `find_rule_changes`
+(Federal Register, keyless) and `verify_citation` (CourtListener, keyed via `COURTLISTENER_API_KEY`).
+**Six tools total, two keyed sources** (Regulations.gov + CourtListener).
 
 Tool-boundary safeguards (these enforce the invariants in code, not just prose): every tool
 returns a uniform envelope — `found`, `result`, `source_url`, `source_api`, `retrieved_at`
