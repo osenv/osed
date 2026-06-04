@@ -9,17 +9,20 @@ result is *evidence for a human to weigh*, never a determination. See the repo
 - **Distribution name:** `osed-connectors` · **import package:** `osed_connectors`
 - **Transport:** local stdio (FastMCP). MCPB is the eventual packaging upgrade path.
 
-## The Gap Analysis loop
+## The Gap Analysis + currency loop
 
-Four tools spanning the full deadline-suit analysis. **Only Regulations.gov needs
-a key** — GovInfo US Code text is reached via the keyless link service.
+Six tools: four for the deadline-suit analysis and two for the doctrinal-currency
+check. Four are keyless; **two need a key** — Regulations.gov and CourtListener.
+GovInfo US Code text is reached via the keyless link service.
 
 | Tool | Question | Source | Key |
 |---|---|---|---|
 | `get_uscode_section` | What is the statutory duty? | GovInfo (US Code) | — |
 | `get_current_regulation` | Does the rule exist now? | eCFR (daily-fresh) | — |
 | `find_agency_actions` | Did the agency act, and when? | Federal Register | — |
+| `find_rule_changes` | Did this rule change? (currency) | Federal Register | — |
 | `find_rulemaking_documents` | Delay timeline (docket/comments) | Regulations.gov v4 | ✅ |
+| `verify_citation` | Does this case citation resolve? (currency) | CourtListener | ✅ |
 
 ## The tools
 
@@ -43,6 +46,27 @@ Regulations.gov documents for the docket/comment timeline, oldest-first. Provide
 least one of `term`, `agency` (e.g. `EPA`), or `docket_id`. **Requires**
 `REGULATIONS_GOV_API_KEY`; without it the tool returns an explicit not-found. The
 key is sent in the `X-Api-Key` header, never in a URL.
+
+### `find_rule_changes(cfr_title, cfr_part, since=None, limit=20)`
+Federal Register actions affecting a CFR citation — the "did this rule change?"
+step of a currency check. Returns later amendments, corrections, and agency notices
+(including agency-announced stays) for the title/part, newest first, each tagged with
+a `change_kind` and a `mentions_stay_or_vacatur` flag. This is **evidence** feeding the
+CURRENT/CHANGED/DEAD/UNVERIFIED classification — it does not classify the rule, and it
+does **not** capture judicial vacaturs or court-ordered stays (those are case law; use
+`verify_citation` / CourtListener). Keyless.
+
+### `verify_citation(text=None, volume=None, reporter=None, page=None)`
+Verifies case citation(s) against CourtListener — the case half of a currency check.
+Provide either `text` containing one or more citations, or an explicit
+`volume`/`reporter`/`page`. Returns evidence per citation: whether it `resolved` to a
+real published case, plus case name, date, precedential status, citation count, URL,
+and subsequent-history fields. It does **not** say whether a case is still good law —
+CourtListener does not flag overruling (Chevron still returns Published), so the
+CURRENT/CHANGED/DEAD judgment stays the attorney's. A non-resolving citation is evidence
+the cite may be wrong or fabricated. **Requires** `COURTLISTENER_API_KEY`; without it the
+tool returns an explicit not-found. The token is sent in the `Authorization` header
+(`Token …`), never in a URL.
 
 ## Tool-boundary safeguards
 
@@ -112,9 +136,11 @@ Add to your project `.mcp.json` (use the absolute path to the venv script):
 ```
 
 Keyless live smoke tests hit the real Federal Register, eCFR, and GovInfo APIs
-(no secrets, so CI runs them by default). The one keyed test (Regulations.gov) is
-gated on `REGULATIONS_GOV_API_KEY` and skips when it is unset:
+(no secrets, so CI runs them by default). The keyed live tests are gated on their
+respective env vars — `REGULATIONS_GOV_API_KEY` (Regulations.gov) and
+`COURTLISTENER_API_KEY` (CourtListener) — and skip when unset:
 
 ```bash
-REGULATIONS_GOV_API_KEY=DEMO_KEY .venv/bin/pytest   # runs the keyed live test too
+REGULATIONS_GOV_API_KEY=DEMO_KEY .venv/bin/pytest   # runs the Regulations.gov keyed test too
+COURTLISTENER_API_KEY=… .venv/bin/pytest            # runs the CourtListener keyed test too
 ```

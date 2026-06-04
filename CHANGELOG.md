@@ -26,6 +26,9 @@ and adds an entry here.
 - `skills/drafting` routes the consent-decree scaffold to its template and marks decrees as negotiated instruments.
 - Skills reference shared resources (templates, the doctrinal-currency doc) via `${CLAUDE_SKILL_DIR}/../..` so the paths resolve identically in development and when installed as a plugin; the currency reference notes the bundled doc is a snapshot (run `/plugin marketplace update` + re-verify).
 
+### Fixed
+- Connector docs corrected to reflect **six** tools, not four: `CONNECTORS.md`, `CLAUDE.md`, and `connectors/regulatory/README.md` (table + tool docs) had lagged behind the WI-2 currency tools (`find_rule_changes`, `verify_citation`), and several places still said Regulations.gov was the "only keyed source" — CourtListener (`verify_citation`) is keyed too. No code change.
+
 ## [0.1.0] — 2026-05-31 — seed
 
 The de-risking structural pass (`docs/plans/derisking-structural-pass.md`): turned OSED's prose
