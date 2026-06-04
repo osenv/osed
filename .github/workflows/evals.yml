@@ -1,9 +1,9 @@
 name: evals
 on:
   push:
-    paths: ["skills/**", "templates/**", "evals/**", "docs/doctrinal-currency.md", ".github/workflows/evals.yml"]
+    paths: ["skills/**", "templates/**", "evals/**", "docs/doctrinal-currency.md", "docs/guide/**", ".github/workflows/evals.yml"]
   pull_request:
-    paths: ["skills/**", "templates/**", "evals/**", "docs/doctrinal-currency.md"]
+    paths: ["skills/**", "templates/**", "evals/**", "docs/doctrinal-currency.md", "docs/guide/**"]
 jobs:
   deterministic:
     runs-on: ubuntu-latest
