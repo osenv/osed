@@ -9,6 +9,7 @@ and adds an entry here.
 ## [Unreleased]
 
 ### Added
+- End-to-end user guide under `docs/guide/` — parallel **For communities** and **For attorneys** tracks plus shared concepts, written to obey OSED's own invariants (a `test_guide_docs.py` check guards against merits-drift in the community track, requires the disclaimer, and verifies intra-guide links).
 - Four state-ERA doctrinal anchors (PA Art. I §27, MT Art. II §3/Art. IX §1, NY Art. I §19 Green Amendment, HI Art. XI) added to the tracked "Worth tracking" list in `docs/doctrinal-currency.md`, each law-as-of stamped.
 - State environmental-rights-act orientation packets for PA, MT, NY, and HI (`templates/state-era-*.md`): plain-language-led, law-as-of stamped, with NY and HI framed as developing law. Four worked examples (`docs/examples/state-era-*.md`) and four packet fixtures (`evals/tests/test_state_era_packets.py`).
 - Clean Air Act §304 citizen-suit notice instrument: two templates — `templates/caa-304-emissions-notice.md` (§304(a)(1) emission violations) and `templates/caa-304-failure-to-act-notice.md` (§304(a)(2) failure to perform a nondiscretionary duty).

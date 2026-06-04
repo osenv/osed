@@ -55,6 +55,7 @@ osed/
 │   ├── architecture.md            ← the four-agent system, in depth
 │   ├── doctrinal-currency.md      ← how to keep agents off dead law
 │   ├── examples/                  ← end-to-end worked examples (public matters, no client facts)
+│   ├── guide/                     ← end-to-end guide: For-communities + For-attorneys tracks
 │   └── runbook.md               ← run the pipeline by hand, with invariant checkpoints
 ├── skills/
 │   ├── intake/SKILL.md           ← the front door: routes a lay concern to candidate pathways
@@ -83,6 +84,10 @@ osed/
 `evals/` is the verification arm of the design invariants — exact-marker checks (DRAFT banner,
 attorney flags, placeholders) plus a gated live + LLM-judge lane. A change to `skills/` or
 `templates/` must keep `cd evals && pytest` green (enforced by CI). See `evals/README.md`.
+
+## Documentation
+
+A full end-to-end guide lives in [`docs/guide/`](docs/guide/README.md) — two tracks, **[For communities](docs/guide/for-communities/start-here.md)** and **[For attorneys](docs/guide/for-attorneys/start-here.md)**, plus shared [concepts](docs/guide/concepts/the-six-invariants.md). OSED drafts; a licensed attorney decides.
 
 ## Quick start
 

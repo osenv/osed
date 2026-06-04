@@ -29,6 +29,7 @@ inline `[⚠ ATTORNEY: ...]` flags are the brakes that keep OSED on the mechanic
 This table maps a concern to a *candidate* pathway — not a conclusion that the pathway fits, and
 never a conclusion that there is a case. Which pathway (if any) applies is a judgment call.
 
-The lay-reader walkthrough of each instrument lives in the for-communities "What each pathway is"
-page; the practitioner catalog lives in the for-attorneys "Instrument catalog" page. See also
+The lay-reader walkthrough of each instrument lives in
+[What each pathway is](../for-communities/what-each-pathway-is.md); the practitioner catalog lives
+in the [Instrument catalog](../for-attorneys/instrument-catalog.md). See also
 [`../../architecture.md`](../../architecture.md) and [the six invariants](the-six-invariants.md).

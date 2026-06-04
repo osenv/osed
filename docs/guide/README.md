@@ -14,17 +14,16 @@ using it creates no attorney-client relationship, and nothing it produces is leg
 
 ## Two ways in
 
-<!-- Track links are completed in the cross-link pass once the track pages exist. -->
-
-- **For communities** — if you have an environmental concern and want to understand whether a
-  pathway might exist and how to bring a draft to a lawyer.
-- **For attorneys** — if you practice environmental law and want to use OSED's instruments,
-  pipeline, and currency tooling in your work.
+- **[For communities](for-communities/start-here.md)** — if you have an environmental concern and
+  want to understand whether a pathway might exist and how to bring a draft to a lawyer.
+- **[For attorneys](for-attorneys/start-here.md)** — if you practice environmental law and want to
+  use OSED's instruments, pipeline, and currency tooling in your work.
 
 ## Shared concepts
 
 Both tracks rest on the same ideas:
 
 - [The disclaimer](concepts/the-disclaimer.md) — what OSED is and is not.
-- **The six invariants** — the guardrails every skill enforces.
-- **The pathways** — the line between what a draft can do and what only a lawyer decides.
+- [The six invariants](concepts/the-six-invariants.md) — the guardrails every skill enforces.
+- [The pathways](concepts/the-pathways.md) — the line between what a draft can do and what only a
+  lawyer decides.

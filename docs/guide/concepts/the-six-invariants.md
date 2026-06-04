@@ -15,7 +15,7 @@ wrong (invented facts, dead law, or an unflagged judgment call), which can sink 
 3. **Every cited authority passes a doctrinal-currency check or is flagged.**
    *Why:* the law changes and outputs go stale. A citation relied on without a currency check can
    be dead law dressed as good law. See [the pathways](the-pathways.md), and — for practitioners —
-   the for-attorneys "Currency and the connector" page.
+   [Currency and the connector](../for-attorneys/currency-and-the-connector.md).
 
 4. **No agent invents facts** — missing facts become `[placeholder]` plus a flag.
    *Why:* a fabricated date, party, or violation is invisible until it is fatal. A placeholder is
