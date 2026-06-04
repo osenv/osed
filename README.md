@@ -92,6 +92,37 @@ cd osed
 # Install the skills into a Claude Skills-compatible environment, or read them directly.
 ```
 
+## Install as a Claude Code plugin
+
+OSED is also a Claude Code plugin, distributed from this repo as a self-hosted marketplace:
+
+```
+/plugin marketplace add bgarakani/osed
+/plugin install osed@osed
+```
+
+The six skills then appear namespaced — `/osed:intake`, `/osed:gap-analysis`, `/osed:drafting`,
+`/osed:precedent-retrieval`, `/osed:plain-language`, `/osed:pipeline` — and the instrument templates
+travel with them.
+
+**Regulatory connector (tool-backed currency checks).** On first session the plugin builds a small
+Python virtual environment for the `osed-regulatory` MCP server (requires `python3`). The keyless
+sources — Federal Register, eCFR, GovInfo — work immediately. Two tools need free API keys, which the
+plugin prompts for on enable (both optional): a CourtListener token (`verify_citation`) and a
+Regulations.gov key (`find_rulemaking_documents`). Without `python3` or the keys, the skills degrade
+safely — they flag authorities **UNVERIFIED** rather than guessing — and the setup step prints a
+visible message so you know the connector is unavailable.
+
+> **Platform note.** The connector auto-starts on macOS and Linux. On Windows the virtual environment
+> builds, but the bundled MCP launch path is POSIX-first (`bin/`); Windows users may need to point the
+> `osed-regulatory` server at `Scripts/osed-connectors.exe` manually. The skills themselves work on
+> any platform; only the auto-started connector is POSIX-first in this release.
+
+**Keeping the law current.** The bundled `docs/doctrinal-currency.md` anchors (and any dated stamps)
+are a **snapshot as of the installed plugin version**. Run `/plugin marketplace update` to refresh
+them, and — as the doc and every skill insist — **re-verify any authority in primary sources before
+relying on it**. A stamp records that a human checked; it is never a substitute for checking.
+
 ## Status
 
 Seed release. The two templates under `templates/` are the first worked instruments; the skills reference them. The roadmap (in `docs/architecture.md`) lists the next instruments to template, by barrier-to-entry order.

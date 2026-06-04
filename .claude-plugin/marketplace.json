@@ -1,0 +1,12 @@
+{
+  "name": "osed",
+  "owner": { "name": "Behrang Garakani" },
+  "description": "OSED — open-source environmental-litigation drafting skills.",
+  "plugins": [
+    {
+      "name": "osed",
+      "source": "./",
+      "description": "The six OSED skills + instrument templates + the regulatory MCP connector."
+    }
+  ]
+}
