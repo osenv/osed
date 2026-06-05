@@ -168,15 +168,17 @@ dist/
 .astro/
 src/content/guide/
 .DS_Store
+.env
+.env.local
 ```
 
 - [ ] **Step 7: Write `src/styles/global.css`**
 
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+Do NOT include `@tailwind base/components/utilities` directives here: `@astrojs/tailwind` v5
+injects the Tailwind layers automatically (`applyBaseStyles: true`), so adding them in a stylesheet
+the layout imports would double-inject. This file carries only the custom global rules:
 
+```css
 :root { color-scheme: light dark; }
 html { background: theme(colors.paper); color: theme(colors.black); }
 body { font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif; line-height: 1.6; }
