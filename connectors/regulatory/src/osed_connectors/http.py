@@ -31,7 +31,7 @@ ALLOWED_HOSTS: set[str] = {
 }
 
 DEFAULT_TIMEOUT = httpx.Timeout(15.0)
-_USER_AGENT = "osed-connectors/0.1 (+https://github.com/bgarakani/osed)"
+_USER_AGENT = "osed-connectors/0.1 (+https://github.com/osenv/osed)"
 
 
 class DisallowedHost(ValueError):

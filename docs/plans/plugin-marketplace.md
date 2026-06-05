@@ -193,8 +193,8 @@ git commit -m "evals: live runner substitutes \${CLAUDE_SKILL_DIR} so plugin-saf
   "version": "0.1.0",
   "description": "Open Source Environmental Defense — skills that draft environmental-litigation instruments (citizen-suit notices, rulemaking petitions, deadline complaints, consent-decree scaffolds, state environmental-rights orientation packets). OSED drafts; a licensed attorney decides.",
   "author": { "name": "Behrang Garakani" },
-  "homepage": "https://github.com/bgarakani/osed",
-  "repository": "https://github.com/bgarakani/osed",
+  "homepage": "https://github.com/osenv/osed",
+  "repository": "https://github.com/osenv/osed",
   "license": "MIT"
 }
 ```
@@ -292,8 +292,8 @@ Make it executable: `chmod +x scripts/setup-connector.sh`.
   "version": "0.1.0",
   "description": "Open Source Environmental Defense — skills that draft environmental-litigation instruments (citizen-suit notices, rulemaking petitions, deadline complaints, consent-decree scaffolds, state environmental-rights orientation packets). OSED drafts; a licensed attorney decides.",
   "author": { "name": "Behrang Garakani" },
-  "homepage": "https://github.com/bgarakani/osed",
-  "repository": "https://github.com/bgarakani/osed",
+  "homepage": "https://github.com/osenv/osed",
+  "repository": "https://github.com/osenv/osed",
   "license": "MIT",
   "userConfig": {
     "courtlistener_api_key": {
@@ -348,7 +348,7 @@ Expected: all "valid"/"parses"; suite green.
 OSED is also a Claude Code plugin, distributed from this repo as a self-hosted marketplace:
 
 ```
-/plugin marketplace add bgarakani/osed
+/plugin marketplace add osenv/osed
 /plugin install osed@osed
 ```
 
@@ -382,7 +382,7 @@ relying on it**. A stamp records that a human checked; it is never a substitute 
 - [ ] **Step 3: Verify + commit**
 ```bash
 grep -c "Install as a Claude Code plugin" README.md   # ==1
-grep -c "plugin marketplace add bgarakani/osed" README.md   # >=1
+grep -c "plugin marketplace add osenv/osed" README.md   # >=1
 cd evals && .venv/bin/pytest -q ; cd ..
 git add README.md CHANGELOG.md
 git commit -m "docs: README install-as-plugin section + CHANGELOG (currency-snapshot + keyless notes)"
