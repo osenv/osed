@@ -102,7 +102,7 @@ cd osed
 OSED is also a Claude Code plugin, distributed from this repo as a self-hosted marketplace:
 
 ```
-/plugin marketplace add bgarakani/osed
+/plugin marketplace add osenv/osed
 /plugin install osed@osed
 ```
 

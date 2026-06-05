@@ -53,7 +53,7 @@ plus matching marker) short-circuits the rebuild. Temp data dir was then removed
 These CANNOT be exercised by an automated/non-interactive agent — they require the interactive
 Claude Code plugin runtime. Run them to finish verification:
 
-1. `/plugin marketplace add <path-to-this-repo>` (or `/plugin marketplace add bgarakani/osed`
+1. `/plugin marketplace add <path-to-this-repo>` (or `/plugin marketplace add osenv/osed`
    once pushed).
 2. `/plugin install osed@osed`.
 3. Confirm the six `osed:*` skills are listed: `intake`, `gap-analysis`, `drafting`,

@@ -56,7 +56,7 @@ their templates + the regulatory MCP connector. v1 ships full functionality, inc
 - `name: "osed"` (not a reserved name; `claude-for-legal` is reserved and unusable), `owner` (the
   maintainer), one `plugins` entry: `{ name: "osed", source: "./", description, version }`.
 
-Install path for users: `/plugin marketplace add bgarakani/osed` → `/plugin install osed@osed`. The
+Install path for users: `/plugin marketplace add osenv/osed` → `/plugin install osed@osed`. The
 six skills appear as `osed:intake`, `osed:gap-analysis`, `osed:drafting`, `osed:precedent-retrieval`,
 `osed:plain-language`, `osed:pipeline`.
 

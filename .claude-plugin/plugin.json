@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "Open Source Environmental Defense — skills that draft environmental-litigation instruments (citizen-suit notices, rulemaking petitions, deadline complaints, consent-decree scaffolds, state environmental-rights orientation packets). OSED drafts; a licensed attorney decides.",
   "author": { "name": "Behrang Garakani" },
-  "homepage": "https://github.com/bgarakani/osed",
-  "repository": "https://github.com/bgarakani/osed",
+  "homepage": "https://github.com/osenv/osed",
+  "repository": "https://github.com/osenv/osed",
   "license": "MIT",
   "userConfig": {
     "courtlistener_api_key": {
