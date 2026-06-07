@@ -44,18 +44,30 @@ leaving it open.
 
 ---
 
+## The published image
+
+CI (`.github/workflows/connector-image.yml`) tests the connector and publishes a multi-arch image to
+the GitHub Container Registry on every push to `main` and every `connector-v*` tag — so nobody has to
+build it, and deploying is a one-line `--image` reference:
+
+```
+ghcr.io/osenv/osed-connector:latest             # newest main
+ghcr.io/osenv/osed-connector:sha-XXXXXXX        # pinned to a commit
+ghcr.io/osenv/osed-connector:connector-v1.2.3   # a release tag
+```
+
+Pin to a `sha-` or release tag in production rather than `latest`.
+
 ## Run it locally (smoke test)
 
 ```bash
-# from connectors/regulatory/
-docker build -t osed-connector .
 docker run --rm -p 8000:8000 \
   -e COURTLISTENER_API_KEY=... -e REGULATIONS_GOV_API_KEY=... \
-  osed-connector
+  ghcr.io/osenv/osed-connector:latest
 # MCP endpoint: http://localhost:8000/mcp
 ```
 
-Or without Docker:
+Or build from source (`docker build -t osed-connector connectors/regulatory`), or without Docker:
 
 ```bash
 pip install .
@@ -78,19 +90,20 @@ the two optional keys.
 
 ## Deploy it (pick one)
 
-The image reads `PORT` at runtime, so it drops onto any container host. Examples:
+Point any container host at the published image (`ghcr.io/osenv/osed-connector:latest`); it reads
+`PORT` at runtime. Examples:
 
-**Google Cloud Run** (scales to zero, HTTPS for free):
+**Google Cloud Run** (scales to zero, HTTPS for free) — one line:
 ```bash
 gcloud run deploy osed-connector \
-  --source connectors/regulatory \
+  --image ghcr.io/osenv/osed-connector:latest \
   --set-env-vars COURTLISTENER_API_KEY=...,REGULATIONS_GOV_API_KEY=... \
   --allow-unauthenticated   # see Security before doing this on a public URL
 ```
 
 **Fly.io:**
 ```bash
-cd connectors/regulatory && fly launch --now
+fly launch --image ghcr.io/osenv/osed-connector:latest --now
 fly secrets set COURTLISTENER_API_KEY=... REGULATIONS_GOV_API_KEY=...
 ```
 
