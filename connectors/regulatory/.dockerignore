@@ -1,0 +1,13 @@
+# Keep the image small and free of secrets/local cruft.
+.env
+.env.*
+!.env.example
+tests/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/

@@ -15,6 +15,7 @@ dev = ["pytest>=8"]
 
 [project.scripts]
 osed-connectors = "osed_connectors.server:main"
+osed-connectors-http = "osed_connectors.server:main_http"
 
 [build-system]
 requires = ["hatchling"]
