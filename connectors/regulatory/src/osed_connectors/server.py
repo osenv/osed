@@ -13,6 +13,7 @@ decide when to call them, so they state the safeguards inline.
 
 from __future__ import annotations
 
+import os
 from typing import Any
 
 from fastmcp import FastMCP
@@ -210,8 +211,26 @@ def verify_citation(
 
 
 def main() -> None:
-    """Console-script entry point (`osed-connectors`). Runs over stdio."""
+    """Console-script entry point (`osed-connectors`). Runs over stdio —
+    this is what the Claude Code plugin launches locally."""
     mcp.run()
+
+
+def main_http() -> None:
+    """Console-script entry point (`osed-connectors-http`). Serves the same
+    tools over streamable HTTP so the connector can be HOSTED and added as a
+    remote connector in claude.ai / Claude Cowork (which can't launch a local
+    stdio process). Binds $HOST:$PORT$MCP_PATH (defaults 0.0.0.0:8000/mcp);
+    PORT honours the convention used by Cloud Run / Fly / Render. The two
+    keyed sources still read REGULATIONS_GOV_API_KEY / COURTLISTENER_API_KEY
+    from the environment; the keyless tools work without them.
+    """
+    mcp.run(
+        transport="streamable-http",
+        host=os.environ.get("HOST", "0.0.0.0"),
+        port=int(os.environ.get("PORT", "8000")),
+        path=os.environ.get("MCP_PATH", "/mcp"),
+    )
 
 
 if __name__ == "__main__":
