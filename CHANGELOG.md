@@ -8,6 +8,12 @@ and adds an entry here.
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-06-07
+
+State-ERA packets, the CAA §304 / deadline-complaint / consent-decree instruments, and OSED's
+distribution surfaces: the Claude Code plugin and the Cowork skill bundles (six self-contained zips,
+shipped via the `v0.2.0` GitHub Release) backed by a self-hostable remote regulatory connector.
+
 ### Added
 - End-to-end user guide under `docs/guide/` — parallel **For communities** and **For attorneys** tracks plus shared concepts, written to obey OSED's own invariants (a `test_guide_docs.py` check guards against merits-drift in the community track, requires the disclaimer, and verifies intra-guide links).
 - Four state-ERA doctrinal anchors (PA Art. I §27, MT Art. II §3/Art. IX §1, NY Art. I §19 Green Amendment, HI Art. XI) added to the tracked "Worth tracking" list in `docs/doctrinal-currency.md`, each law-as-of stamped.
@@ -17,6 +23,8 @@ and adds an entry here.
 - A "Stage 5 — Deadline Complaint" added to both deadline worked-examples (`docs/examples/cwa-304m-deadline-suit.md`, `docs/examples/caa-304-failure-to-act-suit.md`), each registered as a drafting eval fixture.
 - Consent-decree settlement scaffold (`templates/consent-decree-deadline.md`): the negotiated resolution of a deadline/duty suit, statute-agnostic, with every term flagged for the parties to negotiate (the software proposes none). A "Stage 6 — Consent Decree" was added to the CWA §304(m) worked example and registered as a drafting eval fixture.
 - OSED is now installable as a **Claude Code plugin** via a self-hosted marketplace (`.claude-plugin/marketplace.json` + `plugin.json`): the six skills, the instrument templates, and the `osed-regulatory` MCP connector (built into a persistent Python venv by a SessionStart hook; optional CourtListener / Regulations.gov keys via plugin config). See the README "Install as a Claude Code plugin" section.
+- **Claude Cowork distribution**: `scripts/pack-skills.mjs` packs each skill into a self-contained `.zip` (vendoring the templates/docs it references) for upload to claude.ai / Cowork, with a generated `MANIFEST.md`; an end-user `docs/skills-in-cowork.md` walkthrough and `docs/distribution-org-path.md` for centralized org rollout.
+- **Remote regulatory connector**: the connector now also serves streamable HTTP at `/mcp` (`osed-connectors-http`) so it can be hosted as a remote MCP for Cowork/claude.ai; CI tests and publishes a multi-arch image to GHCR (`ghcr.io/osenv/osed-connector`), and `connectors/regulatory/DEPLOY.md` covers self-hosting and the who-hosts/whose-keys privacy choice. The stdio transport (Claude Code plugin) is unchanged — one codebase, two transports.
 
 ### Changed
 - `skills/drafting`, `skills/intake`, and `skills/plain-language` wire the state-ERA packets into the pathway.
